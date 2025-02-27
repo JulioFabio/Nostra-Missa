@@ -1,0 +1,99 @@
+/* Estilos gerais da página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d8d8d0;
+}
+
+/* Barra no topo com altura fixa */
+.top-bar {
+    background-color: #162c0a;  /* Verde escuro */
+    border-radius: 25px;
+    width: 90%;
+    height: 145px;              /* Altura fixa da barra */
+    margin: 0 auto;            /* Remove a margem superior */
+    padding: 0 30px;           /* Sem padding vertical para altura fixa */
+    display: flex;
+    align-items: center;       /* Centraliza verticalmente o conteúdo */
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;        /* Garante que fique no topo */
+    top: -21px;                    /* Conecta a parte superior da barra com o topo da página */
+}
+.logo{
+    position: relative;
+    top: 60px; /* Ajuste esse valor para descer a logo o quanto quiser */
+    left: 80px; /* Muda esse valor para ajustar o deslocamento para a direita */
+
+}
+/* Logo alinhada à esquerda */
+.logo img {
+    height: 170px;              /* Aumente o valor conforme desejado */
+    width: auto;
+    object-fit: contain;       /* Garante que a imagem se ajuste bem */
+}
+
+/* Navegação centralizada */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+/* Links da navegação */
+.nav-links a {
+    color: #c9c5c5;
+    text-decoration: none;
+    font-size: 1.25rem;         /* Aumenta o tamanho da fonte */
+    font-weight: bold;         /* Deixa os textos em negrito */
+    padding: 17px 30px;        /* Aumenta o padding para aumentar o tamanho dos botões */
+    border-radius: 35px;       /* Bordas mais arredondadas */
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* Transição suave */
+}
+/* Efeito hover nos links */
+.nav-links a:hover {
+    color: #ffffff;            /* Cor do texto permanece branca */
+    background-color: #011b01; /* Cor da barra (mais escura) no hover */
+    border: 0px solid; /* Adiciona borda branca quando passar o mouse */
+}
+/* Divisórias entre os botões */
+.divider {
+    width: 2px;
+    height: 45px;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+/* Espaço extra para o conteúdo principal */
+main {
+    padding-top: 120px;
+    text-align: center;
+}
+
+/* Responsividade: Adiciona um layout adequado para telas pequenas */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 30px;
+    }
+
+    .logo img {
+        height: 100px;  /* Reduzindo a altura da logo em telas menores */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;   /* Aumenta ainda mais o tamanho da fonte para telas pequenas */
+        margin-bottom: 15px; /* Dá mais espaçamento entre os links */
+        padding: 18px 30px;
+    }
+
+    .divider {
+        display: none; /* Remove as divisórias em telas pequenas */
+    }
+}
