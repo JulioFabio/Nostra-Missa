@@ -50,7 +50,11 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: center;     /* 🎯 Centraliza os botões horizontalmente */
     gap: 48px;
+    width: 100%;                 /* ✅ Faz a navegação ocupar toda a largura disponível */
+    position: relative;
+    top: 15px;                   
 }
 
 
@@ -58,19 +62,23 @@ body {
 .nav-links a {
     color: #d8d2d2;
     text-decoration: none;
-    font-size: 1.25rem;         /* Aumenta o tamanho da fonte */
-    font-weight: bold;         /* Deixa os textos em negrito */
-    padding: 17px 30px;        /* Aumenta o padding para aumentar o tamanho dos botões */
-    border-radius: 35px;       /* Bordas mais arredondadas */
-    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* Transição suave */
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 17px 30px;
+    border-radius: 35px;
+    border: none;                /* 🔥 Remover bordas padrão */
+    outline: none;               /* 🔥 Remover qualquer outline */
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
 }
-/* Efeito hover nos links */
+
 .nav-links a:hover {
-    color: #ffffff;            /* Cor do texto permanece branca */
-    background-color: #011b01; /* Cor da barra (mais escura) no hover */
-    border: 0px solid; /* Adiciona borda branca quando passar o mouse */
+    color: #ffffff;
+    background-color: var(--hover-color);
+    border: 2px solid #011b01;   /* ✅ Borda branca apenas no hover */
 }
+
 /* Divisórias entre os botões */
+
 .divider {
     width: 2px;
     height: 45px;
@@ -121,7 +129,7 @@ main {
     text-align: center;
     color: #fff;
     font-weight: bold;
-    padding-top: 10px;
+    padding-top: 0px;
     transition: background-color 0.3s ease;
 }
 
