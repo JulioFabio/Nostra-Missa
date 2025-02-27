@@ -1,8 +1,16 @@
+/**
+ * Styles for the main page layout, including the top bar with the logo and navigation links.
+ * The top bar has a fixed height and is centered on the page, with a dark green background and rounded corners.
+ * The logo is positioned at the top left of the bar, and the navigation links are centered within the bar.
+ * The navigation links have a hover effect that changes the background color and text color.
+ * The main content area is positioned below the top bar with some extra padding.
+ * The styles also include responsive adjustments for smaller screens, such as stacking the logo and navigation links vertically.
+ */
 /* Estilos gerais da página */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #d8d8d0;
+    background-color: #f7f7f7;
 }
 
 /* Barra no topo com altura fixa */
@@ -22,15 +30,17 @@ body {
 }
 .logo{
     position: relative;
-    top: 60px; /* Ajuste esse valor para descer a logo o quanto quiser */
-    left: 80px; /* Muda esse valor para ajustar o deslocamento para a direita */
-
+    top: 75px; /* Ajuste esse valor para descer a logo o quanto quiser */
+    left: 95px; /* Muda esse valor para ajustar o deslocamento para a direita */
+    
 }
 /* Logo alinhada à esquerda */
 .logo img {
-    height: 170px;              /* Aumente o valor conforme desejado */
+    height: 195px;              /* Aumente o valor conforme desejado */
     width: auto;
     object-fit: contain;       /* Garante que a imagem se ajuste bem */
+    filter: drop-shadow(-10px 10px 12px rgba(0, 0, 0, 0.5)); /* Adiciona sombra */
+
 }
 
 /* Navegação centralizada */
@@ -40,9 +50,10 @@ body {
     gap: 48px;
 }
 
+
 /* Links da navegação */
 .nav-links a {
-    color: #c9c5c5;
+    color: #d8d2d2;
     text-decoration: none;
     font-size: 1.25rem;         /* Aumenta o tamanho da fonte */
     font-weight: bold;         /* Deixa os textos em negrito */
@@ -96,4 +107,11 @@ main {
     .divider {
         display: none; /* Remove as divisórias em telas pequenas */
     }
+}
+
+:root {
+  --primary-color: #162c0a;
+  --hover-color: #011b01;
+  --text-color: #d8d2d2;
+  --background: #f7f7f7;
 }
