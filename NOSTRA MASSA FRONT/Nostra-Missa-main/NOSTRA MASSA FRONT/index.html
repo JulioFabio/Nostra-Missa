@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra Massa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="nostraicon.png" type="image/png">
+</head>
+<body>
+    <header class="top-bar" >
+        <div class="logo" onclick="toggleDarkMode()" >
+            <img src="nostraicon.png" alt="Logo do site">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <span class="divider"></span>
+            <a href="#">Cardápio</a>
+            <span class="divider"></span>
+            <a href="#">Unidades</a>
+            <span class="divider"></span>
+            <a href="#">Sobre Nós</a>
+            <span class="divider"></span>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+    
+
+    <main>
+        <p>Conteúdo principal da página.</p>
+        <p style="height: 1000px;">Role a página para testar a barra inferior.</p>
+    </main>
+
+    <div class="bottom-panel" id="bottomPanel">
+        <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="false" aria-controls="bottomPanel">▲ Arraste para explorar mais</div>
+        <div class="bottom-panel-content">
+            <h2>Quem Somos?</h2>
+            <p>Pizza ou piza é uma preparação culinária...</p>
+            <p style="height: 800px;">Conteúdo extra para rolagem interna desta área expansível.</p>
+        </div>
+    </div>
+
+    <!-- Barra de Promoção -->
+    <div class="promo-bar">
+        🔥 Promoção Especial: Peça 2 pizzas e ganhe 1 refrigerante grátis! 🍕🥤
+    </div>
+
+    <!-- Botão "Peça Agora" -->
+    <a href="#menu" class="order-button" role="button" aria-label="Peça agora">🍕 Peça Agora</a>
+
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
+    <script src="script.js"></script> <!-- Certifique-se de que o caminho está correto -->
+
+</body>
+</html>
