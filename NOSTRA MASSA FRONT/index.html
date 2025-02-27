@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nostra Massa</title>
-    <link rel="stylesheet" href="style.css"> <!-- Conecta o CSS -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="nostraicon.png" type="image/png">
 </head>
 <body>
@@ -23,11 +23,30 @@
             <span class="divider"></span>
             <a href="#">Contato</a>
         </nav>
-        <div class="spacer"></div> <!-- Espaço para balancear o layout -->
     </header>
 
     <main>
         <p>Conteúdo principal da página.</p>
+        <p style="height: 1000px;">Role a página para testar a barra inferior.</p>
     </main>
+
+    <!-- Barra inferior escondida -->
+    <div class="bottom-bar">
+        <a href="#">Promoções</a>
+        <a href="#">Delivery</a>
+        <a href="#">Novidades</a>
+    </div>
+
+    <script>
+        // Script para mostrar a barra inferior ao rolar a página
+        window.addEventListener('scroll', function() {
+            const bottomBar = document.querySelector('.bottom-bar');
+            if (window.scrollY > 100) {
+                bottomBar.classList.add('show-bottom-bar');
+            } else {
+                bottomBar.classList.remove('show-bottom-bar');
+            }
+        });
+    </script>
 </body>
 </html>

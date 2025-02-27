@@ -10,23 +10,26 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: var(--background);
 }
 
 /* Barra no topo com altura fixa */
 .top-bar {
-    background-color: #162c0a;  /* Verde escuro */
+    background-color: var(--primary-color);
     border-radius: 25px;
     width: 90%;
-    height: 145px;              /* Altura fixa da barra */
-    margin: 0 auto;            /* Remove a margem superior */
-    padding: 0 30px;           /* Sem padding vertical para altura fixa */
+    height: 145px;
+    margin: 0 auto;
+    padding: 0 30px;
     display: flex;
-    align-items: center;       /* Centraliza verticalmente o conteúdo */
+    align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;        /* Garante que fique no topo */
-    top: -21px;                    /* Conecta a parte superior da barra com o topo da página */
+    position: fixed;           /* Fixa a barra no topo */
+    top: -21px;
+    left: 0;
+    right: 0;
+    z-index: 1000;                /* Conecta a parte superior da barra com o topo da página */
 }
 .logo{
     position: relative;
@@ -77,11 +80,50 @@ body {
 
 /* Espaço extra para o conteúdo principal */
 main {
-    padding-top: 120px;
+    padding-top: 170px;
     text-align: center;
 }
 
-/* Responsividade: Adiciona um layout adequado para telas pequenas */
+/* Barra inferior oculta */
+.bottom-bar {
+    position: fixed;
+    bottom: -47px; /* Agora a barra fica parcialmente visível (ajuste aqui o valor) */
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 25px 25px 0 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 0.5s ease;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.bottom-bar:hover,
+.show-bottom-bar {
+    bottom: 0; /* Mostra a barra ao passar o mouse ou ao rolar */
+}
+
+.bottom-bar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.4s ease;
+}
+
+.bottom-bar a:hover {
+    background-color: var(--hover-color);
+    color: #ffffff;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     .top-bar {
         flex-direction: column;
@@ -90,7 +132,7 @@ main {
     }
 
     .logo img {
-        height: 100px;  /* Reduzindo a altura da logo em telas menores */
+        height: 100px;
     }
 
     .nav-links {
@@ -98,20 +140,20 @@ main {
         margin-top: 10px;
     }
 
-    .nav-links a {
-        font-size: 1.5rem;   /* Aumenta ainda mais o tamanho da fonte para telas pequenas */
-        margin-bottom: 15px; /* Dá mais espaçamento entre os links */
-        padding: 18px 30px;
+    .divider {
+        display: none;
     }
 
-    .divider {
-        display: none; /* Remove as divisórias em telas pequenas */
+    .bottom-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
     }
 }
 
 :root {
-  --primary-color: #162c0a;
-  --hover-color: #011b01;
-  --text-color: #d8d2d2;
-  --background: #f7f7f7;
+    --primary-color: #162c0a;
+    --hover-color: #011b01;
+    --text-color: #d8d2d2;
+    --background: #f7f7f7;
 }
