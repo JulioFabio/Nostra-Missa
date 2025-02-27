@@ -359,10 +359,78 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
     animation: fadeInAnimation 1s forwards;
 }
 
-@keyframes fadeInAnimation {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
 }
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    padding: 10px;
+}
+
+.carousel-item img {
+    width: 20%;
+    border-radius: 15px;
+}
+
+.carousel-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e63946;
+}
+
+/* Setas de navegação */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes carouselAnimation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(-200%); }
+}
+
+.carousel {
+    animation: carouselAnimation 7s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 90%;
+    }
+}
+
 
 @media (max-width: 768px) {
     .top-bar {

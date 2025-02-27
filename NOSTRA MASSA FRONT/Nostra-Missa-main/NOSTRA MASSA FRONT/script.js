@@ -70,3 +70,32 @@ window.addEventListener('beforeunload', () => {
 document.querySelectorAll('.fade-in').forEach((el) => {
     el.classList.add('fade-in');
 });
+
+// Selecionando os elementos do carrossel e as setas
+const carousel = document.querySelector('.carousel');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+
+// Variável para manter o índice da imagem atual
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+
+// Função para mostrar a imagem com base no índice
+function updateCarousel() {
+    const width = items[0].offsetWidth;
+    carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+}
+
+// Função para ir para a imagem anterior
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+    updateCarousel();
+});
+
+// Função para ir para a próxima imagem
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+    updateCarousel();
+});
+
+
