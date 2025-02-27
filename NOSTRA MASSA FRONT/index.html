@@ -30,23 +30,16 @@
         <p style="height: 1000px;">Role a página para testar a barra inferior.</p>
     </main>
 
-    <!-- Barra inferior escondida -->
-    <div class="bottom-bar">
-        <a href="#">Promoções</a>
-        <a href="#">Delivery</a>
-        <a href="#">Novidades</a>
+  <!-- Seção expansível inferior -->
+<div class="bottom-panel" id="bottomPanel">
+    <div class="bottom-panel-header">▲ Arraste ou role para explorar mais</div>
+    <div class="bottom-panel-content">
+        <h2>Explore Mais do Nosso Conteúdo</h2>
+        <p>LPizza ou piza é uma preparação culinária que consiste em um disco de massa fermentada de farinha de trigo, coberto com molho de tomate e os ingredientes variados que normalmente incluem algum tipo de queijo, carnes preparadas ou defumadas e ervas, normalmente orégano ou manjericão, tudo assado em forno</p>
+        <p style="height: 800px;">Conteúdo extra para rolagem interna desta área expansível.</p>
     </div>
+</div>
+<script src="script.js"></script>
 
-    <script>
-        // Script para mostrar a barra inferior ao rolar a página
-        window.addEventListener('scroll', function() {
-            const bottomBar = document.querySelector('.bottom-bar');
-            if (window.scrollY > 100) {
-                bottomBar.classList.add('show-bottom-bar');
-            } else {
-                bottomBar.classList.remove('show-bottom-bar');
-            }
-        });
-    </script>
 </body>
 </html>
