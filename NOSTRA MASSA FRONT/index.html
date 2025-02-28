@@ -8,8 +8,8 @@
     <link rel="icon" href="nostraicon.png" type="image/png">
 </head>
 <body>
-    <header class="top-bar">
-        <div class="logo">
+    <header class="top-bar" >
+        <div class="logo" onclick="toggleDarkMode()" >
             <img src="nostraicon.png" alt="Logo do site">
         </div>
         <nav class="nav-links">
@@ -24,22 +24,52 @@
             <a href="#">Contato</a>
         </nav>
     </header>
+    
 
     <main>
         <p>Conteúdo principal da página.</p>
         <p style="height: 1000px;">Role a página para testar a barra inferior.</p>
     </main>
 
-  <!-- Seção expansível inferior -->
-<div class="bottom-panel" id="bottomPanel">
-    <div class="bottom-panel-header">▲ Arraste ou role para explorar mais</div>
-    <div class="bottom-panel-content">
-        <h2>Explore Mais do Nosso Conteúdo</h2>
-        <p>LPizza ou piza é uma preparação culinária que consiste em um disco de massa fermentada de farinha de trigo, coberto com molho de tomate e os ingredientes variados que normalmente incluem algum tipo de queijo, carnes preparadas ou defumadas e ervas, normalmente orégano ou manjericão, tudo assado em forno</p>
-        <p style="height: 800px;">Conteúdo extra para rolagem interna desta área expansível.</p>
+    <div class="bottom-panel" id="bottomPanel">
+        <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="false" aria-controls="bottomPanel">▲ Arraste para explorar mais</div>
+        <div class="bottom-panel-content">
+            <h2>Quem Somos</h2>
     </div>
-</div>
-<script src="script.js"></script>
+    <p>Somos uma pizzaria em Cravinhos, apaixonados por criar momentos especiais. Nossa missão é trazer o sabor autêntico da pizza artesanal, feita com ingredientes frescos e muito amor. Cada fatia é feita com cuidado e dedicação para proporcionar a melhor experiência aos nossos clientes. Venha sentir o sabor da tradição em cada pedaço!</p>
+    
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="pizza.jpg" alt="Pizza 1">
+                <p>Pizza 1</p>
+            </div>
+            <div class="carousel-item">
+                <img src="pizza.jpg" alt="Pizza 2">
+                <p>Pizza 2</p>
+            </div>
+            <div class="carousel-item">
+                <img src="pizza.jpg" alt="Pizza 3">
+                <p>Pizza 3</p>
+            </div>
+        </div>
+        <button class="carousel-prev">❮</button>
+        <button class="carousel-next">❯</button>
+    </div>
+    
+      
+
+    <!-- Barra de Promoção -->
+    <div class="promo-bar">
+        🔥 Promoção Especial: Peça 2 pizzas e ganhe 1 refrigerante grátis! 🍕🥤
+    </div>
+
+    <!-- Botão "Peça Agora" -->
+    <a href="#menu" class="order-button" role="button" aria-label="Peça agora">🍕 Peça Agora</a>
+
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
+    <script src="script.js"></script> <!-- Certifique-se de que o caminho está correto -->
 
 </body>
 </html>
