@@ -1,75 +1,43 @@
 const bottomPanel = document.getElementById('bottomPanel');
-const panelHeader = document.getElementById('expandButton');  // Garante que estamos usando o botão correto
+const panelContent = document.querySelector('.bottom-panel-content');
+const panelHeader = document.getElementById('expandButton');
 let isPanelOpen = false;
 
-// Função para alternar o painel
+// Alternar o painel
 function togglePanel(abrir) {
     isPanelOpen = abrir !== undefined ? abrir : !isPanelOpen;
-    bottomPanel.classList.toggle('open', isPanelOpen);  // Alterna a classe 'open'
+    bottomPanel.classList.toggle('open', isPanelOpen);
 }
 
-// Evento para abrir ou fechar o painel ao clicar no "Arraste para Explorar"
+// Clique no topo do painel
 panelHeader.addEventListener('click', () => {
-    togglePanel();  // Alterna o painel
+    togglePanel();
 });
 
-// Detecta rolagem para abrir ou fechar o painel
+// Rolagem
 window.addEventListener('wheel', (event) => {
+    const scrollTop = window.scrollY;
+    const atTop = scrollTop === 0;
+
     if (event.deltaY > 0 && !isPanelOpen) {
-        togglePanel(true);  // Abre o painel ao rolar para baixo
-    } else if (event.deltaY < 0 && isPanelOpen) {
-        togglePanel(false);  // Fecha o painel ao rolar para cima
+        // Rolar para baixo abre o painel
+        togglePanel(true);
+    } else if (event.deltaY < 0 && isPanelOpen && atTop) {
+        // Só fecha o painel se estiver no topo da página
+        togglePanel(false);
     }
 });
 
-
-// Função para alternar entre os modos claro e escuro
+// Modo escuro
 function toggleDarkMode() {
-    // Alterna a classe dark-mode no corpo
     document.body.classList.toggle('dark-mode');
+    document.querySelector('.top-bar')?.classList.toggle('dark-mode');
+    document.querySelector('.bottom-panel')?.classList.toggle('dark-mode');
 
-    // Alterna a classe dark-mode na top-bar
-    const topBar = document.querySelector('.top-bar');
-    if (topBar) {
-        topBar.classList.toggle('dark-mode');
-    }
-
-    // Alterna a classe dark-mode na bottom-panel
-    const bottomPanel = document.querySelector('.bottom-panel');
-    if (bottomPanel) {
-        bottomPanel.classList.toggle('dark-mode');
-    }
-
-    // Alterna a classe dark-mode nos botões "Peça Agora"
-    const allOrderButtons = document.querySelectorAll('.order-button');
-    allOrderButtons.forEach(button => {
+    document.querySelectorAll('.order-button').forEach(button => {
         button.classList.toggle('dark-mode');
     });
 }
-
-
-
-toggleButton.addEventListener('click', toggleDarkMode);
-console.log(document.body.classList);
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        document.body.classList.add('scrolled');
-    } else {
-        document.body.classList.remove('scrolled');
-    }
-});
-
-window.addEventListener('load', () => {
-    document.body.classList.remove('loading');
-});
-
-window.addEventListener('beforeunload', () => {
-    document.body.classList.add('loading');
-});
-
-document.querySelectorAll('.fade-in').forEach((el) => {
-    el.classList.add('fade-in');
-});
 
 const conteudos = {
     home: `
@@ -82,29 +50,50 @@ const conteudos = {
             <li>Pizza Margherita</li>
             <li>Pizza Calabresa</li>
             <li>Pizza Quatro Queijos</li>
-            <li>Pizza Vegetariana</li>
         </ul>
     `,
     unidades: `
         <h2>Nossas Unidades</h2>
-        <p>Estamos presentes em várias cidades. Visite a unidade mais próxima!</p>
+        <p>Estamos presentes em Cravinhos, Ribeirão Preto e região.</p>
     `,
     sobre: `
         <h2>Quem Somos</h2>
-        <p>Somos uma pizzaria em Cravinhos, apaixonados por criar momentos especiais...</p>
+        <p>Somos uma pizzaria em Cravinhos, apaixonados por pizza artesanal.</p>
     `,
     contato: `
         <h2>Fale Conosco</h2>
-        <p>Telefone: (16) 99999-9999</p>
-        <p>Email: contato@nostramassa.com</p>
+        <p>WhatsApp: (16) 99999-9999<br>Email: contato@nostramassa.com</p>
     `
 };
 
+function carregarConteudo(page, mudarURL = true, abrirPainel = false) {
+    panelContent.innerHTML = conteudos[page] || '<h2>Conteúdo não encontrado</h2>';
+    if (mudarURL) {
+        history.pushState({ page }, '', `/${page === 'home' ? '' : page}`);
+    }
+    // Só abre o painel quando o parâmetro abrirPainel for verdadeiro
+    if (abrirPainel) {
+        bottomPanel.classList.add('open');
+    }
+}
+
+// Detecta clique nos links do menu
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const pagina = link.getAttribute('data-page');
-        const painel = document.querySelector('.bottom-panel-content');
-        painel.innerHTML = conteudos[pagina] || '<h2>Conteúdo não encontrado</h2>';
+        const page = link.getAttribute('data-page');
+        carregarConteudo(page);
     });
+});
+
+// Lida com botões "voltar" e "avançar" do navegador
+window.addEventListener('popstate', (event) => {
+    const page = event.state?.page || 'home';
+    carregarConteudo(page, false);
+});
+
+// Carrega o conteúdo inicial baseado na URL
+document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname.replace('/', '') || 'home';
+    carregarConteudo(path, false);
 });

@@ -4,7 +4,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
 body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: 'Arial', sans-serif;
     font-size: inherit;
@@ -209,23 +208,28 @@ main {
 
 .bottom-panel {
     position: fixed;
-    bottom: -57%;
+    bottom: -54%; /* Começa ligeiramente abaixo da tela */
     left: 0;
     right: 0;
     height: 70%;
-    background-color: var(--primary-color);
-    border-radius: 25px 25px 0 0;
+    background: var(--primary-color); /* Cor do fundo igual ao do restante do site */
+    border-radius: 12px;
     width: 90%;
     margin: 0 auto;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    transition: bottom 0.6s ease;
+    transition: bottom 0.6s ease-out; /* Animação suave */
     z-index: 999;
     padding: 20px;
     color: var(--text-color);
-    animation: slideUp 0.8s ease-out;
+    animation: slideUp 0.8s ease-out; /* Animação para descer suavemente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.bottom-panel.open {
+    bottom: 0; /* A posição final onde estará visível */
+    animation: slideUp 0.6s ease-out; /* Só anima quando a classe "open" é adicionada */
+}
 .bottom-panel.dark-mode {
     background-color: #1a1a1a;
     color: #e0e0e0;
@@ -257,6 +261,36 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
     background-color: #4e5b46;
 }
 
+.bottom-panel-content {
+    padding: 20px;
+    color: #d8d2d2;
+}
+
+.bottom-panel-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d8d2d2;
+    margin-bottom: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #444;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
 body.dark-mode {
     color: #e0e0e0;
 }
@@ -267,17 +301,18 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
 
 @keyframes slideUp {
     from {
-        bottom: -70%;
+        bottom: -60%; /* Começa ligeiramente fora da tela */
     }
     to {
-        bottom: -57%;
+        bottom: -54%; /* Atinge a posição final */
     }
 }
 
 .bottom-panel::-webkit-scrollbar {
     width: 8px;
 }
-.bottom-panel h2{
+
+.bottom-panel h2 {
     text-align: left;
     font-size: 44px;
     margin-bottom: 14px;
@@ -317,63 +352,20 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
     }
 }
 
-.bottom-panel.open {
-    bottom: 0;
-}
 
-.promo-bar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #e63946;
-    color: white;
-    text-align: center;
-    padding: 7px;
-    font-weight: bold;
-    animation: fadeInPromo 1s ease-in-out;
-    z-index: 1001;
-}
+
 
 @keyframes fadeInPromo {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.top-bar,
-.nav-links a,
-.order-button,
-.promo-bar {
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
 
-.order-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #e63946;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    animation: fadeInPromo 1s ease-in-out;
-    z-index: 1002;
-}
-
-.order-button:hover {
-    background-color: #ff5733;
-    transform: scale(1.05);
-}
 
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 1s forwards;
 }
-
-
-
 
 @media (max-width: 768px) {
     .top-bar {
@@ -404,7 +396,7 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
 
 :root {
     --primary-color: #162c0a;
-    --hover-color: #011b01;
+    --hover-color: #010e00;
     --text-color: #d8d2d2;
-    --background: #f7f7f7;
+    --background: #010e00;
 }
