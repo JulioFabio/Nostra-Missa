@@ -14,21 +14,24 @@ panelHeader.addEventListener('click', () => {
     togglePanel();
 });
 
-// Rolagem
 window.addEventListener('wheel', (event) => {
     const scrollTop = window.scrollY;
-    const atTop = scrollTop === 0;
+    const atTop = scrollTop <= 30;
+
+    // Ignorar se o scroll veio de dentro do painel
+    const isFromPanel = bottomPanel.contains(event.target);
+    if (isFromPanel) return;
 
     if (event.deltaY > 0 && !isPanelOpen) {
-        // Rolar para baixo abre o painel
         togglePanel(true);
     } else if (event.deltaY < 0 && isPanelOpen && atTop) {
-        // Só fecha o painel se estiver no topo da página
         togglePanel(false);
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 100);
     }
 });
 
-// Modo escuro
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     document.querySelector('.top-bar')?.classList.toggle('dark-mode');
@@ -57,9 +60,38 @@ const conteudos = {
         <p>Estamos presentes em Cravinhos, Ribeirão Preto e região.</p>
     `,
     sobre: `
-        <h2>Quem Somos</h2>
-        <p>Somos uma pizzaria em Cravinhos, apaixonados por pizza artesanal.</p>
-    `,
+    <h2>Quem Somos</h2>
+
+    <div class="sobre-nos-texto">
+        <p>
+            Fundada em 2016 no coração de Cravinhos, a <strong>Nostra Massa</strong> nasceu da paixão por pizza e pelo desejo de criar experiências memoráveis. Desde o início, nosso objetivo sempre foi ir além de apenas alimentar — queremos despertar sensações, reunir pessoas e criar memórias ao redor de uma boa fatia.
+        </p>
+        <p>
+            Nosso diferencial está na dedicação com que tratamos cada etapa: da seleção dos ingredientes à forma como recebemos nossos clientes. Utilizamos <strong>massas de fermentação lenta</strong>, ingredientes frescos e combinações que equilibram tradição com criatividade. O resultado? Uma pizza artesanal que encanta no sabor e no carinho com que é feita.
+        </p>
+        <p>
+            Com um ambiente acolhedor e uma equipe apaixonada pelo que faz, a Nostra Massa se tornou parte da rotina e da história de muitos moradores da cidade. E mesmo com o crescimento, mantemos viva a nossa essência: ser um ponto de encontro, de afeto e de sabor.
+        </p>
+        <p>
+            Seja no salão, no delivery ou na retirada, cada pedido é uma oportunidade de entregar mais que uma pizza: é entregar cuidado, aconchego e aquele toque especial que só quem ama o que faz consegue colocar.
+        </p>
+    </div>
+
+    <div class="sobre-nos-grid">
+        <div class="sobre-item">
+            <h3>🍕 A Pizza Artesanal</h3>
+            <p>Utilizamos ingredientes frescos, massas de fermentação lenta e combinações de sabores que vão do clássico ao exclusivo. Cada pizza é feita com amor e cuidado.</p>
+        </div>
+        <div class="sobre-item">
+            <h3>🧡 Atendimento com Carinho</h3>
+            <p>Nosso time está sempre pronto para receber você com simpatia, garantindo uma experiência acolhedora, seja no salão, delivery ou retirada.</p>
+        </div>
+        <div class="sobre-item">
+            <h3>🏡 Tradição Local</h3>
+            <p>Fazemos parte da história de Cravinhos com orgulho! E continuamos evoluindo, sem nunca perder nossa essência: oferecer uma experiência única em cada fatia.</p>
+        </div>
+    </div>
+`,
     contato: `
         <h2>Fale Conosco</h2>
         <p>WhatsApp: (16) 99999-9999<br>Email: contato@nostramassa.com</p>
@@ -97,3 +129,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname.replace('/', '') || 'home';
     carregarConteudo(path, false);
 });
+
+
