@@ -12,6 +12,10 @@ function togglePanel(abrir) {
      if (!isPanelOpen) {
         panelContent.scrollTop = 0;
     }
+ else {
+    // Reinicia a animação dos itens "sobre"
+    reanimarSobreItens();
+}
 
     
 }
@@ -114,6 +118,13 @@ function carregarConteudo(page, mudarURL = true, abrirPainel = false) {
     if (abrirPainel) {
         bottomPanel.classList.add('open');
     }
+    // Se o conteúdo carregado for o "sobre", reinicia as animações
+if (page === 'sobre') {
+    // Aguarda o DOM atualizar o HTML antes de animar
+    setTimeout(() => {
+        reanimarSobreItens();
+    }, 50);
+}
 }
 
 // Detecta clique nos links do menu
@@ -124,6 +135,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         carregarConteudo(page);
     });
 });
+
 
 // Lida com botões "voltar" e "avançar" do navegador
 window.addEventListener('popstate', (event) => {
@@ -138,3 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function reanimarSobreItens() {
+    const itens = document.querySelectorAll('.sobre-item');
+    itens.forEach(item => {
+        item.style.animation = 'none';
+        item.offsetHeight; // força reflow
+        item.style.animation = ''; // faz a animação recomeçar
+    });
+}

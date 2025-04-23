@@ -225,6 +225,7 @@ main {
     animation: slideUp 0.8s ease-out; /* Animação para descer suavemente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
+    
 }
 .bottom-panel-header {
     text-align: center;
@@ -239,12 +240,19 @@ main {
     color: #fff;
     padding: 10px;
     transition: background-color 0.3s ease;
+    overflow: hidden; /* Adicionado para evitar expansão excessiva */
+    box-sizing: border-box; /* Garante que padding não afete a largura */
+    overflow: hidden; /* Impede que o conteúdo se expanda para fora */
+    display: flex; /* Usamos flexbox para centralizar */
+    align-items: center; /* Garante o alinhamento vertical */
+    justify-content: center; /* Garante o alinhamento horizontal */
+
     
     
 }
 .bottom-panel-header:hover {
     background-color: #010e00;
-    transform: scale(1.05);
+    transform: translateY(-2px); /* Muda o efeito de escala para um simples deslocamento */
     border: none; /* Evita bordas extras */
     animation: pulse 0.6s infinite alternate;
 }
@@ -255,14 +263,31 @@ main {
 .bottom-panel-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    justify-content: flex-start;
+    text-align: left; /* Alinha o texto à esquerda */
+    align-items: center;
     padding: 20px;
-    width: 100%;  /* Certifique-se que o conteúdo tenha 100% de largura */
+    width: 100%;  /* Certifique-se de que o conteúdo tenha 100% de largura */
     color: #d8d2d2;
     overflow-y: auto; /* Permite rolar o conteúdo se necessário */
     height: calc(100% - 40px); /* Ajusta a altura do conteúdo */
-    
+    box-sizing: border-box; /* Garantir que o padding seja incluído na largura total */
+    flex-grow: 1;  /* Garante que o conteúdo cresça até o tamanho necessário */
+
+}
+
+/* Oculta a barra de rolagem, mas permite a rolagem */
+.bottom-panel-content::-webkit-scrollbar {
+    width: 0px;  /* Oculta a barra de rolagem */
+    height: 0px;
+}
+
+.bottom-panel-content::-webkit-scrollbar-thumb {
+    background-color: transparent;  /* Torna o "polegar" da barra invisível */
+    border-radius: 10px;
+}
+
+.bottom-panel-content::-webkit-scrollbar-track {
+    background: transparent;  /* Torna o fundo da barra invisível */
 }
 
 .bottom-panel-content h2 {
@@ -321,19 +346,51 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
     text-align: justify;
 }
 
+
 .sobre-nos-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 24px;
     margin-top: 32px;
+    justify-content: center;
+    max-width: 1000px;   /* ou 90%, se preferir mais fluido */
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .sobre-item {
     background-color: rgba(255, 255, 255, 0.08);
     padding: 16px;
     border-radius: 12px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sobreFadeIn 0.8s ease-out forwards;
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; /* Aumento da duração da transição */
+
 }
 
+.sobre-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.sobre-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.sobre-item:nth-child(4) {
+    animation-delay: 0.6s;
+}
+/* Adicione mais se tiver mais itens */
+
+@keyframes sobreFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.sobre-item:hover {
+    transform: translateY(-15px); /* Quando o mouse passar, o item sobe */
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); /* A sombra mais forte quando o item é hover */
+}
 .sobre-item h3 {
     margin-bottom: 8px;
     font-size: 1.2rem;
