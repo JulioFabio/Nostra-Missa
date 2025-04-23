@@ -7,6 +7,13 @@ let isPanelOpen = false;
 function togglePanel(abrir) {
     isPanelOpen = abrir !== undefined ? abrir : !isPanelOpen;
     bottomPanel.classList.toggle('open', isPanelOpen);
+
+     // Se fechou, volta o scroll do conteúdo pro topo
+     if (!isPanelOpen) {
+        panelContent.scrollTop = 0;
+    }
+
+    
 }
 
 // Clique no topo do painel

@@ -217,14 +217,61 @@ main {
     width: 90%;
     margin: 0 auto;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
+    overflow: hidden;
     transition: bottom 0.6s ease-out; /* Animação suave */
     z-index: 999;
     padding: 20px;
     color: var(--text-color);
     animation: slideUp 0.8s ease-out; /* Animação para descer suavemente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
 }
+.bottom-panel-header {
+    text-align: center;
+    width: 100%;  /* Faz com que o header ocupe toda a largura do painel */
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    position: relative;
+    top: 0; /* Isso faz o header "grudar" no topo */
+    z-index: 1;
+    cursor: pointer; /* Para dar o efeito de botão */
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    
+    
+}
+.bottom-panel-header:hover {
+    background-color: #010e00;
+    transform: scale(1.05);
+    border: none; /* Evita bordas extras */
+    animation: pulse 0.6s infinite alternate;
+}
+
+.bottom-panel-header:active {
+    transform: scale(0.98);
+}
+.bottom-panel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;  /* Certifique-se que o conteúdo tenha 100% de largura */
+    color: #d8d2d2;
+    overflow-y: auto; /* Permite rolar o conteúdo se necessário */
+    height: calc(100% - 40px); /* Ajusta a altura do conteúdo */
+    
+}
+
+.bottom-panel-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d8d2d2;
+    margin-bottom: 10px;
+}
+
 
 .bottom-panel.open {
     bottom: 0; /* A posição final onde estará visível */
@@ -234,6 +281,7 @@ main {
     background-color: #1a1a1a;
     color: #e0e0e0;
 }
+
 
 .bottom-panel-header.dark-mode {
     background-color: #333;
@@ -261,23 +309,6 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
     background-color: #4e5b46;
 }
 
-.bottom-panel-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    justify-content: flex-start;
-    padding: 20px;
-    color: #d8d2d2;
-    overflow-y: auto; /* Permite rolar o conteúdo se necessário */
-    height: calc(100% - 40px); /* Ajusta a altura do conteúdo */
-}
-
-.bottom-panel-content h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #d8d2d2;
-    margin-bottom: 10px;
-}
 
 .sobre-nos-texto {
     display: flex;
@@ -350,25 +381,8 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
     border-radius: 10px;
 }
 
-.bottom-panel-header {
-    cursor: pointer;
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
 
-.bottom-panel-header:hover {
-    background-color: #010e00;
-    transform: scale(1.05);
-    animation: pulse 0.6s infinite alternate;
-}
 
-.bottom-panel-header:active {
-    transform: scale(0.98);
-}
 
 @keyframes pulse {
     from {
