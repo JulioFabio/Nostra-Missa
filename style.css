@@ -454,7 +454,7 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
 }
 
 .accordion-header {
-    width: 100%;
+    width: 60%;
     background: transparent;
     border: none;
     text-align: left;
@@ -548,6 +548,57 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
   .btn-outline { border: 2px solid var(--hover-color); color: var(--hover-color); }
   .btn:hover, .btn-outline:hover { transform: translateY(-2px); opacity: .9; }
 
+
+  .depoimentos {
+    text-align: center; /* Centraliza o texto */
+    padding: 24px 0;    /* Adiciona um padding para dar mais espaço ao redor */
+  }
+  
+  .depoimentos h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffdab9;
+  }
+  .depoimentos h2.headline-central {
+    text-align: center; /* Garante que o título esteja centralizado */
+    margin: 0 auto;     /* Garante que o título fique centralizado no contêiner */
+    padding: 20px 0;    /* Ajusta o padding para dar mais espaço ao redor */
+  }
+  .swiper-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative; /* Permite que os botões de navegação sejam posicionados em relação ao contêiner */
+    display: flex;
+    justify-content: center; /* Alinha os botões de navegação horizontalmente */
+      overflow: hidden; /* Garante que o conteúdo extra seja escondido */
+
+  }
+  
+  
+  blockquote {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  cite {
+    display: block;
+    font-size: 1em;
+    margin-top: 10px;
+    color: #777;
+  }
+  .swiper-button-prev,
+.swiper-button-next {
+  color: white;  /* Altera a cor das setas para branco */
+  font-size: 1rem;  /* Ajuste o tamanho conforme necessário */
+  margin-bottom: 20px; /* Ajusta o espaço entre o título e os depoimentos */
+
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #fff;  /* Garante que a cor continue branca quando o usuário passar o mouse */
+}
 body.dark-mode {
     color: #e0e0e0;
 }
