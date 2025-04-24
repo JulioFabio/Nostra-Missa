@@ -1,0 +1,68 @@
+/* ---------- Seção “Unidades + Carrossel” ---------- */
+.unidades-com-carousel {
+    padding: 40px 0;
+    background-color: var(--background);
+    color: var(--text-color);
+  }
+  
+  .unidades-com-carousel .container.duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  
+  /* Grid de cards à esquerda */
+  .unidades-com-carousel .col-esquerda .unidades-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .unidades-com-carousel .col-esquerda .unidade-item {
+    background: rgba(255,255,255,0.08);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .unidades-com-carousel .col-esquerda .unidade-item h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+  
+  /* Carrossel à direita */
+  .unidades-com-carousel .col-direita .unidades-swiper {
+    width: 100%;
+  }
+  
+  .unidades-com-carousel .col-direita .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .unidades-com-carousel .col-direita figure {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .unidades-com-carousel .col-direita img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .unidades-com-carousel .col-direita figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .unidades-com-carousel .container.duas-colunas {
+      grid-template-columns: 1fr;
+    }
+  }
+  

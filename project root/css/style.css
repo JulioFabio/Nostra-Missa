@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('sobre-nos.css');
+@import url('unidades.css');
+@import url('buttons.css');
+@import url('dark-mode.css');
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    background: url('../assets/pizza.jpg') no-repeat center center fixed;
+    transition: background-color 0.5s ease;  
+}
+
+.mode-toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e63946;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+}
+
+.mode-toggle-button:hover {
+    background-color: #ff5733;
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: #2d3d1e;
+}
+
+.order-button.dark-mode {
+    background-color: #f7f7f7;
+    color: #000000;
+}
+
+.order-button.dark-mode:hover {
+    background-color: #b56b6e;
+}
+
+.mode-toggle-button.dark-mode {
+    background-color: #e63946;
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 1003;
+    display: none;
+}
+
+body.loading .loading-spinner {
+    display: block;
+}
+
+body.scrolled {
+    background-color: #f2f2f2;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .promo-bar {
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/pizza.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+    animation: backgroundMove 5s infinite alternate ease-in-out;
+}
+
+.top-bar {
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--primary-color), #224d0d);
+    width: 90%;
+    height: 145px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: -40px;
+    left: 0;
+    right: 0;
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.top-bar.dark-mode {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #e0e0e0;
+}
+
+.logo {
+    position: relative;
+    top: 75px;
+    left: 95px;
+}
+
+.logo img {
+    height: 195px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(-10px 10px 12px rgba(0, 0, 0, 0.5));
+}
+
+.logo img:hover {
+    filter: brightness(1.2) drop-shadow(0px 0px 20px rgba(255, 94, 0, 0.6));
+    transition: 0.3s ease-in-out;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+    position: relative;
+    top: 15px;
+}
+
+.nav-links a {
+    color: #d8d2d2;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 17px 30px;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+    opacity: 0.5;
+    transform: translateY(-8px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.nav-links a:focus {
+    outline: 3px solid #ff5733;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 75% 75%; }
+    100% { background-position: 100% 100%; }
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: var(--hover-color);
+    border: 2px solid #011b01;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.3);
+}
+
+.nav-links a:active {
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.divider {
+    width: 2px;
+    height: 45px;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+main {
+    padding-top: 170px;
+    text-align: center;
+}
+
+.bottom-panel {
+    position: fixed;
+    bottom: -54%; /* Começa ligeiramente abaixo da tela */
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: var(--primary-color); /* Cor do fundo igual ao do restante do site */
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: bottom 0.6s ease-out; /* Animação suave */
+    z-index: 999;
+    padding: 20px;
+    color: var(--text-color);
+    animation: slideUp 0.8s ease-out; /* Animação para descer suavemente */
+
+    
+}
+.bottom-panel-header {
+    text-align: center;
+    width: 100%;  /* Faz com que o header ocupe toda a largura do painel */
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    position: relative;
+    top: 0; /* Isso faz o header "grudar" no topo */
+    z-index: 1;
+    cursor: pointer; /* Para dar o efeito de botão */
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    overflow: hidden; /* Adicionado para evitar expansão excessiva */
+    box-sizing: border-box; /* Garante que padding não afete a largura */
+    overflow: hidden; /* Impede que o conteúdo se expanda para fora */
+    display: flex; /* Usamos flexbox para centralizar */
+    align-items: center; /* Garante o alinhamento vertical */
+    justify-content: center; /* Garante o alinhamento horizontal */
+
+    
+    
+}
+.bottom-panel-header:hover {
+    background-color: #010e00;
+    transform: translateY(-2px); /* Muda o efeito de escala para um simples deslocamento */
+    border: none; /* Evita bordas extras */
+    animation: pulse 0.6s infinite alternate;
+}
+
+.bottom-panel-header:active {
+    transform: scale(0.98);
+}
+.bottom-panel-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Alinha o texto à esquerda */
+    align-items: center;
+    padding: 30px;
+    width: 100%;  /* Certifique-se de que o conteúdo tenha 100% de largura */
+    color: #d8d2d2;
+    overflow-y: auto; /* Permite rolar o conteúdo se necessário */
+    height: calc(100% - 40px); /* Ajusta a altura do conteúdo */
+    box-sizing: border-box; /* Garantir que o padding seja incluído na largura total */
+    flex-grow: 1;  /* Garante que o conteúdo cresça até o tamanho necessário */
+
+}
+
+/* Oculta a barra de rolagem, mas permite a rolagem */
+.bottom-panel-content::-webkit-scrollbar {
+    width: 0px;  /* Oculta a barra de rolagem */
+    height: 0px;
+}
+
+.bottom-panel-content::-webkit-scrollbar-thumb {
+    background-color: transparent;  /* Torna o "polegar" da barra invisível */
+    border-radius: 10px;
+}
+
+.bottom-panel-content::-webkit-scrollbar-track {
+    background: transparent;  /* Torna o fundo da barra invisível */
+}
+
+.bottom-panel-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d8d2d2;
+    margin-bottom: 10px;
+    text-shadow: -5px 3px 2px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.bottom-panel.open {
+    bottom: 0; /* A posição final onde estará visível */
+    animation: slideUp 0.6s ease-out; /* Só anima quando a classe "open" é adicionada */
+    height: 75vh;
+}
+.bottom-panel.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+
+.bottom-panel-header.dark-mode {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.bottom-panel-header.dark-mode:hover {
+    background-color: #666;
+}
+
+.divider.dark-mode {
+    background-color: #444;
+}
+
+body.dark-mode .logo img {
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.6));
+}
+
+body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
+    background-color: #444;
+}
+
+.nav-links a.dark-mode:hover {
+    color: #ffffff;
+    background-color: #4e5b46;
+}
+
+
+
+body.dark-mode {
+    color: #e0e0e0;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #e0e0e0;
+}
+
+@keyframes slideUp {
+    from {
+        bottom: -60%; /* Começa ligeiramente fora da tela */
+    }
+    to {
+        bottom: -54%; /* Atinge a posição final */
+    }
+}
+
+.bottom-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bottom-panel h2 {
+    text-align: left;
+    font-size: 44px;
+    margin-bottom: 14px;
+    margin-top: -9px;
+}
+
+.bottom-panel::-webkit-scrollbar-thumb {
+    background-color: var(--hover-color);
+    border-radius: 10px;
+}
+
+
+
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.01);
+    }
+}
+
+
+
+
+@keyframes fadeInPromo {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 30px;
+    }
+    .bottom-panel-content {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .bottom-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+:root {
+    --primary-color: #162c0a;
+    --hover-color: #010e00;
+    --text-color: #d8d2d2;
+    --background: #010e00;
+}

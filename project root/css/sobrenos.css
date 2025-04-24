@@ -1,0 +1,264 @@
+.sobre-nos-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #fff;
+    padding: 20px 0;
+    text-align: justify;
+}
+
+
+.sobre-nos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    justify-content: center;
+    max-width: 1000px;   /* ou 90%, se preferir mais fluido */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    padding: 24px;
+
+}
+
+
+
+.sobre-item {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sobreFadeIn 0.8s ease-out forwards;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+
+}
+
+.sobre-item h3 {
+    color: #fff;
+    -webkit-text-stroke: 0.6px #2f3b2f; /* verde escuro */
+}
+.sobre-item p, .sobre-item h3 {
+    text-shadow: -4px 3px 2px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.sobre-item:nth-child(2) {
+    animation-delay: 0.2s;
+    
+}
+.sobre-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.sobre-item:nth-child(4) {
+    animation-delay: 0.6s;
+}
+/* Adicione mais se tiver mais itens */
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sobreFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.sobre-item:hover {
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); 
+    transform: translateY(-6px);
+    background-color: rgba(220, 197, 167, 0.12); /* um pouquinho mais clara */
+}
+.sobre-item h3 {
+    font-size: 1.4rem;
+    color: #ffdab9;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.sobre-item p {
+       font-size: 1rem;
+    line-height: 1.75;
+    color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .sobre-nos-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+    }
+
+    .sobre-item {
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        min-width: 280px;
+        margin-right: 16px;
+    }
+}
+.headline-central {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.accordion-header {
+    width: 60%;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.4rem;
+    color: #ffdab9;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center; /* Centraliza o título do accordion */
+    display: flex;
+
+    
+}
+.accordion-header i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1.2em; /* Ajuste o tamanho do ícone conforme necessário */
+    color: #333; /* Cor do ícone (pode alterar conforme o estilo do seu site) */
+  }
+.accordion-header:hover {
+    
+    transform: scale(1.01); /* Leve aumento de escala ao passar o mouse */
+  }
+  .accordion {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas de largura igual */
+  grid-template-rows: auto auto;         /* 2 linhas automáticas */
+  gap: 12px;                             /* espaçamento entre as células */
+  justify-items: center;                 /* centraliza cada item na célula */
+  align-items: start;                    /* alinha cada item ao topo da célula */
+  width: 100%;
+  max-width: 800px;                      /* opcional: limita a largura total */
+  margin: 0 auto;                        /* centraliza o grid na página */
+  padding: 24px 0;
+  position: relative; /* contexto para os bodies absolutos */
+
+  }
+  .accordion .accordion-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha o conteúdo do accordion ao centro */
+    align-items: center;
+  }
+  .accordion-item {
+    width: 100%;        /* ocupa toda a coluna */
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    top: 100%;          /* justo abaixo do header */
+    padding-left: 1rem;
+    overflow: hidden;
+    transition: 
+    max-height 2.0s ease-in-out, /* <— Duração maior e suave */
+    padding 0.8s ease-in-out;
+    padding-left: 1rem;
+    padding: 0 1rem;    /* padding inicial (alturas zero) */
+
+  }
+  
+
+  .accordion-header.active + .accordion-body {
+    max-height: 500px; /* ajuste conforme o conteúdo */
+  }
+  .accordion-item.active .accordion-body {
+    max-height: 1000px; /* Ou um valor grande o suficiente para o conteúdo */
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .cta .btn, .cta .btn-outline {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .cta { display: flex; gap: 1rem; margin-top: 2rem; justify-content: center; }
+  .btn, .btn-outline { padding: .8rem 1.5rem; border-radius: 2rem; font-weight: 600; transition: transform .2s ease; }
+  .btn { background: var(--hover-color); color: #fff; }
+  .btn-outline { border: 2px solid var(--hover-color); color: var(--hover-color); }
+  .btn:hover, .btn-outline:hover { transform: translateY(-2px); opacity: .9; }
+
+
+  .depoimentos {
+    text-align: center; /* Centraliza o texto */
+    padding: 24px 0;    /* Adiciona um padding para dar mais espaço ao redor */
+  }
+  
+  .depoimentos h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffdab9;
+  }
+  .depoimentos h2.headline-central {
+    text-align: center; /* Garante que o título esteja centralizado */
+    margin: 0 auto;     /* Garante que o título fique centralizado no contêiner */
+    padding: 20px 0;    /* Ajusta o padding para dar mais espaço ao redor */
+  }
+  .swiper-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative; /* Permite que os botões de navegação sejam posicionados em relação ao contêiner */
+    display: flex;
+    justify-content: center; /* Alinha os botões de navegação horizontalmente */
+      overflow: hidden; /* Garante que o conteúdo extra seja escondido */
+
+  }
+  
+  
+  blockquote {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  cite {
+    display: block;
+    font-size: 1em;
+    margin-top: 10px;
+    color: #777;
+  }
+  .swiper-button-prev,
+.swiper-button-next {
+  color: white;  /* Altera a cor das setas para branco */
+  font-size: 1rem;  /* Ajuste o tamanho conforme necessário */
+  margin-bottom: 20px; /* Ajusta o espaço entre o título e os depoimentos */
+
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #fff;  /* Garante que a cor continue branca quando o usuário passar o mouse */
+}
