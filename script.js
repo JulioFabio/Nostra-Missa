@@ -69,13 +69,13 @@ const conteudos = {
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-header">Nosso Jeito de Fazer Pizza</button>
+        <button class="accordion-header">Nosso Jeito</button>
         <div class="accordion-body">
           <p>Utilizamos <strong>massas de fermentação lenta</strong>, ingredientes frescos e combinações que equilibram tradição com criatividade. Cada etapa é feita com cuidado: da seleção dos melhores ingredientes ao forno, garantindo uma massa leve e crocante.</p>
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-header">Conexão com a Comunidade</button>
+        <button class="accordion-header">Nossa Conexão</button>
         <div class="accordion-body">
           <p>Com um ambiente acolhedor e uma equipe apaixonada pelo que faz, a Nostra Massa se tornou parte da rotina e da história de muitos moradores da cidade. Participamos de eventos locais e apoiamos projetos sociais para fortalecer nossa comunidade.</p>
         </div>
@@ -122,10 +122,7 @@ const conteudos = {
       </div>
     </section>
 
-    <div class="cta fade-in">
-      <a href="/unidades" class="btn">Nossas Unidades</a>
-      <a href="/cardapio" class="btn-outline">Ver Cardápio</a>
-    </div>
+    
   `,
   contato: `
     <h2>Fale Conosco</h2>

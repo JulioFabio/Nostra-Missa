@@ -467,41 +467,61 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
     margin-bottom: 10px;
     text-transform: uppercase;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center; /* Centraliza o título do accordion */
+    display: flex;
+
+    
 }
+.accordion-header i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1.2em; /* Ajuste o tamanho do ícone conforme necessário */
+    color: #333; /* Cor do ícone (pode alterar conforme o estilo do seu site) */
+  }
 .accordion-header:hover {
     
     transform: scale(1.01); /* Leve aumento de escala ao passar o mouse */
   }
-.sobre-nos-grid .accordion-container {
-    display: grid; /* Usando grid ao invés de flexbox */
-    grid-template-columns: repeat(2, 1fr); /* Dois itens por linha */
-    gap: 24px; /* Espaço entre os itens */
-    justify-content: center;
-    width: 100%;
-}
+  .accordion {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas de largura igual */
+  grid-template-rows: auto auto;         /* 2 linhas automáticas */
+  gap: 12px;                             /* espaçamento entre as células */
+  justify-items: center;                 /* centraliza cada item na célula */
+  align-items: start;                    /* alinha cada item ao topo da célula */
+  width: 100%;
+  max-width: 800px;                      /* opcional: limita a largura total */
+  margin: 0 auto;                        /* centraliza o grid na página */
+  padding: 24px 0;
+  position: relative; /* contexto para os bodies absolutos */
 
-.sobre-nos-grid .accordion-container .accordion-item {
-    flex: 1 1 calc(50% - 12px); /* Define que cada item deve ocupar 50% da largura */
-    min-width: 280px;
+  }
+  .accordion .accordion-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha o conteúdo do accordion ao centro */
+    align-items: center;
+  }
+  .accordion-item {
+    width: 100%;        /* ocupa toda a coluna */
     box-sizing: border-box;
-}
- 
+    position: relative;
+  }
+  
   .accordion-body {
     max-height: 0;
     overflow: hidden;
+    top: 100%;          /* justo abaixo do header */
     padding-left: 1rem;
     overflow: hidden;
     transition: 
-    max-height 1.0s ease-in-out, /* <— Duração maior e suave */
-    padding 1.0s ease-in-out;
+    max-height 2.0s ease-in-out, /* <— Duração maior e suave */
+    padding 0.8s ease-in-out;
     padding-left: 1rem;
+    padding: 0 1rem;    /* padding inicial (alturas zero) */
+
   }
   
-  .accordion-header:hover + .accordion-body {
-    max-height: 500px; /* Ajuste conforme o conteúdo */
-    padding: 10px;
-    opacity: 1;
-}
+
   .accordion-header.active + .accordion-body {
     max-height: 500px; /* ajuste conforme o conteúdo */
   }
@@ -511,7 +531,7 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
 
   .fade-in {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .fade-in.visible {
