@@ -1,74 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nostra Massa</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="nostraicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nostra Massa</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="nostraicon.png" type="image/png">
 </head>
 <body>
-    <header class="top-bar">
-        <div class="logo" onclick="toggleDarkMode()">
-            <img src="nostraicon.png" alt="Logo do site">
-        </div>
-        <nav class="nav-links">
-            <a href="/" data-page="home">Home</a>
-            <span class="divider"></span>
-            <a href="/cardapio" data-page="cardapio">Cardápio</a>
-            <span class="divider"></span>
-            <a href="/unidades" data-page="unidades">Unidades</a>
-            <span class="divider"></span>
-            <a href="/sobre" data-page="sobre">Sobre Nós</a>
-            <span class="divider"></span>
-            <a href="/contato" data-page="contato">Contato</a>
-        </nav>
-    </header>
-
-    <div class="bottom-panel" id="bottomPanel">
-        <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="false" aria-controls="bottomPanel">
-            ▲ Arraste para explorar mais
-        </div>
-        
-        <div class="bottom-panel-content">
-            <h2>Quem Somos</h2>
-        
-            <!-- Texto longo principal -->
-            <div class="sobre-nos-texto">
-                <p>
-                    Fundada em 2016 no coração de Cravinhos, a <strong>Nostra Massa</strong> nasceu da paixão por pizza e pelo desejo de criar experiências memoráveis. Desde o início, nosso objetivo sempre foi ir além de apenas alimentar — queremos despertar sensações, reunir pessoas e criar memórias ao redor de uma boa fatia.
-                </p>
-                <p>
-                    Nosso diferencial está na dedicação com que tratamos cada etapa: da seleção dos ingredientes à forma como recebemos nossos clientes. Utilizamos <strong>massas de fermentação lenta</strong>, ingredientes frescos e combinações que equilibram tradição com criatividade. O resultado? Uma pizza artesanal que encanta no sabor e no carinho com que é feita.
-                </p>
-                <p>
-                    Com um ambiente acolhedor e uma equipe apaixonada pelo que faz, a Nostra Massa se tornou parte da rotina e da história de muitos moradores da cidade. E mesmo com o crescimento, mantemos viva a nossa essência: ser um ponto de encontro, de afeto e de sabor.
-                </p>
-                <p>
-                    Seja no salão, no delivery ou na retirada, cada pedido é uma oportunidade de entregar mais que uma pizza: é entregar cuidado, aconchego e aquele toque especial que só quem ama o que faz consegue colocar.
-                </p>
-            </div>
-        
-            <!-- Blocos informativos extras -->
-            <div class="sobre-nos-grid">
-                <div class="sobre-item">
-                    <h3>🍕 A Pizza Artesanal</h3>
-                    <p>Utilizamos ingredientes frescos, massas de fermentação lenta e combinações de sabores que vão do clássico ao exclusivo. Cada pizza é feita com amor e cuidado.</p>
-                </div>
-                <div class="sobre-item">
-                    <h3>🧡 Atendimento com Carinho</h3>
-                    <p>Nosso time está sempre pronto para receber você com simpatia, garantindo uma experiência acolhedora, seja no salão, delivery ou retirada.</p>
-                </div>
-                <div class="sobre-item">
-                    <h3>🏡 Tradição Local</h3>
-                    <p>Fazemos parte da história de Cravinhos com orgulho! E continuamos evoluindo, sem nunca perder nossa essência: oferecer uma experiência única em cada fatia.</p>
-                </div>
-            </div>
-        </div>
+  <header class="top-bar">
+    <div class="logo" onclick="toggleDarkMode()">
+      <img src="nostraicon.png" alt="Logo do site">
     </div>
+    <nav class="nav-links">
+      <a href="/" data-page="home">Home</a><span class="divider"></span>
+      <a href="/cardapio" data-page="cardapio">Cardápio</a><span class="divider"></span>
+      <a href="/unidades" data-page="unidades">Unidades</a><span class="divider"></span>
+      <a href="/sobre" data-page="sobre">Sobre Nós</a><span class="divider"></span>
+      <a href="/contato" data-page="contato">Contato</a>
+    </nav>
+  </header>
 
-    <div class="loading-spinner" id="loadingSpinner"></div>
+  <div class="bottom-panel" id="bottomPanel">
+    <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="false">
+      ▲ Arraste para explorar mais
+    </div>
+    <div class="bottom-panel-content" id="panelContent">
+      <!-- SEÇÃO SOBRE COM ACCORDION -->
+      <h2 class="headline-central fade-in">Quem Somos</h2>
+      <div class="accordion fade-in">
+        <div class="accordion-item">
+          <button class="accordion-header">Nossa História</button>
+          <div class="accordion-body">
+            <p>Fundada em 2016 no coração de Cravinhos, a <strong>Nostra Massa</strong> nasceu da paixão por pizza e pelo desejo de criar experiências memoráveis...</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Nosso Jeito de Fazer Pizza</button>
+          <div class="accordion-body">
+            <p>Utilizamos <strong>massas de fermentação lenta</strong>, ingredientes frescos e combinações de sabores que equilibram tradição e criatividade...</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Conexão com a Comunidade</button>
+          <div class="accordion-body">
+            <p>Com um ambiente acolhedor e equipe apaixonada, nos tornamos parte da rotina de muitos moradores...</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Mais que Pizza</button>
+          <div class="accordion-body">
+            <p>Seja no salão, delivery ou retirada, cada pedido é uma entrega de carinho e cuidado...</p>
+          </div>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- GRID DE ITENS -->
+      <div class="sobre-nos-grid">
+        <div class="sobre-item fade-in"><h3>🍕 Pizza Artesanal</h3><p>Ingredientes frescos, massas leves e sabores que surpreendem.</p></div>
+        <div class="sobre-item fade-in"><h3>🧡 Atendimento com Carinho</h3><p>Equipe acolhedora, pronta para fazer você se sentir em casa.</p></div>
+        <div class="sobre-item fade-in"><h3>🏡 Orgulho Local</h3><p>Desde Cravinhos para a região, mantendo sempre nossa essência.</p></div>
+      </div>
+
+      <!-- CARROSSEL DE DEPOIMENTOS -->
+      <section class="depoimentos fade-in">
+        <h2 class="headline-central">O que dizem nossos clientes</h2>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <blockquote>"Melhor pizza da região!" <cite>— Maria S.</cite></blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>"Ambiente incrível e atendimento nota 10." <cite>— João P.</cite></blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote>"Sempre surpreende com novos sabores." <cite>— Ana R.</cite></blockquote>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <div class="cta fade-in">
+        <a href="/unidades" class="btn">Nossas Unidades</a>
+        <a href="/cardapio" class="btn-outline">Ver Cardápio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-spinner" id="loadingSpinner"></div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
