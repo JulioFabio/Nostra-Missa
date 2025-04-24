@@ -68,19 +68,7 @@
     </div>
 
     <div class="loading-spinner" id="loadingSpinner"></div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const itens = document.querySelectorAll('.sobre-item');
 
-    itens.forEach((item, i) => {
-      const delay = i * 200; // 200ms por item
-
-      setTimeout(() => {
-        item.classList.add('flutuar');
-      }, 800 + delay); // espera a animação de entrada + delay de cada um
-    });
-  });
-</script>
     <script src="script.js"></script>
 </body>
 </html>

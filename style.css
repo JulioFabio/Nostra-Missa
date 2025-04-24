@@ -212,19 +212,19 @@ main {
     left: 0;
     right: 0;
     height: 70%;
-    background: var(--primary-color); /* Cor do fundo igual ao do restante do site */
-    border-radius: 12px;
+    background: #fdc07c	; /* Cor do fundo igual ao do restante do site */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     width: 90%;
     margin: 0 auto;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: bottom 0.6s ease-out; /* Animação suave */
     z-index: 999;
     padding: 20px;
     color: var(--text-color);
     animation: slideUp 0.8s ease-out; /* Animação para descer suavemente */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: inset 0 0 0 7px var(--primary-color); /* borda interna branca com 30% de opacidade */
+
     
 }
 .bottom-panel-header {
@@ -237,7 +237,7 @@ main {
     top: 0; /* Isso faz o header "grudar" no topo */
     z-index: 1;
     cursor: pointer; /* Para dar o efeito de botão */
-    color: #fff;
+    color: #83131C;
     padding: 10px;
     transition: background-color 0.3s ease;
     overflow: hidden; /* Adicionado para evitar expansão excessiva */
@@ -265,7 +265,7 @@ main {
     flex-direction: column;
     text-align: left; /* Alinha o texto à esquerda */
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     width: 100%;  /* Certifique-se de que o conteúdo tenha 100% de largura */
     color: #d8d2d2;
     overflow-y: auto; /* Permite rolar o conteúdo se necessário */
@@ -301,6 +301,7 @@ main {
 .bottom-panel.open {
     bottom: 0; /* A posição final onde estará visível */
     animation: slideUp 0.6s ease-out; /* Só anima quando a classe "open" é adicionada */
+    height: 75vh;
 }
 .bottom-panel.dark-mode {
     background-color: #1a1a1a;
@@ -366,7 +367,7 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
     opacity: 0;
     transform: translateY(30px);
     animation: sobreFadeIn 0.8s ease-out forwards;
-    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; /* Aumento da duração da transição */
+    
 
 }
 
@@ -388,7 +389,6 @@ body.dark-mode .bottom-panel::-webkit-scrollbar-thumb {
     }
 }
 .sobre-item:hover {
-    transform: translateY(-15px); /* Quando o mouse passar, o item sobe */
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); /* A sombra mais forte quando o item é hover */
 }
 .sobre-item h3 {
