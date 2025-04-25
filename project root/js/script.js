@@ -233,7 +233,7 @@ function carregarConteudo(page, mudarURL = true) {
 // 7) SPA navigation
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
+    //e.preventDefault(); // comentado para fins de testes
     carregarConteudo(link.dataset.page);
     togglePanel(true);
   });
