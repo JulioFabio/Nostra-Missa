@@ -2,7 +2,10 @@
 @import url('sobre-nos.css');
 @import url('unidades.css');
 @import url('cardapio.css');
+<<<<<<< HEAD:project_root/css/style.css
 @import url('contato.css');
+=======
+>>>>>>> eb674d7a6e79fb8cd372b7d12b2fd00a20f7558b:project root/css/style.css
 @import url('buttons.css');
 @import url('dark-mode.css');
 * {
