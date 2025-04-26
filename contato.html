@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Nostra Massa</title>
+  <link rel="icon" href="project_root/assets/nostraicon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="project_root/css/style.css" />
+  <link rel="stylesheet" href="project_root/css/contato.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="top-bar">
+    <div class="logo" onclick="toggleDarkMode()">
+      <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa" />
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><span class="divider"></span>
+      <a href="cardapio.html">Cardápio</a><span class="divider"></span>
+      <a href="unidades.html">Unidades</a><span class="divider"></span>
+      <a href="sobrenos.html">Sobre Nós</a><span class="divider"></span>
+      <a href="contato.html">Contato</a><span class="divider"></span>
+    </nav>
+  </header>
+
+  <!-- PAINEL CONTATO -->
+  <div class="bottom-panel open" id="bottomPanel">
+    <div class="bottom-panel-header">
+      ▲ Envie uma mensagem para nós
+    </div>
+
+    <div class="bottom-panel-content">
+      <section class="contato fade-in">
+        <h2 class="headline-central">Fale Conosco</h2>
+
+        <form class="contato-form">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" />
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div class="loading-spinner" id="loadingSpinner"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="project_root/js/script.js"></script>
+</body>
+</html>

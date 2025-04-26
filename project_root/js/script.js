@@ -58,7 +58,7 @@ const conteudos = {
   unidades: `
   
 `,  sobre: `
-    <h2 class="headline-central fade-in">Quem somos?</h2>
+    <h2 class="headline-central fade-in">Quem Somos</h2>
     <div class="accordion fade-in">
       <div class="accordion-item">
         <button class="accordion-header">Nossa História</button>
@@ -233,7 +233,7 @@ function carregarConteudo(page, mudarURL = true) {
 // 7) SPA navigation
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
+    //e.preventDefault(); // comentado para fins de testes
     carregarConteudo(link.dataset.page);
     togglePanel(true);
   });
