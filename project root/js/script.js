@@ -58,7 +58,7 @@ const conteudos = {
   unidades: `
   
 `,  sobre: `
-    <h2 class="headline-central fade-in">Quem Somos</h2>
+    <h2 class="headline-central fade-in">Quem somos?</h2>
     <div class="accordion fade-in">
       <div class="accordion-item">
         <button class="accordion-header">Nossa História</button>
