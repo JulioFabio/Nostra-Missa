@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import url('sobre-nos.css');
+@import url('sobrenos.css');
 @import url('unidades.css');
 @import url('cardapio.css');
-<<<<<<< HEAD:project_root/css/style.css
 @import url('contato.css');
-=======
->>>>>>> eb674d7a6e79fb8cd372b7d12b2fd00a20f7558b:project root/css/style.css
-@import url('buttons.css');
-@import url('dark-mode.css');
+
 * {
     font-family: 'Poppins', sans-serif;
 }
