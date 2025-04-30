@@ -2,10 +2,7 @@
 @import url('sobre-nos.css');
 @import url('unidades.css');
 @import url('cardapio.css');
-<<<<<<< HEAD:project_root/css/style.css
 @import url('contato.css');
-=======
->>>>>>> eb674d7a6e79fb8cd372b7d12b2fd00a20f7558b:project root/css/style.css
 @import url('buttons.css');
 @import url('dark-mode.css');
 * {
@@ -214,7 +211,7 @@ main {
 }
 
 .bottom-panel {
-    background-image: url('assets/cardápio.png');
+    background-image: url('project_root/assets/cardápio.png');
     position: fixed;
     bottom: -54%; /* Começa ligeiramente abaixo da tela */
     left: 0;
