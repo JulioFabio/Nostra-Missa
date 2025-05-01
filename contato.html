@@ -27,46 +27,69 @@
   </header>
 
   <!-- PAINEL CONTATO -->
-  <div class="bottom-panel open" id="bottomPanel">
+  <div class="bottom-panel open" id="bottomPanel" style="position: fixed; z-index: -1;">
     <div class="bottom-panel-header">
       ▲ Envie uma mensagem para nós
     </div>
-
+  
     <div class="bottom-panel-content">
       <section class="contato fade-in">
         <h2 class="headline-central">Fale Conosco</h2>
-
+  
         <form class="contato-form">
           <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required />
+            <input type="text" id="nome" name="nome" placeholder="Enter your Name" required />
           </div>
-
+  
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" placeholder="Enter a valid email address" required />
           </div>
-
-          <div class="form-group">
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" />
-          </div>
-
-          <div class="form-group">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-          </div>
-
+  
           <button type="submit" class="btn-enviar">Enviar Mensagem</button>
         </form>
       </section>
     </div>
   </div>
-
+  
   <div class="loading-spinner" id="loadingSpinner"></div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="project_root/js/script.js"></script>
+</body>
+</html>
+
+<!-- Caixa de texto 1-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contato Personalizado</title>
+</head>
+<body>
+    <section class="form-container">
+        <div class="container">
+            <form>
+                <h1>CONTATE-NOS</h1>
+                <p>Preencha as informações abaixo e entraremos em contato com você</p>
+                <div class="input-single">
+                    <input class="input" type="text" id="nome" required>
+                    <label for="nome">Seu nome completo</label>
+                </div>
+                <div class="input-single">
+                    <input class="input" type="text" id="email" required>
+                    <label for="email">Seu e-mail</label>
+                </div>
+                <div class="input-single">
+                    <input class="input" type="text" id="telefone" required>
+                    <label for="telefone">Seu telefone</label>
+                </div>
+                <div class="btn"><input type="submit" value="Enviar"></div>
+            </form>
+        </div>
+    </section>
 </body>
 </html>

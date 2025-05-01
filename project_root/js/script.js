@@ -247,8 +247,40 @@ function carregarConteudoEspecifico() {
       break;
     case 'contato':
       panelContent.innerHTML = `
+        <!-- PAINEL CONTATO -->
+  <div class="bottom-panel open" id="bottomPanel" style="position: fixed; z-index: -1;">
+    <div class="bottom-panel-header">
+      ▲ Envie uma mensagem para nós
+    </div>
+  
+    <div class="bottom-panel-content">
+      <section class="contato fade-in">
         <h2 class="headline-central">Fale Conosco</h2>
-        <p>WhatsApp: (16) 99999-9999<br>Email: contato@nostramassa.com</p>
+  
+        <form class="contato-form">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Enter your Name" required />
+          </div>
+  
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter a valid email address" required />
+          </div>
+  
+          <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+      </section>
+    </div>
+  </div>
+  
+  <div class="loading-spinner" id="loadingSpinner"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="project_root/js/script.js"></script>
+</body>
+</html>
       `;
       break;
   }
