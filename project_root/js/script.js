@@ -166,7 +166,6 @@ function carregarConteudoEspecifico() {
     case 'home':
       panelContent.innerHTML = `
         <h2 class="headline-central">Bem-vindo à Nostra Massa</h2>
-        <p>Descubra o sabor da verdadeira pizza artesanal!</p>
       `;
       break;
     case 'sobre':
