@@ -38,9 +38,9 @@ body {
 }
 
 .mode-toggle-button:hover {
-    background-color: #ff5733;
+    background-color: #ffffff;
     transform: scale(1.1);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.5);
 }
 
 .nav-links a:hover {
@@ -161,20 +161,20 @@ body::before {
 .nav-links a {
     color: #d8d2d2;
     text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 17px 30px;
-    border-radius: 35px;
+    font-size: 1.25rem !important;
+    font-weight: bold !important;
+    padding: 17px 30px !important;
+    border-radius: 5px;
     border: none;
     outline: none;
     transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
     opacity: 0.5;
-    transform: translateY(-8px);
+    transform: translateY(8px);
     animation: fadeIn 0.5s ease-out forwards;
 }
 
 .nav-links a:focus {
-    outline: 3px solid #ff5733;
+    outline: 3px solid #ffffff;
 }
 
 @keyframes fadeIn {
@@ -192,20 +192,8 @@ body::before {
 .nav-links a:hover {
     color: #ffffff;
     background-color: var(--hover-color);
-    border: 2px solid #011b01;
+    border: 1px solid #011b01;
     transform: scale(1.1);
-    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.3);
-}
-
-.nav-links a:active {
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
-}
-
-.divider {
-    width: 2px;
-    height: 45px;
-    background-color: #ffffff;
-    opacity: 0.5;
 }
 
 main {
@@ -284,30 +272,20 @@ main {
 
 }
 
-/* Oculta a barra de rolagem, mas permite a rolagem */
-.bottom-panel-content::-webkit-scrollbar {
-    width: 0px;  /* Oculta a barra de rolagem */
-    height: 0px;
-}
-
-.bottom-panel-content::-webkit-scrollbar-thumb {
-    background-color: transparent;  /* Torna o "polegar" da barra invisível */
-    border-radius: 10px;
-}
-
-.bottom-panel-content::-webkit-scrollbar-track {
-    background: transparent;  /* Torna o fundo da barra invisível */
-}
-
-.bottom-panel-content h2 {
-    font-size: 24px;
-    font-weight: bold;
+.bottom-panel-content {
+    padding: 30px;
     color: #d8d2d2;
-    margin-bottom: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .bottom-panel-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     text-shadow: -5px 3px 2px rgba(0, 0, 0, 0.25);
-
-}
-
+  }
+  
 
 .bottom-panel.open {
     bottom: 0; /* A posição final onde estará visível */
