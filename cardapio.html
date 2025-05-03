@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cardápio - Nostra Massa</title>
+  <title>Cardápio – Nostra Massa</title>
   <link rel="icon" href="project_root/assets/nostraicon.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -18,73 +18,34 @@
       <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa" />
     </div>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="cardapio.html">Cardápio</a>
-      <a href="unidades.html">Unidades</a>
-      <a href="sobrenos.html">Sobre Nós</a>
+      <a href="index.html">Home</a><span class="divider"></span>
+      <a href="cardapio.html">Cardápio</a><span class="divider"></span>
+      <a href="unidades.html">Unidades</a><span class="divider"></span>
+      <a href="sobrenos.html">Sobre Nós</a><span class="divider"></span>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
 
-  <!-- PAINEL -->
-  <div class="bottom-panel open" id="bottomPanel">
-    <div class="bottom-panel-header">
+  <!-- BOTTOM PANEL -->
+  <div class="bottom-panel" id="bottomPanel">
+    <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="false">
       ▲ Role para visualizar nosso cardápio
     </div>
-    <div class="bottom-panel-content">
-      
-      <section class="sobre-nos fade-in">
-        <div class="container">
-          <h2 class="headline-central">Nosso Cardápio</h2>
-
-          <div class="accordion">
-            <div class="accordion-item">
-              <button class="accordion-header"><i class="fa fa-pizza-slice"></i> Categoria 1</button>
-              <div class="accordion-body">
-                <p></p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-header"><i class="fa fa-pizza-slice"></i> Categoria 2</button>
-              <div class="accordion-body">
-                <p></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="sobre-nos-grid">
-            <div class="sobre-item"><h3>Item 1</h3><p></p></div>
-            <div class="sobre-item"><h3>Item 2</h3><p></p></div>
-            <div class="sobre-item"><h3>Item 3</h3><p></p></div>
-          </div>
+    <div class="bottom-panel-content" id="panelContent">
+      <div class="menu-columns">
+        <div class="menu-column salgadas">
+          <h2 class="headline-central">Pizzas Salgadas</h2>
         </div>
-      </section>
-
-      <section class="depoimentos fade-in">
-        <h2 class="headline-central">O que dizem sobre nossas pizzas</h2>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <blockquote>" "</blockquote>
-              <cite>— Cliente</cite>
-            </div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+        <div class="menu-column doces">
+          <h2 class="headline-central">Pizzas Doces</h2>
         </div>
-      </section>
-
+      </div>
     </div>
   </div>
 
   <div class="loading-spinner" id="loadingSpinner"></div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
   <script src="project_root/js/script.js"></script>
-</body>
-</html>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
