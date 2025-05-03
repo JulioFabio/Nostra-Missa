@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('sobrenos.css');
 @import url('unidades.css');
-@import url('cardapio.css');
 @import url('contato.css');
 @import url('buttons.css');
 @import url('dark-mode.css');
@@ -261,7 +260,7 @@ main {
     display: flex;
     flex-direction: column;
     text-align: left; /* Alinha o texto à esquerda */
-    align-items: center;
+    /*align-items: flex-start;*/
     padding: 30px;
     width: 100%;  /* Certifique-se de que o conteúdo tenha 100% de largura */
     color: #d8d2d2;
