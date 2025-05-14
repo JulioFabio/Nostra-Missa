@@ -1,108 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nostra Massa</title>
-  <link rel="icon" href="project_root/assets/nostraicon.png" type="image/png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="project_root/css/style.css"> 
-  <link rel="stylesheet" href="project_root/css/sobrenos.css">
-  <link rel="stylesheet" href="project_root/css/unidades.css">
-  <link rel="stylesheet" href="project_root/css/cardapio.css">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidades - Nostra Massa</title>
+  <link rel="icon" href="project_root/assets/nostraicon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="project_root/css/style.css" />
+  <link rel="stylesheet" href="project_root/css/unidades.css" />
 </head>
 <body>
   <!-- HEADER -->
   <header class="top-bar">
-    <div class="logo" onclick="toggleDarkMode()">
-      <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa">
+    <div class="logo">
+      <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa" />
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="cardapio.html">Cardápio</a>
-      <a href="unidades.html">Unidades</a>
+      <a href="unidades.html" class="active">Unidades</a>
       <a href="sobrenos.html">Sobre Nós</a>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
 
-  <!-- BOTTOM PANEL -->
-  <div class="bottom-panel" id="bottomPanel">
-    <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="false">
-      ▲ Arraste para explorar mais
+  <!-- PAINEL INFERIOR COM AS UNIDADES -->
+  <div class="bottom-panel open" id="bottomPanel">
+    <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="true">
+      ▼ Arraste para fechar
     </div>
     <div class="bottom-panel-content" id="panelContent">
-      
-      <!-- SEÇÃO SOBRE NÓS -->
-      <section class="sobre-nos fade-in">
-        <div class="container">
-          <h2 class="headline-central">Quem Somos</h2>
-          <div class="accordion">
-            <div class="accordion-item">
-              <button class="accordion-header"><i class="fa fa-history"></i> Nossa História</button>
-              <div class="accordion-body">
-                <p>Fundada em 2016 no coração de Cravinhos, a <strong>Nostra Massa</strong> nasceu da paixão por pizza e pelo desejo de criar experiências memoráveis...</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-header"><i class="fa fa-pizza-slice"></i> Nosso Jeito</button>
-              <div class="accordion-body">
-                <p>Utilizamos <strong>massas de fermentação lenta</strong>, ingredientes frescos e combinações que equilibram tradição e criatividade...</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-header"><i class="fa fa-users"></i> Nossa Conexão</button>
-              <div class="accordion-body">
-                <p>Com um ambiente acolhedor e equipe apaixonada, nos tornamos parte da rotina de muitos moradores...</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-header"><i class="fa fa-heart"></i> Mais que Pizza</button>
-              <div class="accordion-body">
-                <p>Seja no salão, delivery ou retirada, cada pedido é uma entrega de carinho e cuidado...</p>
-              </div>
-            </div>
-          </div>
+      <h1 class="titulo-unidades">Nossas Unidades</h1>
 
-          <div class="sobre-nos-grid">
-            <div class="sobre-item"><h3>🍕 Pizza Artesanal</h3><p>Ingredientes frescos, massas leves e sabores que surpreendem.</p></div>
-            <div class="sobre-item"><h3>🧡 Atendimento com Carinho</h3><p>Equipe acolhedora, pronta para fazer você se sentir em casa.</p></div>
-            <div class="sobre-item"><h3>🏡 Orgulho Local</h3><p>Desde Cravinhos para a região, mantendo sempre nossa essência.</p></div>
-          </div>
+      <!-- UNIDADE: Cravinhos -->
+      <div class="unidade-bloco">
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.2211500990885!2d-47.71907022492251!3d-21.337865479193213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be2e02bbd1a9%3A0xf289c07f1a9ed29f!2sAv.%20Rita%20C%C3%A2ndida%20Nogueira%2C%20481%20-%20Centro%2C%20Cravinhos%20-%20SP%2C%2014140-000!5e0!3m2!1spt-BR!2sbr!4v1715633080324!5m2!1spt-BR!2sbr"
+            loading="lazy" allowfullscreen style="border:0;"></iframe>
         </div>
-      </section>
-
-      <!-- SEÇÃO DEPOIMENTOS -->
-      <section class="depoimentos fade-in">
-        <h2 class="headline-central">O que nossos clientes dizem</h2>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <blockquote>"A melhor pizza que já comi! Sempre me surpreendo com os sabores." <cite>— João M.</cite></blockquote>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>"Ambiente acolhedor e atendimento maravilhoso. Amei!" <cite>— Maria L.</cite></blockquote>
-            </div>
-            <div class="swiper-slide">
-              <blockquote>"A pizza de calabresa é sensacional, e o atendimento é impecável!" <cite>— Lucas F.</cite></blockquote>
-            </div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+        <div class="info">
+          <h2>Nostra Massa Cravinhos</h2>
+          <p>Av. Rita Cândida Nogueira, 481<br>Cravinhos, SP</p>
+          <p><strong>Tel:</strong> (16) 99238-0676 / (16) 3482-2555</p>
+          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
         </div>
-      </section>
+      </div>
 
+      <!-- UNIDADE: Ribeirão -->
+      <div class="unidade-bloco reverse">
+        <div class="info">
+          <h2>Nostra Massa Ribeirão</h2>
+          <p>Rua São José, 933<br>Ribeirão Preto – Shopping Santa Úrsula</p>
+          <p><strong>Tel:</strong> 3635-6655 / 3635-4775 / 99281-2124</p>
+          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+        </div>
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.447195070301!2d-47.82080352493682!3d-21.177692779413897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9bd190e95ab95%3A0x39575d3b9d46f1c7!2sShopping%20Santa%20%C3%9Arsula!5e0!3m2!1spt-BR!2sbr!4v1715632979625!5m2!1spt-BR!2sbr"
+            loading="lazy" allowfullscreen style="border:0;"></iframe>
+        </div>
+      </div>
 
+      <!-- UNIDADE: Santa Maria -->
+      <div class="unidade-bloco">
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.094315983164!2d-47.72700122492237!3d-21.34343097919344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be379e0b9b1d%3A0xfdf6cf8556d4c514!2sSanta%20Maria%20Outlet!5e0!3m2!1spt-BR!2sbr!4v1715632729603!5m2!1spt-BR!2sbr"
+            loading="lazy" allowfullscreen style="border:0;"></iframe>
+        </div>
+        <div class="info">
+          <h2>Nostra Santa Maria</h2>
+          <p>Rodovia Anhanguera, Km 299<br>Cravinhos – Santa Maria Outlet</p>
+          <p><strong>Tel:</strong> (16) 3100-0354</p>
+          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+        </div>
+      </div>
 
+      <!-- UNIDADE: Express -->
+      <div class="unidade-bloco reverse">
+        <div class="info">
+          <h2>Nostra Express Cravinhos</h2>
+          <p>Av. Pedro Amoroso, 465<br>Cravinhos – Posto Avenida</p>
+          <p><strong>Tel:</strong> (16) 99367-7155</p>
+          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+        </div>
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.142046864899!2d-47.729408899999996!3d-21.341566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be3a82e64559%3A0x9f1c82cd184cba4f!2sAv.%20Pedro%20Amoroso%2C%20465%20-%20Cravinhos%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1715632852054!5m2!1spt-BR!2sbr"
+            loading="lazy" allowfullscreen style="border:0;"></iframe>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="loading-spinner" id="loadingSpinner"></div>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="project_root/js/script.js"></script>
+  <!-- SCRIPTS -->
+  <script src="project_root/js/script.js"></script>
 </body>
 </html>
