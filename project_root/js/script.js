@@ -372,136 +372,244 @@ function carregarConteudoEspecifico() {
 // Lista completa de pizzas (salgadas e doces)
 const pizzas = [
   // — SALGADAS —
-  { name: "ABOBRINHA",         desc: "Molho tomates frescos, muçarela, abobrinha em rodelas temperadas, parmesão, mais molho de tomate, azeitonas",                                                        price: "R$ 79,90", type: "salgada" },
-  { name: "ALCATRA (CHARMOSA)",desc: "Molho de tomates frescos, muçarela, Alcatra, gorgonzola, cebola roxa marinada no balsâmico e mel, orégano e azeitonas",                                            price: "R$ 87,90", type: "salgada" },
-  { name: "ALHO PORÓ",         desc: "Molho tomates frescos, muçarela, cream cheese, alho poró puxado na manteiga e vinho branco, azeitonas",                                                      price: "R$ 84,90", type: "salgada" },
-  { name: "ALICHE",            desc: "Molho tomates frescos, muçarela, aliche, azeitonas",                                                                                                          price: "R$ 84,90", type: "salgada" },
-  { name: "AMERICANA",         desc: "Molho tomates frescos, muçarela, calabresa, bacon, cebola, molho barbecue, azeitonas",                                                                       price: "R$ 79,90", type: "salgada" },
-  { name: "AMOROSA",           desc: "Molho de tomates frescos, muçarela, peito de peru, cream cheese, geleia de amora, azeitonas",                                                               price: "R$ 79,90", type: "salgada" },
-  { name: "ATUM",              desc: "Molho tomate, muçarela, atum em pedaços, rodelas de tomate, cebola, azeitonas",                                                                            price: "R$ 87,90", type: "salgada" },
-  { name: "ATUM DO CHEF",      desc: "Molho tomates frescos, muçarela, atum em pedaços, brócolis, rodelas de tomate, cebola, azeitonas",                                                        price: "R$ 89,90", type: "salgada" },
-  { name: "ATUM HOLL",         desc: "Molho tomates frescos, muçarela, atum em pedaços, cream cheese, molho tare, cheiro verde, azeitonas",                                                      price: "R$ 87,90", type: "salgada" },
-  { name: "À MODA DA CASA",    desc: "Molho tomates frescos, muçarela, calabresa, lombinho defumado, milho, bacon, rodelas de tomate, requeijão cremoso, azeitonas",                                price: "R$ 84,90", type: "salgada" },
-
-  { name: "BACALHAU",          desc: "Molho tomates frescos, muçarela, bacalhau em lascas, ovo, tomates frescos, cebola, pimentão, azeitonas",                                                     price: "R$ 89,90", type: "salgada" },
-  { name: "BAJANA ESPECIAL",   desc: "Molho tomates frescos, muçarela, calabresa, pimenta, tomate seco, creme de espinafre, rodelas de tomate, manjericão, azeitonas",                             price: "R$ 79,90", type: "salgada" },
-  { name: "BOLONHESA",         desc: "Molho tomates frescos, muçarela, calabresa, bacon, palmito, requeijão, azeitonas",                                                                         price: "R$ 82,90", type: "salgada" },
-  { name: "BRÓCOLIS COM REQU", desc: "Molho tomates frescos, muçarela, brócolis, requeijão cremoso, azeitonas",                                                                                  price: "R$ 78,90", type: "salgada" },
-  { name: "BRÓCOLIS DO CHEF",  desc: "Molho tomates frescos, muçarela, brócolis, palmito, tomate seco, creme de espinafre, azeitonas",                                                       price: "R$ 79,90", type: "salgada" },
-
-  { name: "CALABRESA",         desc: "Molho tomates frescos, muçarela, calabresa, cebola, azeitonas",                                                                                             price: "R$ 79,90", type: "salgada" },
-  { name: "CALABRIA",          desc: "Molho tomates frescos, muçarela, calabresa, tomates selecionados, requeijão, cebola selecionada fatiada, pimenta, azeitonas",                               price: "R$ 82,90", type: "salgada" },
-  { name: "CALIFÓRINA",        desc: "Molho tomates frescos, muçarela, lombinho, pêssego, abacaxi, figo, ameixa e cereja",                                                                  price: "R$ 86,90", type: "salgada" },
-  { name: "CAMARÃO",           desc: "Molho tomates frescos, muçarela, camarão ao molho de tomate fresco, requeijão, azeitonas",                                                             price: "R$ 108,90", type: "salgada" },
-  { name: "CAPRESE",           desc: "Molho tomates frescos, muçarela, rodelas de tomates selecionados, pesto de azeitonas pretas, muçarela de búfala, manjericão fresco, azeitonas",           price: "R$ 82,90", type: "salgada" },
-  { name: "CARIJÓ",            desc: "Molho tomates frescos, muçarela, frango, milho, requeijão, ovo, bacon, azeitonas",                                                                     price: "R$ 81,90", type: "salgada" },
-  { name: "CINCO QUEIJOS",     desc: "Molho tomates frescos, muçarela, parmesão, gorgonzola, requeijão, cheddar, azeitonas",                                                                  price: "R$ 83,90", type: "salgada" },
-
-  { name: "DIVINA",            desc: "Molho de tomates frescos, muçarela, pepperoni, pimentão amarelo e vermelho, champignon, cebolas, orégano e azeitonas",                                     price: "R$ 79,90", type: "salgada" },
-  { name: "DOG (CACHORRO QUENTE)", desc: "Molho tomates frescos, muçarela, molho de tomate com salsichas, requeijão, milho, batata palha, azeitonas",                                            price: "R$ 79,90", type: "salgada" },
-  { name: "DORITOS",           desc: "Molho tomates frescos, muçarela, bacon, cheddar, doritos, azeitonas",                                                                                  price: "R$ 81,90", type: "salgada" },
-
-  { name: "ESCAROLA",          desc: "Molho tomates frescos, muçarela, escarola, bacon, tomate, azeitonas",                                                                                  price: "R$ 79,90", type: "salgada" },
-  { name: "ESPECIAL DO CLIENTE (06 INGREDIENTES)", desc: "Escolha até 6 ingredientes: Muçarela, calabresa, lombinho, peito de peru, pepperoni, bacon, parmesão, gorgonzola, requeijão, cheddar, cream cheese, palmito, tomate, cebola, milho, ervilha, ovo, brócolis, pimenta, tomate seco, champignon, frango", price: "R$ 89,90", type: "salgada" },
-  { name: "ESTROGONOFE DE CARNE", desc: "Molho tomates frescos, muçarela, estrogonofe de carne com champignon, requeijão cremoso, azeitonas",                                                  price: "R$ 87,90", type: "salgada" },
-  { name: "ESTROGONOFE DE FRANGO", desc: "Molho tomates frescos, muçarela, estrogonofe de frango com champignon, requeijão cremoso, azeitonas",                                                price: "R$ 81,90", type: "salgada" },
-
-  { name: "FIGO COM 3 QUEIJOS", desc: "Molho tomates frescos, muçarela, gorgonzola, requeijão cremoso e figo caramelizado",                                                                price: "R$ 76,90", type: "salgada" },
-  { name: "FILÉ MIGNON",        desc: "Molho tomates frescos, muçarela, Filé mignon em cubos, gotas de requeijão, azeitonas",                                                             price: "R$ 118,90", type: "salgada" },
-  { name: "FIORENTINI",         desc: "Molho tomates frescos, muçarela, peito de peru defumado, milho, requeijão cremoso, parmesão, azeitonas",                                              price: "R$ 83,90", type: "salgada" },
-  { name: "FRANGO COM REQUEIJÃO",desc: "Molho tomates frescos, muçarela, frango desfiado, requeijão cremoso, azeitonas",                                                                   price: "R$ 77,90", type: "salgada" },
-
-  { name: "HOT HOLL (SALMÃO)",  desc: "Molho tomates frescos, muçarela, salmão, cream cheese, cebolinha, molho tare, azeitonas",                                                       price: "R$ 108,90", type: "salgada" },
-
-  { name: "IMPERIAL",           desc: "Molho tomates frescos, muçarela, cream cheese, geleia de pimenta, azeitonas",                                                                     price: "R$ 79,90", type: "salgada" },
-  { name: "INGLESA",            desc: "Molho tomates frescos, muçarela, lombinho defumado, ovo, cebola, requeijão, azeitonas",                                                            price: "R$ 79,90", type: "salgada" },
-  { name: "ITALIANA",           desc: "Molho tomates frescos, muçarela, molho carne moída, palmito, requeijão, azeitonas",                                                               price: "R$ 81,90", type: "salgada" },
-
-  { name: "LIGHT ESPECIAL",     desc: "Molho tomates frescos, queijo branco, peito de peru, brócolis, rodelas de tomate, azeitonas",                                                    price: "R$ 77,90", type: "salgada" },
-  { name: "LINGUIÇA ARTESANAL", desc: "Molho de tomates frescos, muçarela, linguiça artesanal, requeijão, pimentão, pimenta biquinho, queijo coalho, cheiro verde, orégano e azeitonas", price: "R$ 91,90", type: "salgada" },
-  { name: "LOMBINHO COM REQU",   desc: "Molho tomates frescos, muçarela, lombinho canadense, requeijão cremoso, azeitonas",                                                             price: "R$ 79,90", type: "salgada" },
-  { name: "LOMBINHO DO CHEF",   desc: "Molho tomates frescos, muçarela, lombinho canadense, tomate seco, bacon, requeijão cremoso, azeitonas",                                          price: "R$ 81,90", type: "salgada" },
-
-  { name: "MARGUERITA",         desc: "Molho tomates frescos, muçarela, manjericão fresco, e mais molho de tomates, azeitonas",                                                          price: "R$ 69,90", type: "salgada" },
-  { name: "MILHO",              desc: "Molho tomates frescos, muçarela, milho, requeijão, bacon, azeitonas",                                                                             price: "R$ 79,90", type: "salgada" },
-  { name: "MUÇARELA",           desc: "Molho tomates frescos, muçarela, rodelas de tomate, azeitonas",                                                                                   price: "R$ 63,90", type: "salgada" },
-
-  { name: "NAPOLITANA",         desc: "Molho tomates frescos, muçarela, parmesão, rodelas de tomate, manjericão fresco, azeitonas",                                                       price: "R$ 79,90", type: "salgada" },
-  { name: "NORDESTINA COM REQU", desc: "Molho tomates frescos, muçarela, carne seca desfiada, rodelas de tomates frescos, cebola, requeijão, azeitonas",                                      price: "R$ 94,90", type: "salgada" },
-
-  { name: "PALMITO",            desc: "Molho tomates frescos, muçarela, palmito, azeitonas",                                                                                            price: "R$ 81,90", type: "salgada" },
-  { name: "PALMITO DO CHEF",    desc: "Molho tomates frescos, palmito, champignon, tomate seco, bacon, requeijão cremoso, azeitonas",                                                    price: "R$ 83,90", type: "salgada" },
-  { name: "PÃO DE ALHO",        desc: "Muçarela, creme de alho temperado, requeijão, bacon, azeitonas",                                                                                 price: "R$ 79,90", type: "salgada" },
-  { name: "PAULISTA",           desc: "Molho tomates frescos, muçarela, presunto picado, ervilha, palmito, bacon, azeitonas",                                                            price: "R$ 79,90", type: "salgada" },
-  { name: "PEITO PERU",         desc: "Molho tomates frescos, muçarela, peito de peru picado, alho poró temperado, cream cheese, azeitonas",                                             price: "R$ 85,90", type: "salgada" },
-  { name: "PEPPERONI",          desc: "Molho tomates frescos, muçarela, pepperoni, azeitonas",                                                                                         price: "R$ 81,90", type: "salgada" },
-  { name: "PIZZAIOLO",          desc: "Molho tomates frescos, muçarela, pepperoni, palmito, tomate seco, bacon, azeitonas",                                                            price: "R$ 81,90", type: "salgada" },
-  { name: "PORTUGUESA",         desc: "Molho tomates frescos, muçarela, presunto, palmito, ervilha, ovo, cebola, azeitonas",                                                           price: "R$ 79,90", type: "salgada" },
-  { name: "PRECIOSA",           desc: "Molho tomates frescos, muçarela, pepperoni, cream cheese, gorgonzola, tomate cereja, manjericão, azeitonas",                                     price: "R$ 88,90", type: "salgada" },
-  { name: "PRESUNTO E MUCARELA",desc: "Molho tomates frescos, muçarela, presunto, tomates, azeitonas",                                                                                 price: "R$ 78,90", type: "salgada" },
-  { name: "PRESUNTO PARMA",     desc: "Molho tomates frescos, muçarela, rúcula, tomate cereja, presunto parma, parmesão, azeitonas",                                                    price: "R$ 89,90", type: "salgada" },
-  { name: "PRIMAVERA",          desc: "Molho tomates frescos, muçarela, palmito, brócolis, manjericão fresco, rodelas de tomate, requeijão cremoso, azeitonas",                            price: "R$ 78,90", type: "salgada" },
-
-  { name: "QUATRO QUEIJOS",     desc: "Molho tomates frescos, muçarela, parmesão, gorgonzola, requeijão cremoso, azeitonas",                                                             price: "R$ 81,80", type: "salgada" },
-
-  { name: "ROMANA",             desc: "Molho tomates frescos, muçarela, lombinho canadense, champignon, rodelas tomates, manjericão, requeijão cremoso, azeitonas",                         price: "R$ 79,90", type: "salgada" },
-  { name: "RÚCULA DO CHEF",     desc: "Molho tomates frescos, muçarela, rúcula, molho a base de mostarda, acceto balsâmico, mel, tomate seco, creme de queijo branco, azeitonas",          price: "R$ 79,90", type: "salgada" },
-
-  { name: "SHIMEJI",            desc: "Molho tomates frescos, muçarela, shimeji na manteiga, cream cheese, cebolinha",                                                                price: "R$ 86,90", type: "salgada" },
-  { name: "SUPREMA",            desc: "Molho tomates frescos, muçarela, carne bovina em cubos, pepperoni, champignon, pimentão, azeitonas",                                              price: "R$ 89,90", type: "salgada" },
+  { category:'salgada', title:'ABOBRINHA', desc:'Molho tomates frescos, muçarela, abobrinha em rodelas temperadas, parmesão, mais molho de tomate, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'ALCATRA (CHARMOSA)', desc:'Molho de tomates frescos, muçarela, Alcatra, gorgonzola, cebola roxa marinada no balsâmico e mel, orégano e azeitonas', price:'R$ 87,90' },
+  { category:'salgada', title:'ALHO PORÓ', desc:'Molho tomates frescos, muçarela, cream cheese, alho poró puxado na manteiga e vinho branco, azeitonas', price:'R$ 84,90' },
+  { category:'salgada', title:'ALICHE', desc:'Molho tomates frescos, muçarela, aliche, azeitonas', price:'R$ 84,90' },
+  { category:'salgada', title:'AMERICANA', desc:'Molho tomates frescos, muçarela, calabresa, bacon, cebola, molho barbecue, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'AMOROSA', desc:'Molho de tomates frescos, muçarela, peito de peru, cream cheese, geleia de amora, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'ATUM', desc:'Molho tomate, muçarela, atum em pedaços, rodelas de tomate, cebola, azeitonas', price:'R$ 87,90' },
+  { category:'salgada', title:'ATUM DO CHEF', desc:'Molho tomates frescos, muçarela, atum em pedaços, brócolis, rodelas de tomate, cebola, azeitonas', price:'R$ 89,90' },
+  { category:'salgada', title:'ATUM HOLL', desc:'Molho tomates frescos, muçarela, atum em pedaços, cream cheese, molho tare, cheiro verde, azeitonas', price:'R$ 87,90' },
+  { category:'salgada', title:'À MODA DA CASA', desc:'Molho tomates frescos, muçarela, calabresa, lombinho defumado, milho, bacon, rodelas de tomate, requeijão cremoso, azeitonas', price:'R$ 84,90' },
+  { category:'salgada', title:'BACALHAU', desc:'Molho tomates frescos, muçarela, bacalhau em lascas, ovo, tomates frescos, cebola, pimentão, azeitonas', price:'R$ 89,90' },
+  { category:'salgada', title:'BAIANA ESPECIAL', desc:'Molho tomates frescos, muçarela, calabresa, pimenta, tomate seco, creme de espinafre, rodelas de tomate, manjericão, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'BOLONHESA', desc:'Molho tomates frescos, muçarela, calabresa, bacon, palmito, requeijão, azeitonas', price:'R$ 82,90' },
+  { category:'salgada', title:'BRÓCOLIS COM REQU', desc:'Molho tomates frescos, muçarela, brócolis, requeijão cremoso, azeitonas', price:'R$ 78,90' },
+  { category:'salgada', title:'BRÓCOLIS DO CHEF', desc:'Molho tomates frescos, muçarela, brócolis, palmito, tomate seco, creme de espinafre, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'CALABRESA', desc:'Molho tomates frescos, muçarela, calabresa, cebola, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'CALABRIA', desc:'Molho tomates frescos, muçarela, calabresa, tomates selecionados, requeijão, cebola selecionada fatiada, pimenta, azeitonas', price:'R$ 82,90' },
+  { category:'salgada', title:'CALIFÓRINA', desc:'Molho tomates frescos, muçarela, lombinho, pêssego, abacaxi, figo, ameixa e cereja', price:'R$ 86,90' },
+  { category:'salgada', title:'CAMARÃO', desc:'Molho tomates frescos, muçarela, camarão ao molho de tomate fresco, requeijão, azeitonas', price:'R$ 108,90' },
+  { category:'salgada', title:'CAPRESE', desc:'Molho tomates frescos, muçarela, rodelas de tomates selecionados, pesto de azeitonas pretas, muçarela de búfala, manjericão fresco, azeitonas', price:'R$ 82,90' },
+  { category:'salgada', title:'CARIJÓ', desc:'Molho tomates frescos, muçarela, frango, milho, requeijão, ovo, bacon, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'CINCO QUEIJOS', desc:'Molho tomates frescos, muçarela, parmesão, gorgonzola, requeijão, cheddar, azeitonas', price:'R$ 83,90' },
+  { category:'salgada', title:'DIVINA', desc:'Molho de tomates frescos, muçarela, pepperoni, pimentão amarelo e vermelho, champignon, cebolas, orégano e azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'DOG (CACHORRO QUENTE)', desc:'Molho tomates frescos, muçarela, molho de tomate com salsichas, requeijão, milho, batata palha, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'DORITOS', desc:'Molho tomates frescos, muçarela, bacon, cheddar, doritos, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'ESCAROLA', desc:'Molho tomates frescos, muçarela, escarola, bacon, tomate, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'ESPECIAL DO CLIENTE (06 INGREDIENTES)', desc:'Escolha até 6 ingredientes: Muçarela, calabresa, lombinho, peito de peru, pepperoni, bacon, parmesão, gorgonzola, requeijão, cheddar, cream cheese, palmito, tomate, cebola, milho, ervilha, ovo, brócolis, pimenta, tomate seco, champignon, frango', price:'R$ 89,90' },
+  { category:'salgada', title:'ESTROGONOFE DE CARNE', desc:'Molho tomates frescos, muçarela, estrogonofe de carne com champignon, requeijão cremoso, azeitonas', price:'R$ 87,90' },
+  { category:'salgada', title:'ESTROGONOFE DE FRANGO', desc:'Molho tomates frescos, muçarela, estrogonofe de frango com champignon, requeijão cremoso, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'FIGO COM 3 QUEIJOS', desc:'Molho tomates frescos, muçarela, gorgonzola, requeijão cremoso e figo caramelizado', price:'R$ 76,90' },
+  { category:'salgada', title:'FILÉ MIGNON', desc:'Molho tomates frescos, muçarela, Filé mignon em cubos, gotas de requeijão, azeitonas', price:'R$ 118,90' },
+  { category:'salgada', title:'FIORENTINI', desc:'Molho tomates frescos, muçarela, peito de peru defumado, milho, requeijão cremoso, parmesão, azeitonas', price:'R$ 83,90' },
+  { category:'salgada', title:'FRANGO COM REQUEIJÃO', desc:'Molho tomates frescos, muçarela, frango desfiado, requeijão cremoso, azeitonas', price:'R$ 77,90' },
+  { category:'salgada', title:'HOT HOLL (SALMÃO)', desc:'Molho tomates frescos, muçarela, salmão, cream cheese, cebolinha, molho tare, azeitonas', price:'R$ 108,90' },
+  { category:'salgada', title:'IMPERIAL', desc:'Molho tomates frescos, muçarela, cream cheese, geleia de pimenta, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'INGLESA', desc:'Molho tomates frescos, muçarela, lombinho defumado, ovo, cebola, requeijão, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'ITALIANA', desc:'Molho tomates frescos, muçarela, molho carne moída, palmito, requeijão, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'LIGHT ESPECIAL', desc:'Molho tomates frescos, queijo branco, peito de peru, brócolis, rodelas de tomate, azeitonas', price:'R$ 77,90' },
+  { category:'salgada', title:'LINGUIÇA ARTESANAL', desc:'Molho de tomates frescos, muçarela, linguiça artesanal, requeijão, pimentão, pimenta biquinho, queijo coalho, cheiro verde, orégano e azeitonas', price:'R$ 91,90' },
+  { category:'salgada', title:'LOMBINHO COM REQU', desc:'Molho tomates frescos, muçarela, lombinho canadense, requeijão cremoso, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'LOMBINHO DO CHEF', desc:'Molho tomates frescos, muçarela, lombinho canadense, tomate seco, bacon, requeijão cremoso, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'MARGUERITA', desc:'Molho tomates frescos, muçarela, manjericão fresco, e mais molho de tomates, azeitonas', price:'R$ 69,90' },
+  { category:'salgada', title:'MILHO', desc:'Molho tomates frescos, muçarela, milho, requeijão, bacon, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'MUÇARELA', desc:'Molho tomates frescos, muçarela, rodelas de tomate, azeitonas', price:'R$ 63,90' },
+  { category:'salgada', title:'NAPOLITANA', desc:'Molho tomates frescos, muçarela, parmesão, rodelas de tomate, manjericão fresco, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'NORDESTINA COM REQU', desc:'Molho tomates frescos, muçarela, carne seca desfiada, rodelas de tomates frescos, cebola, requeijão, azeitonas', price:'R$ 94,90' },
+  { category:'salgada', title:'PALMITO', desc:'Molho tomates frescos, muçarela, palmito, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'PALMITO DO CHEF', desc:'Molho tomates frescos, palmito, champignon, tomate seco, bacon, requeijão cremoso, azeitonas', price:'R$ 83,90' },
+  { category:'salgada', title:'PÃO DE ALHO', desc:'Muçarela, creme de alho temperado, requeijão, bacon, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'PAULISTA', desc:'Molho tomates frescos, muçarela, presunto picado, ervilha, palmito, bacon, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'PEITO PERU', desc:'Molho tomates frescos, muçarela, peito de peru picado, alho poró temperado, cream cheese, azeitonas', price:'R$ 85,90' },
+  { category:'salgada', title:'PEPPERONI', desc:'Molho tomates frescos, muçarela, pepperoni, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'PIZZAIOLO', desc:'Molho tomates frescos, muçarela, pepperoni, palmito, tomate seco, bacon, azeitonas', price:'R$ 81,90' },
+  { category:'salgada', title:'PORTUGUESA', desc:'Molho tomates frescos, muçarela, presunto, palmito, ervilha, ovo, cebola, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'PRECIOSA', desc:'Molho tomates frescos, muçarela, pepperoni, cream cheese, gorgonzola, tomate cereja, manjericão, azeitonas', price:'R$ 88,90' },
+  { category:'salgada', title:'PRESUNTO E MUÇARELA', desc:'Molho tomates frescos, muçarela, presunto, tomates, azeitonas', price:'R$ 78,90' },
+  { category:'salgada', title:'PRESUNTO PARMA', desc:'Molho tomates frescos, muçarela, rúcula, tomate cereja, presunto parma, parmesão, azeitonas', price:'R$ 89,90' },
+  { category:'salgada', title:'PRIMAVERA', desc:'Molho tomates frescos, muçarela, palmito, brócolis, manjericão fresco, rodelas de tomate, requeijão cremoso, azeitonas', price:'R$ 78,90' },
+  { category:'salgada', title:'QUATRO QUEIJOS', desc:'Molho tomates frescos, muçarela, parmesão, gorgonzola, requeijão cremoso, azeitonas', price:'R$ 81,80' },
+  { category:'salgada', title:'ROMANA', desc:'Molho tomates frescos, muçarela, lombinho canadense, champignon, rodelas tomates, manjericão, requeijão cremoso, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'RÚCULA DO CHEF', desc:'Molho tomates frescos, muçarela, rúcula, molho a base de mostarda, acceto balsâmico, mel, tomate seco, creme de queijo branco, azeitonas', price:'R$ 79,90' },
+  { category:'salgada', title:'SHIMEJI', desc:'Molho tomates frescos, muçarela, shimeji na manteiga, cream cheese, cebolinha', price:'R$ 86,90' },
+  { category:'salgada', title:'SUPREMA', desc:'Molho tomates frescos, muçarela, carne bovina em cubos, pepperoni, champignon, pimentão, azeitonas', price:'R$ 89,90' },
 
   // — DOCES —
-  { name: "ABACAXI C/ CHOC BRANCO", desc: "Massa fina, abacaxi, chocolate branco, leite condensado e coco",                                                                         price: "R$ 74,90", type: "doce" },
-  { name: "BANANA C/ CHOC BRANCO",  desc: "Massa fina, banana, chocolate branco e canela",                                                                                         price: "R$ 74,90", type: "doce" },
-  { name: "BOMBOM DE KITKAT",        desc: "Massa fina, brigadeiro artesanal, creme de leite ninho, Kit Kat, morango",                                                                 price: "R$ 74,90", type: "doce" },
-  { name: "BOMBOM DE UVA",           desc: "Massa fina, brigadeiro artesanal, creme de leite ninho, uva",                                                                            price: "R$ 74,90", type: "doce" },
-  { name: "BRIGADEIRO",              desc: "Massa fina, Brigadeiro artesanal e chocolate granulado",                                                                               price: "R$ 74,90", type: "doce" },
-  { name: "CASADINHO",               desc: "Massa fina, chocolate ao leite com chocolate branco",                                                                                   price: "R$ 74,90", type: "doce" },
-  { name: "CHOCOLATE BRANCO",        desc: "Massa fina, chocolate branco",                                                                                                         price: "R$ 74,90", type: "doce" },
-  { name: "NUTELLA C/ MORANGO",      desc: "Massa fina, Nutella, creme de leite e morango",                                                                                         price: "R$ 77,90", type: "doce" },
-  { name: "PAÇOQUINHA NOVIDADE",     desc: "Massa fina, chocolate ao leite, paçoquinha",                                                                                            price: "R$ 70,90", type: "doce" },
-  { name: "PISTACHE",                desc: "Massa fina, Ganache de pistache e amêndoas de pistache",                                                                                price: "R$ 85,90", type: "doce" },
-  { name: "PRESTÍGIO",               desc: "Massa fina, Brigadeiro artesanal com doce de coco",                                                                                     price: "R$ 74,90", type: "doce" },
-  { name: "ROMEU E JULIETA",         desc: "Massa fina, muçarela, goiabada cremosa",                                                                                              price: "R$ 73,90", type: "doce" }
+  { category:'doce', title:'ABACAXI C/ CHOC BRANCO', desc:'Massa fina, abacaxi, chocolate branco, leite condensado e coco', price:'R$ 74,90' },
+  { category:'doce', title:'BANANA C/ CHOC BRANCO', desc:'Massa fina, banana, chocolate branco e canela', price:'R$ 74,90' },
+  { category:'doce', title:'BOMBOM DE KITKAT', desc:'Massa fina, brigadeiro artesanal, creme de leite ninho, Kit Kat, morango', price:'R$ 74,90' },
+  { category:'doce', title:'BOMBOM DE UVA', desc:'Massa fina, brigadeiro artesanal, creme de leite ninho, uva', price:'R$ 74,90' },
+  { category:'doce', title:'BRIGADEIRO', desc:'Massa fina, Brigadeiro artesanal e chocolate granulado', price:'R$ 74,90' },
+  { category:'doce', title:'CASADINHO', desc:'Massa fina, chocolate ao leite com chocolate branco', price:'R$ 74,90' },
+  { category:'doce', title:'CHOCOLATE BRANCO', desc:'Massa fina, chocolate branco', price:'R$ 74,90' },
+  { category:'doce', title:'NUTELLA C/ MORANGO', desc:'Massa fina, Nutella, creme de leite e morango', price:'R$ 77,90' },
+  { category:'doce', title:'PAÇOQUINHA NOVIDADE', desc:'Massa fina, chocolate ao leite, paçoquinha', price:'R$ 70,90' },
+  { category:'doce', title:'PISTACHE', desc:'Massa fina, Ganache de pistache e amêndoas de pistache', price:'R$ 85,90' },
+  { category:'doce', title:'PRESTÍGIO', desc:'Massa fina, Brigadeiro artesanal com doce de coco', price:'R$ 74,90' },
+  { category:'doce', title:'ROMEU E JULIETA', desc:'Massa fina, muçarela, goiabada cremosa', price:'R$ 73,90' },
+
+  // — FONDUE —
+  { category: 'fondue', title: 'FONDUE - chocolate', desc: '5 acompanhamentos disponíveis no dia', price: 'R$ 39,90' },
+
+  // — CALDOS —
+  { category:'caldo', title:'Cabotia c/ carne seca', desc:'Caldo de cabotia com carne seca desfiada', price:'R$ 26,90' },
+  { category:'caldo', title:'Feijão', desc:'Caldo de feijão, calabresa e bacon', price:'R$ 26,90' },
+  { category:'caldo', title:'Legumes', desc:'Cabotia, cenoura, mandioquinha, chuchu, mandioca e abobrinha', price:'R$ 26,90' },
+  { category:'caldo', title:'Mandioca com bacon', desc:'Caldo de mandioca com bacon', price:'R$ 26,90' },
+
+  // — SALADAS —
+  { category:'salada', title:'Completa', desc:'Rúcula, alface, tomate, cebola, ervilha, muçarela, ovo, palmito, azeitonas', price:'R$ 29,90' },
+
+  // — MASSAS —
+  { category:'massa', title:'Lasanha 4 Queijos', desc:'Molho branco', price:'R$ 29,90' },
+  { category:'massa', title:'Lasanha Presunto e Muçarela', desc:'Molho bolonhesa ou ao sugo. Escolher em adicionais', price:'R$ 29,90' },
+  { category:'massa', title:'Mac & Cheese', desc:'Massa caracolina com creme de cheddar finalizado com bacon e farofa panko temperada', price:'R$ 34,90' },
+  { category:'massa', title:'Nhoque c/ Muçarela', desc:'Recheado com muçarela. Escolher 1 molho em adicionais', price:'R$ 29,90' },
+  { category:'massa', title:'Rondeli Presunto e Muçarela', desc:'Presunto e muçarela. Escolher 1 molho em adicionais', price:'R$ 29,90' },
+
+  // — MASSAS – TALHARIM —
+  { category:'talharim', title:'Talharim ao Molho Bolonhesa', desc:'Talharim ao molho bolonhesa, queijo parmesão', price:'R$ 29,90' },
+  { category:'talharim', title:'Talharim ao Molho Branco', desc:'Talharim ao molho branco, queijo parmesão', price:'R$ 29,90' },
+  { category:'talharim', title:'Talharim ao Molho Camarão', desc:'Talharim ao molho branco com camarões, queijo parmesão', price:'R$ 39,90' },
+  { category:'talharim', title:'Talharim ao Molho Sugo', desc:'Talharim ao molho sugo, queijo parmesão', price:'R$ 29,90' },
+  { category:'talharim', title:'Talharim c/ Brócolis e Bacon', desc:'Talharim ao molho branco, brócolis e bacon, queijo parmesão', price:'R$ 29,90' },
+
+  // — PORÇÕES —
+  { category:'porcao', title:'Batata Frita Completa', desc:'Muçarela, bacon, cheddar, requeijão', price:'R$ 34,90' },
+  { category:'porcao', title:'Calabresa Acebolada', desc:'', price:'R$ 34,90' },
+  { category:'porcao', title:'Estrogonofe de Carne', desc:'Acompanhamento: arroz, batata palha e salada (porção para 2 pessoas)', price:'R$ 54,90' },
+  { category:'porcao', title:'Estrogonofe de Frango', desc:'Acompanhamento: arroz, batata palha e salada (porção para 2 pessoas)', price:'R$ 47,90' },
+  { category:'porcao', title:'Frango no Varal', desc:'Porção de frango no varal acompanhado de fritas', price:'R$ 34,90' },
+
+  // — BEBIDAS – ÁGUAS E REFRIGERANTES —
+  { category:'bebida-agua', title:'Água c/ gás 500ml', desc:'', price:'R$ 4,00' },
+  { category:'bebida-agua', title:'Água sem gás 500ml', desc:'', price:'R$ 3,50' },
+  { category:'bebida-agua', title:'Coca-Cola 2 litros', desc:'', price:'R$ 13,50' },
+  { category:'bebida-agua', title:'Coca-Cola 600ml', desc:'', price:'R$ 8,90' },
+  { category:'bebida-agua', title:'Coca-Cola Lata', desc:'', price:'R$ 6,50' },
+  { category:'bebida-agua', title:'Coca-Cola Zero 600ml', desc:'', price:'R$ 8,90' },
+  { category:'bebida-agua', title:'Coca-Cola Zero Lata', desc:'', price:'R$ 6,50' },
+  { category:'bebida-agua', title:'Fanta laranja 2 litros', desc:'', price:'R$ 13,50' },
+  { category:'bebida-agua', title:'Fanta laranja Lata', desc:'', price:'R$ 6,50' },
+  { category:'bebida-agua', title:'Fanta uva Lata', desc:'', price:'R$ 6,50' },
+  { category:'bebida-agua', title:'Guaraná Antarctica 2 litros', desc:'', price:'R$ 13,50' },
+  { category:'bebida-agua', title:'Guaraná Antarctica 600ml', desc:'', price:'R$ 8,90' },
+  { category:'bebida-agua', title:'Guaraná Zero 2 litros', desc:'', price:'R$ 13,50' },
+  { category:'bebida-agua', title:'H2O Limoneto 500ml', desc:'', price:'R$ 7,90' },
+  { category:'bebida-agua', title:'Sprite 2 litros', desc:'', price:'R$ 13,50' },
+  { category:'bebida-agua', title:'Sprite Lata', desc:'', price:'R$ 6,50' },
+
+  // — BEBIDAS – SUCOS NATURAIS —
+  { category:'bebida-suco', title:'Del Valle Goiaba Lata', desc:'', price:'R$ 6,90' },
+  { category:'bebida-suco', title:'Del Valle Manga Lata', desc:'', price:'R$ 6,90' },
+  { category:'bebida-suco', title:'Del Valle Pêssego Lata', desc:'', price:'R$ 6,90' },
+  { category:'bebida-suco', title:'Del Valle Uva Lata', desc:'', price:'R$ 6,90' },
+  { category:'bebida-suco', title:'Suco Natural Abacaxi (350ml)', desc:'', price:'R$ 11,90' },
+  { category:'bebida-suco', title:'Suco Abacaxi c/ Ameixa (350ml)', desc:'', price:'R$ 11,90' },
+  { category:'bebida-suco', title:'Suco Abacaxi c/ Hortelã (350ml)', desc:'', price:'R$ 11,90' },
+  { category:'bebida-suco', title:'Suco Natural Laranja (350ml)', desc:'', price:'R$ 11,90' },
+  { category:'bebida-suco', title:'Suco Laranja c/ Morango (350ml)', desc:'', price:'R$ 15,90' },
+  { category:'bebida-suco', title:'Suco Natural Limão (350ml)', desc:'', price:'R$ 11,90' },
+  { category:'bebida-suco', title:'Suco Natural Maracujá (350ml)', desc:'', price:'R$ 11,90' },
+  { category:'bebida-suco', title:'Suco Natural Morango (350ml)', desc:'', price:'R$ 11,90' },
+
+  // — BEBIDAS – CERVEJAS —
+  { category:'bebida-cerveja', title:'Amstel (Puro Malte) Lata 350ml', desc:'', price:'R$ 6,90' },
+  { category:'bebida-cerveja', title:'Antarctica Lata 350ml', desc:'', price:'R$ 6,90' },
+  { category:'bebida-cerveja', title:'Brahma Lata 350ml', desc:'', price:'R$ 6,90' },
+  { category:'bebida-cerveja', title:'Corona Extra Long Neck 330ml', desc:'', price:'R$ 12,90' },
+  { category:'bebida-cerveja', title:'Heineken (Puro Malte) Long Neck 330ml', desc:'', price:'R$ 11,90' },
+  { category:'bebida-cerveja', title:'Heineken Zero Long Neck 330ml', desc:'', price:'R$ 11,90' },
+  { category:'bebida-cerveja', title:'Skol Lata 350ml', desc:'', price:'R$ 6,90' },
+  { category:'bebida-cerveja', title:'Spaten Long Neck 330ml', desc:'', price:'R$ 10,90' },
+  { category:'bebida-cerveja', title:'Stella Artois Long Neck 330ml', desc:'', price:'R$ 11,90' },
+
+  // — BEBIDAS – VINHOS —
+  { category:'bebida-vinho', title:'Vinho Girola Branco Seco 750ml', desc:'', price:'R$ 32,50' },
+  { category:'bebida-vinho', title:'Vinho Girola Branco Suave 750ml', desc:'', price:'R$ 32,50' },
+  { category:'bebida-vinho', title:'Vinho Girola Rosé Suave 750ml', desc:'', price:'R$ 32,50' },
+  { category:'bebida-vinho', title:'Vinho Girola Tinto Seco 750ml', desc:'', price:'R$ 32,50' },
+  { category:'bebida-vinho', title:'Vinho Girola Tinto Suave 750ml', desc:'', price:'R$ 32,50' }
 ];
 
-// Função que renderiza as pizzas nas colunas
+// Função que renderiza todo o cardápio
 function renderCardapio() {
-  const colSalgadas = document.querySelector('.menu-column.salgadas');
-  const colDoces    = document.querySelector('.menu-column.doces');
+  const panel = document.getElementById('panelContent');
+  panel.innerHTML = '';
 
-  // limpa antes de popular
-  colSalgadas.querySelectorAll('.menu-item').forEach(el => el.remove());
-  colDoces   .querySelectorAll('.menu-item').forEach(el => el.remove());
+  // 1) Colunas de Pizzas
+  const wrapper = document.createElement('div');
+  wrapper.className = 'menu-columns';
+  ['salgada','doce'].forEach(tipo => {
+    const col = document.createElement('div');
+    col.className = `menu-column ${tipo}`;
+    col.innerHTML = `<h2 class="headline-central">${tipo === 'salgada' ? 'Pizzas Salgadas' : 'Pizzas Doces'}</h2>`;
 
-  // Filtra e ordena cada tipo
-  const salgadas = pizzas
-    .filter(p => p.type === 'salgada')
-    .sort((a, b) => a.name.localeCompare(b.name, 'pt'));
-  const doces = pizzas
-    .filter(p => p.type === 'doce')
-    .sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+    pizzas
+      .filter(item => item.category === tipo)
+      .sort((a, b) => a.title.localeCompare(b.title, 'pt'))
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'menu-item';
+        div.innerHTML = `
+          <h3>${item.title}<span class="price">${item.price}</span></h3>
+          <p>${item.desc}</p>
+        `;
+        col.appendChild(div);
+      });
+    wrapper.appendChild(col);
+  });
+  panel.appendChild(wrapper);
 
-  // Gera e insere o HTML para cada pizza
-  for (const p of salgadas) {
-    const div = document.createElement('div');
-    div.className = 'menu-item';
-    div.innerHTML = `
-      <h3>${p.name}<span class="price">${p.price}</span></h3>
-      <p>${p.desc}</p>
-    `;
-    colSalgadas.appendChild(div);
-  }
-  for (const p of doces) {
-    const div = document.createElement('div');
-    div.className = 'menu-item';
-    div.innerHTML = `
-      <h3>${p.name}<span class="price">${p.price}</span></h3>
-      <p>${p.desc}</p>
-    `;
-    colDoces.appendChild(div);
-  }
+  // Seções adicionais para outras categorias, como Fondue, Caldos, etc
+  const sections = [
+    { key: 'fondue', title: 'Fondue' },
+    { key: 'caldo', title: 'Caldos' },
+    { key: 'salada', title: 'Saladas' },
+    { key: 'massa', title: 'Massas' },
+    { key: 'talharim', title: 'Massas – Talharim' },
+    { key: 'porcao', title: 'Porções' },
+    { key: 'bebida-agua', title: 'Bebidas – Águas/Refri' },
+    { key: 'bebida-suco', title: 'Bebidas – Sucos' },
+    { key: 'bebida-cerveja', title: 'Bebidas – Cervejas' },
+    { key: 'bebida-vinho', title: 'Bebidas – Vinhos' }
+  ];
+
+  sections.forEach(sec => {
+    const itens = pizzas.filter(i => i.category === sec.key);
+    if (!itens.length) return;
+
+    // Linha na Seção de Fondue
+    if (sec.key === 'fondue') {
+      const hr = document.createElement('hr');
+      hr.style.border = 'none';
+      hr.style.height = '2px';
+      hr.style.backgroundColor = '#e63946';
+      hr.style.opacity = '0.5';
+      hr.style.margin = '30px';
+      panel.appendChild(hr);
+    }
+
+    // título da seção
+    const H2 = document.createElement('h2');
+    H2.className = 'headline-central';
+    H2.textContent = sec.title;
+    panel.appendChild(H2);
+    // itens
+    itens.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'menu-item';
+      div.innerHTML = `
+        <h3>${item.title}<span class="price">${item.price}</span></h3>
+        <p>${item.desc}</p>
+      `;
+      panel.appendChild(div);
+    });
+  });
 }
+
 
 // Modifique o evento DOMContentLoaded para incluir a carga de conteúdo específico
 document.addEventListener('DOMContentLoaded', () => {

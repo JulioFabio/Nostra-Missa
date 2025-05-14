@@ -54,6 +54,14 @@
   margin-left: auto;
 }
 
+.separator-line {
+  border: none;
+  height: 2px;
+  background-color: #e63946;
+  opacity: 0.5;
+  margin: 30px 0;
+}
+
 /* Cada item do menu */
 .menu-item {
   margin-bottom: 20px;

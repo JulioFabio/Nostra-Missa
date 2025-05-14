@@ -26,34 +26,58 @@
     </nav>
   </header>
 
-  <!-- PAINEL CONTATO -->
-  <div class="bottom-panel open" id="bottomPanel" style="position: fixed; z-index: -1;">
-    <div class="bottom-panel-header">
-      ▲ Envie uma mensagem para nós
+  <!-- INFORMAÇÕES VERDE / VERMELHO -->
+  <div class="info-dupla">
+    <div class="coluna-esquerda">
+      <div class="item">
+        <i class="fas fa-phone-alt"></i>
+        <span>LIGUE PARA NÓS</span>
+      </div>
+      <div class="item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>LOCALIZAÇÃO</span>
+      </div>
+      <div class="item">
+        <i class="fas fa-clock"></i>
+        <span>HORÁRIO COMERCIAL</span>
+      </div>
     </div>
-  
-    <div class="bottom-panel-content">
-      <section class="contato fade-in">
-        <h2 class="headline-central">Fale Conosco</h2>
-  
-        <form class="contato-form">
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Enter your Name" required />
-          </div>
-  
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter a valid email address" required />
-          </div>
-  
-          <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-        </form>
-      </section>
+
+    <div class="coluna-direita">
+      <div class="item">
+        <p>1 (234) 567-891, 1 (234) 987-654</p>
+      </div>
+      <div class="item">
+        <p>121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
+      </div>
+      <div class="item">
+        <p>Seg - Sex ..... 10h - 20h, Sáb, Dom ...... Fechado</p>
+      </div>
     </div>
   </div>
-  
-  <div class="loading-spinner" id="loadingSpinner"></div>
+
+  <!-- FORMULÁRIO FIXO -->
+  <section class="form-container">
+    <div class="contact-box-fixed">
+      <form>
+        <h1>CONTATE-NOS</h1>
+        <p>Preencha as informações abaixo e entraremos em contato com você</p>
+        <div class="input-single">
+          <input class="input" type="text" id="nome" required>
+          <label for="nome">Seu nome completo</label>
+        </div>
+        <div class="input-single">
+          <input class="input" type="text" id="email" required>
+          <label for="email">Seu e-mail</label>
+        </div>
+        <div class="input-single">
+          <input class="input" type="text" id="telefone" required>
+          <label for="telefone">Seu telefone</label>
+        </div>
+        <div class="btn"><input type="submit" value="Enviar"></div>
+      </form>
+    </div>
+  </section>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -61,35 +85,47 @@
 </body>
 </html>
 
-<!-- Caixa de texto 1-->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Contato Personalizado</title>
-</head>
-<body>
-    <section class="form-container">
-        <div class="container">
-            <form>
-                <h1>CONTATE-NOS</h1>
-                <p>Preencha as informações abaixo e entraremos em contato com você</p>
-                <div class="input-single">
-                    <input class="input" type="text" id="nome" required>
-                    <label for="nome">Seu nome completo</label>
-                </div>
-                <div class="input-single">
-                    <input class="input" type="text" id="email" required>
-                    <label for="email">Seu e-mail</label>
-                </div>
-                <div class="input-single">
-                    <input class="input" type="text" id="telefone" required>
-                    <label for="telefone">Seu telefone</label>
-                </div>
-                <div class="btn"><input type="submit" value="Enviar"></div>
-            </form>
-        </div>
-    </section>
-</body>
-</html>
+<!-- Rodapé -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa">
+    </div>
+    
+    <div class="footer-links">
+      <a href="https://www.facebook.com/NostraMassaCravinhos">Nostra Massa Cravinhos</a>
+      <a href="https://www.instagram.com/NostraMassaCravinhos">Instagram</a>
+      <a href="mailto:admin@nostramassa.com">Email</a>
+    </div>
+
+    <div class="footer-address">
+      <div>
+        <h4>Nostra Santa Maria</h4>
+        <p>Rodovia Anhanguera, Km 299, Cravinhos, SP</p>
+        <p>(16) 3300-0345</p>
+      </div>
+
+      <div>
+        <h4>Nostra Express Cravinhos</h4>
+        <p>Av. Pedro Amaroas, 465 Cravinhos, SP</p>
+        <p>(16) 3487-7155</p>
+      </div>
+
+      <div>
+        <h4>Nostra Massa Ribeirão</h4>
+        <p>Rua São José, 933 Ribeirão Preto, SP</p>
+        <p>3235-6655 / 3485-4775</p>
+      </div>
+      
+      <div>
+        <h4>Nostra Massa Cravinhos</h4>
+        <p>Av. Rita Cândida Nogueira, 481 Cravinhos, SP</p>
+        <p>(16)99238-9676/(16)3482-2555</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Todos os direitos reservados</p>
+  </div>
+</footer>
+
