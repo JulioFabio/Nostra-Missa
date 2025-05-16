@@ -102,21 +102,6 @@
        color: #d8d2d2;
 }
 
-@media (max-width: 768px) {
-    .sobre-nos-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 16px;
-    }
-
-    .sobre-item {
-        flex: 0 0 auto;
-        scroll-snap-align: center;
-        min-width: 280px;
-        margin-right: 16px;
-    }
-}
 .headline-central {
     text-align: center;
     margin-bottom: 2rem;

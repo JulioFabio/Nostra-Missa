@@ -1,0 +1,226 @@
+@media (max-width: 768px) {
+  /* === style.css === */
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .logo-container {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    transform: translateY(20px);
+  }
+
+  .logo img {
+    height: 100px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .bottom-panel {
+    height: auto;
+    border-radius: 0;
+  }
+
+  .bottom-panel-content {
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  form.grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+  }
+
+  section,
+  .content-section {
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* === contato.css === */
+  .contact-box-fixed {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .info-dupla {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* === sobrenos.css === */
+  .sobre-nos-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .sobre-nos-grid img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .sobre-nos-conteudo {
+    text-align: center;
+  }
+
+  .accordion-header {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  /* === unidades.css === */
+  .mapa-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .titulo-local {
+    text-align: center;
+  }
+
+  .menu-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .menu-column {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 🔴 Remove a linha vertical no mobile */
+  .menu-columns::before {
+    display: none;
+  }
+
+  .menu-column h2,
+  .menu-column h3 {
+    font-size: 1.5rem;
+    word-break: break-word;
+  }
+
+  .menu-column p {
+    padding: 0 10px;
+  }
+
+  /* 🔵 Adiciona uma linha horizontal no mobile (opcional) */
+  .separator-line {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    border: none;
+    border-top: 2px solid #e63946;
+    opacity: 0.5;
+  }
+
+  .cardapio-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 16px;
+  }
+
+  .cardapio-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    min-width: 280px;
+    margin-right: 16px;
+  }
+
+  .accordion {
+    grid-template-columns: 1fr;
+  }
+
+  .accordion-header {
+    width: 100%;
+  }
+
+  /* === RESPONSIVO: UNIDADES === */
+
+  .unidade-bloco {
+    margin-bottom: 40px;
+  }
+
+  .mapa-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .mapa,
+  .info {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .titulo-local {
+    text-align: center;
+  }
+
+  .painel-unidade {
+    padding: 20px;
+  }
+
+  .info p {
+    text-align: center;
+  }
+
+
+}
+
+

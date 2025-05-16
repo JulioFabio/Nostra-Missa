@@ -101,16 +101,6 @@ form input[type=submit] {
   z-index: 999;
 }
 
-@media (max-width: 768px) {
-  .contact-box-fixed {
-    position: static;
-    width: 90%;
-    margin: 20px auto;
-    top: auto;
-    right: auto;
-  }
-}
-
 /* INFORMATIVO DUAS CAIXAS VERMELHA E VERDE */
 .info-dupla {
   display: flex;

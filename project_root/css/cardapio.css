@@ -207,35 +207,4 @@
   transform: translateY(0);
 }
 
-/* ===== Responsivo ===== */
-@media (max-width: 768px) {
 
-  .menu-columns { 
-    flex-direction: column; 
-  
-  }
-
-  .menu-column {
-    width: 100%;
-  }
-
-  .cardapio-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 16px;
-  }
-  .cardapio-item {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    min-width: 280px;
-    margin-right: 16px;
-  }
-  .accordion {
-    grid-template-columns: 1fr;
-  }
-  .accordion-header {
-    width: 100%;
-  }
-
-}

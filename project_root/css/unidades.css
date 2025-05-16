@@ -1,107 +1,87 @@
-/* Título principal branco (centralizado e destacado) */
+/* === UNIDADES === */
+
+/* Título principal da seção */
 .titulo-unidades {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  /* Wrapper para cada bloco (já existente) */
-  .unidade-bloco {
-    margin-bottom: 60px;
-  }
-  
-  /* Wrapper que envolve título local + conteúdo (mapa + info lado a lado) */
-  .mapa-info-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  
-  .titulo-local {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #e63946;
-    text-align: left;
-    margin-bottom: 12px;
-  }
-  
-  
- /* Mapa + texto lado a lado */
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Painel que envolve todas as unidades */
+.painel-unidade {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estrutura geral de cada unidade */
+.unidade-bloco {
+  margin-bottom: 60px;
+}
+
+.unidade-bloco.reverse .mapa-info {
+  flex-direction: row-reverse;
+}
+
+/* Layout mapa + informações */
 .mapa-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  
-  /* Zig-zag: se o bloco for .reverse, inverte a ordem */
-  .unidade-bloco.reverse .mapa-info {
-    flex-direction: row-reverse;
-  }
-  
-  /* Mapa */
-  .mapa {
-    flex: 1 1 400px;
-    max-width: 600px;
-    height: 350px;
-  }
-  
-  .mapa iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 12px;
-  }
-  
-  /* Informações */
-  .info {
-    flex: 1 1 300px;
-    max-width: 500px;
-    padding-left: 20px; /* <<< Adiciona espaço para alinhar com o título vermelho */
-  }
-  
-  
-  .info p {
-    font-size: 1.1rem;
-    margin: 6px 0;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .mapa-info {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .info {
-        padding-left: 0;
-        text-align: center;
-    }
-  
-    .titulo-local {
-      text-align: center;
-    }
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
 
-  .painel-unidade {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 12px;
-    padding: 40px;
-    margin-top: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
+/* Coluna do mapa */
+.mapa {
+  flex: 1 1 400px;
+  max-width: 600px;
+  height: 350px;
+}
 
-  /* Remove barra de rolagem visível */
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Coluna de informações */
+.info {
+  flex: 1 1 300px;
+  max-width: 500px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin: 6px 0;
+  color: #e0e0e0;
+}
+
+/* Título de cada local */
+.titulo-local {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e63946;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+/* Scroll suave do painel */
 .bottom-panel-content {
-    overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE/Edge */
-  }
-  .bottom-panel-content::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-  }
-  
-  
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.bottom-panel-content::-webkit-scrollbar {
+  display: none;
+}
