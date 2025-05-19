@@ -101,6 +101,16 @@ form input[type=submit] {
   z-index: 999;
 }
 
+@media (max-width: 768px) {
+  .contact-box-fixed {
+    position: static;
+    width: 90%;
+    margin: 20px auto;
+    top: auto;
+    right: auto;
+  }
+}
+
 /* INFORMATIVO DUAS CAIXAS VERMELHA E VERDE */
 .info-dupla {
   display: flex;
@@ -207,17 +217,6 @@ form input[type=submit] {
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.footer-logo img {
-  display: flex;
-  max-height: 100%;
-  overflow: hidden;
-  width: 100px; 
-  justify-content: center;
-  text-align: center;
-  height: 100px;
-  margin-top: 32px;
 }
 
 .footer-links {
