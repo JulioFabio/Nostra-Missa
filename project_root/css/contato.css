@@ -20,74 +20,95 @@ body {
 }
 
 /* FORMULÁRIO */
+
 form {
-  margin-left: -170px;
-  background: #fff;
+  font-family: 'Caveat', cursive;
+  background: url('../assets/comandaForm.png') no-repeat center;
+  background-color: transparent;
+  color: #423020;/*cor do texto*/
+  font-weight: bolder;
+  margin-top: -40px;
+  margin-left: -240px;
   max-width: 500px;
-  height: 450px;
+  height: 620px;
   padding: 40px;
-  border-radius: 20px;
+  background-size: 130% 100%;
+  padding-top: 90px;
+  padding-right: 20px;
+  filter: drop-shadow(0px 5px 2px rgba(68, 38, 17, 0.4));
 }
 
 form h1 {
+  font-family: 'Caveat', cursive;
   text-align: center;
   margin-bottom: 10px;
-  color: #2D5966;
-  font-size: 22pt;
+  color: #db4c4c;
+  font-size: 36pt;
 }
 
 form p {
+  font-family: 'Caveat', cursive;
   text-align: center;
   margin-bottom: 25px;
+  font-size: 20pt;
 }
 
 form .input-single {
+  font-family: 'Caveat', cursive;
   position: relative;
-  margin: 30px 0;
+  margin: 30px ;
 }
 
 form .input-single label {
+  font-size: 17pt;
+  font-family: 'Caveat', cursive;
   position: absolute;
   left: 0;
   bottom: 5px;
   cursor: text;
   transition: all 0.5s;
-  color: #808080;
+  color: #9b7f5ac5;
 }
 
-form .input-single .input {
+form .input-single .input {/*caixas do form pra colocar texto*/
   width: 100%;
   border: 0;
-  border-bottom: 2px solid #808080;
-  padding: 5px;
+  border-bottom: 2px dashed #c5b097;
+  background:transparent;
+  padding: 12px 5px 4px 5px;
   outline: 0;
   font-size: 16px;
 }
 
 form .input-single .input:focus {
-  border-bottom: 2px solid #2D5966;
+  border-bottom: 3px dashed #a89277;
 }
 
 form .input-single .input:focus ~ label,
 form .input-single .input:valid ~ label {
-  transform: translateY(-20px);
-  font-size: 12px;
-  color: #2D5966;
+  transform: translateY(-30px);
+  font-size: 19px;
+  color: #df9f7a;
 }
 
 .btn {
-  width: 100%;
-  text-align: center;
+  background: url('../assets/botao-enviar.png') no-repeat center;
+  width: 180px;
+  height: 180px;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: -50px auto 0 auto;
+  transition: transform 0.2s ease;
 }
 
 form input[type=submit] {
+  padding: 6px 3px;
   border: 0;
-  border-radius: 10px;
-  background-color: #0b1105;
-  color: #fff;
-  font-size: 14pt;
+  background-color: transparent;
+  color: transparent;
   cursor: pointer;
-  border-radius: 19px;
 }
 
 /* FORMULÁRIO FIXO NA LATERAL */
@@ -118,12 +139,12 @@ form input[type=submit] {
   margin: 220px 200px 40px;
   height: 360px;
   overflow: hidden;
-  position: fixed;  /* Torna a caixa fixa */
+  position: relative;  /* Torna a caixa fixa */
   top: 30px;  /* Ajusta a distância do topo */
   left: 20px;  /* Ajusta a distância à esquerda */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
   z-index: 10;  
 }
 
@@ -134,7 +155,7 @@ form input[type=submit] {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 106px; /*distancia entre escritas verticais*/
 }
 
 .coluna-direita {
@@ -145,7 +166,7 @@ form input[type=submit] {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 119px; /*distancia entre escritas verticais*/
 }
 .coluna-esquerda .item i {
   font-size: 30px; /* Aumenta os ícones */
@@ -222,12 +243,14 @@ form input[type=submit] {
 .footer-links {
   display: flex;
   gap: 15px;
+
 }
 
 .footer-links a {
   text-decoration: none;
   color: #fff;
-  font-size: 12px; 
+  font-size: 20px; 
+  font-weight: bolder;
 }
 
 .footer-address {
@@ -247,7 +270,7 @@ form input[type=submit] {
 }
 
 .footer-bottom {
-  background-color: #9c2a2a; 
+  background-color: #722a2a; 
   text-align: center;
   padding: 5px 0; 
   margin-top: 10px;
