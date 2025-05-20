@@ -487,6 +487,59 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
   opacity: 1;
 }
 
+/* Estilo para os talheres decorativos */
+.utensil {
+    position: fixed;
+    bottom: 5%; /* Posição inicial próxima à base da tela */
+    z-index: 990; /* Abaixo do painel, mas acima do fundo */
+    width: 400px; /* Tamanho ajustável conforme necessário */
+    height: auto;
+    pointer-events: none; /* Para não interferir nos cliques */
+    transition: transform 0.6s ease-out, bottom 0.6s ease-out; /* Transição suave */
+    display: block; /* Garante que seja visível */
+    animation-delay: 0.5s;
+    animation: utensilSlideUp 0.8s ease-out forwards;
+    
+  }
+ 
+
+  .left-utensil {
+    left: -20px; /* Distância da borda esquerda */
+    transform: rotate(-15deg);
+    transition: transform 0.6s ease-out, bottom 0.6s ease-out, left 0.6s ease-out;
+    bottom: 5%;
+  }
+  
+  .right-utensil {
+    right: -20px; /* Distância da borda direita */
+    transform: rotate(15deg); /* Rotação para parecer mais natural */
+    transition: transform 0.6s ease-out, bottom 0.6s ease-out, right 0.6s ease-out;
+  }
+  
+  .utensil img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(4px 6px 10px rgba(0, 0, 0, 0.5));
+    opacity: 0.95; /* Leve transparência para não ficar muito chamativo */
+  }
+  
+  /* Quando o painel estiver aberto, ajustar a posição dos talheres */
+  .bottom-panel.open ~ .utensil,
+  .utensil.panel-open {
+    
+    bottom: 65%; /* Move para cima quando o painel está aberto */
+    transform: translateY(-50px); /* Movimento adicional para acompanhar o painel */
+  }
+  
+  /* Versão para modo escuro */
+  body.dark-mode .utensil img {
+    filter: brightness(0.8) drop-shadow(0px 4px 6px rgba(255, 255, 255, 0.2));
+  }
+  
+
+  
+
 /* coloquei isso pq tava dando b.o na unidades, n estava centralizando o texto - Bruno */
 html, body {
     overflow-x: hidden !important;
