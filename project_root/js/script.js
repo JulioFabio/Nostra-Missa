@@ -539,75 +539,86 @@ function renderCardapio() {
   const panel = document.getElementById('panelContent');
   panel.innerHTML = '';
 
-  // 1) Colunas de Pizzas
-  const wrapper = document.createElement('div');
-  wrapper.className = 'menu-columns';
-  ['salgada','doce'].forEach(tipo => {
-    const col = document.createElement('div');
-    col.className = `menu-column ${tipo}`;
-    col.innerHTML = `<h2 class="headline-central">${tipo === 'salgada' ? 'Pizzas Salgadas' : 'Pizzas Doces'}</h2>`;
-
-    pizzas
-      .filter(item => item.category === tipo)
-      .sort((a, b) => a.title.localeCompare(b.title, 'pt'))
-      .forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'menu-item';
-        div.innerHTML = `
-          <h3>${item.title}<span class="price">${item.price}</span></h3>
-          <p>${item.desc}</p>
-        `;
-        col.appendChild(div);
-      });
-    wrapper.appendChild(col);
-  });
-  panel.appendChild(wrapper);
-
-  // Seções adicionais para outras categorias, como Fondue, Caldos, etc
-  const sections = [
-    { key: 'fondue', title: 'Fondue' },
-    { key: 'caldo', title: 'Caldos' },
-    { key: 'salada', title: 'Saladas' },
-    { key: 'massa', title: 'Massas' },
-    { key: 'talharim', title: 'Massas – Talharim' },
-    { key: 'porcao', title: 'Porções' },
-    { key: 'bebida-agua', title: 'Bebidas – Águas/Refri' },
-    { key: 'bebida-suco', title: 'Bebidas – Sucos' },
-    { key: 'bebida-cerveja', title: 'Bebidas – Cervejas' },
-    { key: 'bebida-vinho', title: 'Bebidas – Vinhos' }
+  // Lista das categorias na ordem que quer mostrar + título amigável
+  const categorias = [
+    { key: 'salgada', titulo: 'Pizzas Salgadas' },
+    { key: 'doce', titulo: 'Pizzas Doces' },
+    { key: 'fondue', titulo: 'Fondue' },
+    { key: 'caldo', titulo: 'Caldos' },
+    { key: 'salada', titulo: 'Saladas' },
+    { key: 'massa', titulo: 'Massas' },
+    { key: 'talharim', titulo: 'Massas – Talharim' },
+    { key: 'porcao', titulo: 'Porções' },
+    { key: 'bebida-agua', titulo: 'Bebidas – Águas e Refrigerantes' },
+    { key: 'bebida-suco', titulo: 'Bebidas – Sucos Naturais' },
+    { key: 'bebida-cerveja', titulo: 'Bebidas – Cervejas' },
+    { key: 'bebida-vinho', titulo: 'Bebidas – Vinhos' },
   ];
 
-  sections.forEach(sec => {
-    const itens = pizzas.filter(i => i.category === sec.key);
-    if (!itens.length) return;
+  categorias.forEach((cat, idx) => {
+    // Cria título da categoria
+    const titulo = document.createElement('h2');
+    titulo.className = 'headline-central';
+    titulo.textContent = cat.titulo;
+    panel.appendChild(titulo);
 
-    // Linha na Seção de Fondue
-    if (sec.key === 'fondue') {
-      const hr = document.createElement('hr');
-      hr.style.border = 'none';
-      hr.style.height = '2px';
-      hr.style.backgroundColor = '#e63946';
-      hr.style.opacity = '0.5';
-      hr.style.margin = '30px';
-      panel.appendChild(hr);
-    }
+    // Cria container em grid para os itens da categoria
+    const grid = document.createElement('div');
+    grid.className = 'pizzas-grid';
+    panel.appendChild(grid);
 
-    // título da seção
-    const H2 = document.createElement('h2');
-    H2.className = 'headline-central';
-    H2.textContent = sec.title;
-    panel.appendChild(H2);
-    // itens
-    itens.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'menu-item';
-      div.innerHTML = `
+    // Filtra e ordena os itens da categoria
+    const itensCategoria = pizzas
+      .filter(p => p.category === cat.key)
+      .sort((a, b) => a.title.localeCompare(b.title, 'pt'));
+
+    // Adiciona cada item no grid
+    itensCategoria.forEach(item => {
+      const divItem = document.createElement('div');
+      divItem.className = 'menu-item pizza-item';
+      divItem.innerHTML = `
         <h3>${item.title}<span class="price">${item.price}</span></h3>
         <p>${item.desc}</p>
       `;
-      panel.appendChild(div);
+      grid.appendChild(divItem);
     });
+
+    // Se não for a última categoria, adiciona uma linha horizontal para separar
+    if (idx < categorias.length - 1) {
+      const hr = document.createElement('hr');
+      hr.className = 'separator-line';
+      panel.appendChild(hr);
+    }
   });
+}
+
+
+function corrigirVisibilidadeConteudo() {
+  if (!bottomPanel) return;
+  
+  const panelContent = document.getElementById('panelContent');
+  if (panelContent) {
+    panelContent.style.opacity = '1';
+    panelContent.style.visibility = 'visible';
+    panelContent.style.display = 'block';
+    panelContent.style.color = '#ffffff';
+    
+    // Forçar propriedades CSS específicas para manter o grid aberto
+    panelContent.style.width = '100%';
+    panelContent.style.maxWidth = '900px';
+    panelContent.style.margin = '0 auto';
+    panelContent.style.textAlign = 'left';
+
+    const grids = panelContent.querySelectorAll('.pizzas-grid');
+    grids.forEach(grid => {
+      grid.style.display = 'grid';
+      grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+      grid.style.gap = '20px 40px';
+    });
+
+    corrigirEstilosCabecalho();
+    console.log('Visibilidade do conteúdo corrigida e grid fixado');
+  }
 }
 
 
