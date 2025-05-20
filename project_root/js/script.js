@@ -614,10 +614,12 @@ function renderCardapio() {
 // Modifique o evento DOMContentLoaded para incluir a carga de conteúdo específico
 document.addEventListener('DOMContentLoaded', () => {
   carregarConteudoEspecifico(); // Carregar conteúdo específico para a página atual
-  
+  addDecorativeUtensils();
+
   if (getCurrentPage() === 'cardapio') {
     renderCardapio();
   }
+   setupUtensils();  
 
   debugButton.addEventListener('click', () => {
     carregarConteudoEspecifico();
@@ -626,3 +628,131 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.body.appendChild(debugButton);
 }); 
+
+// Adicione esta função após o carregamento do documento
+function setupUtensils() {
+  // Verificar se os elementos dos talheres existem
+  const leftUtensil = document.querySelector('.left-utensil');
+  const rightUtensil = document.querySelector('.right-utensil');
+  
+  if (!leftUtensil || !rightUtensil) {
+    console.log('Elementos dos talheres não encontrados');
+    return;
+  }
+  
+  console.log('Talheres encontrados e configurados');
+  
+  // Atualizar a posição dos talheres quando o painel mudar
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === 'class') {
+        const isPanelOpen = bottomPanel.classList.contains('open');
+        leftUtensil.classList.toggle('panel-open', isPanelOpen);
+        rightUtensil.classList.toggle('panel-open', isPanelOpen);
+      }
+    });
+  });
+  
+  observer.observe(bottomPanel, { attributes: true });
+}
+function addDecorativeUtensils() {
+  // Verificar se os talheres já existem na página
+  if (document.querySelector('.utensil')) {
+    return; // Talheres já existem, não precisa adicionar novamente
+  }
+  const bottomPanel = document.getElementById('bottomPanel');
+  if (!bottomPanel) {
+    console.log('Bottom panel não encontrado, adiando adição dos talheres');
+    // Tentar novamente em breve
+    setTimeout(addDecorativeUtensils, 100);
+    return;
+  }
+  
+  // Criar o garfo (lado esquerdo)
+  const leftUtensil = document.createElement('div');
+  leftUtensil.className = 'utensil left-utensil';
+  const leftImg = document.createElement('img');
+  leftImg.src = 'project_root/assets/fork.png';
+  leftImg.alt = 'Garfo decorativo';
+  leftUtensil.appendChild(leftImg);
+  
+  // Criar a faca (lado direito)
+  const rightUtensil = document.createElement('div');
+  rightUtensil.className = 'utensil right-utensil';
+  const rightImg = document.createElement('img');
+  rightImg.src = 'project_root/assets/knife.png'; // Substitua por knife.png quando disponível
+  rightImg.alt = 'Faca decorativa';
+  rightUtensil.appendChild(rightImg);
+  
+  // Adicionar os talheres ao body
+  document.body.appendChild(leftUtensil);
+  document.body.appendChild(rightUtensil);
+  
+  console.log('Talheres decorativos adicionados à página');
+  const observer = new MutationObserver((mutations, obs) => {
+    // Verificar se o painel está visível
+    if (bottomPanel && bottomPanel.offsetHeight > 0) {
+      // Sincronizar a aparição dos talheres com o bottom panel
+      setTimeout(() => {
+        leftUtensil.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out, bottom 0.6s ease-out';
+        rightUtensil.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out, bottom 0.6s ease-out';
+        
+        leftUtensil.style.opacity = '0.95';
+        rightUtensil.style.opacity = '0.95';
+        
+        // Se o painel já estiver aberto, posicionar os talheres adequadamente
+        if (bottomPanel.classList.contains('open')) {
+          leftUtensil.classList.add('panel-open');
+          rightUtensil.classList.add('panel-open');
+        }
+      }, 300); // Pequeno atraso para sincronizar com a animação do painel
+      
+      obs.disconnect(); // Parar de observar após a animação
+    }
+  });
+
+// Observar mudanças no DOM que possam afetar a visibilidade do painel
+  observer.observe(document.body, { 
+    childList: true, 
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['class', 'style']
+  });
+  
+  console.log('Talheres decorativos adicionados à página');
+  // Configurar a interação com o bottom panel
+  setupUtensilsInteraction();
+}
+
+// Função para configurar a interação dos talheres com o bottom panel
+function setupUtensilsInteraction() {
+  const bottomPanel = document.getElementById('bottomPanel');
+  if (!bottomPanel) return;
+  
+  const leftUtensil = document.querySelector('.left-utensil');
+  const rightUtensil = document.querySelector('.right-utensil');
+  
+  // Atualizar a classe dos talheres quando o painel mudar
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === 'class') {
+        const isPanelOpen = bottomPanel.classList.contains('open');
+        leftUtensil.classList.toggle('panel-open', isPanelOpen);
+        rightUtensil.classList.toggle('panel-open', isPanelOpen);
+      }
+    });
+  });
+  
+  observer.observe(bottomPanel, { attributes: true });
+  
+  // Também atualizar quando togglePanel for chamado diretamente
+  const originalTogglePanel = window.togglePanel;
+  if (originalTogglePanel) {
+    window.togglePanel = function() {
+      originalTogglePanel.apply(this, arguments);
+      const isPanelOpen = bottomPanel.classList.contains('open');
+      leftUtensil.classList.toggle('panel-open', isPanelOpen);
+      rightUtensil.classList.toggle('panel-open', isPanelOpen);
+    };
+  }
+}
