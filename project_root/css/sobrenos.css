@@ -77,10 +77,64 @@
       transform: translateY(0);
   }
 }
+/* Adicionar efeito de barrinha laranja nos itens do sobre nós */
+.sobre-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #e63946; /* Cor laranja/avermelhada */
+  transition: width 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.sobre-item:hover::before {
+  width: 100%;
+}
+
+/* Melhorar o efeito hover nos itens */
 .sobre-item:hover {
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); 
   transform: translateY(-6px);
   background-color: rgba(220, 197, 167, 0.12); /* um pouquinho mais clara */
+}
+
+.sobre-item h3 {
+  transition: color 0.3s ease;
+}
+
+.sobre-item:hover h3 {
+  color: #e63946; /* Cor laranja/avermelhada quando hover */
+}
+
+/* Adicionar efeito de brilho ao passar o mouse */
+.sobre-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.7s ease-in-out;
+  z-index: 0;
+}
+
+.sobre-item:hover::after {
+  left: 100%;
 }
 .sobre-item h3 {
   font-size: 18px;
@@ -117,13 +171,142 @@
       margin-right: 16px;
   }
 }
+/* Correção para centralizar os títulos */
+/* Corrigir centralização dos títulos */
 .headline-central {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
+  width: 100% !important; /* Força a largura total */
+  max-width: 100% !important; /* Garante que não haja limitação de largura */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important; /* Garante que seja um bloco que ocupa toda a largura */
+  position: relative;
+  padding-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #e63946, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
+/* Garantir que o elemento após o título também esteja centralizado */
+.headline-central::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50% !important; /* Força o posicionamento no centro */
+  transform: translateX(-50%) !important; /* Garante centralização perfeita */
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #e63946, #ffb347);
+  border-radius: 3px;
+}
+
+/* Garantir que os contêineres de seção estejam centralizados */
+.sobre-nos, 
+.depoimentos, 
+.estatisticas, 
+.galeria-fotos, 
+.timeline-section {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Garantir que os contêineres de conteúdo dentro das seções estejam centralizados */
+.container, 
+.sobre-nos .container,
+.depoimentos .container,
+.estatisticas .container,
+.galeria-fotos .container,
+.timeline-section .container {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Centralizar os elementos que precisam de alinhamento específico */
+.accordion, 
+.sobre-nos-grid, 
+.estatisticas-container, 
+.swiper-container,
+.timeline {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Garantir que os títulos de todas as seções estejam centralizados */
+.sobre-nos h2,
+.depoimentos h2,
+.estatisticas h2,
+.galeria-fotos h2,
+.timeline-section h2 {
+  text-align: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Variação para subtítulos */
+.sobre-item h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #ffdab9;
+  height: auto;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+
+/* Garantir que o sobre-item mantenha a posição relativa para o posicionamento absoluto da tag */
+.sobre-item {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/* Cores diferentes para cada título de item */
+.sobre-item:nth-child(1) h3 {
+  color: #ffb347; /* Laranja */
+}
+
+
+.sobre-item:nth-child(2) h3 {
+  color: #e63946; /* Vermelho */
+}
+
+.sobre-item:nth-child(3) h3 {
+  color: #a8dadc; /* Azul claro */
+}
+
+/* Estilos diferentes para cada seção */
+.depoimentos h2.headline-central {
+  background: linear-gradient(45deg, #457b9d, #a8dadc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.depoimentos h2.headline-central::after {
+  background: linear-gradient(45deg, #457b9d, #a8dadc);
+}
+
+.estatisticas h2.headline-central {
+  background: linear-gradient(45deg, #ffb347, #ffcc33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.estatisticas h2.headline-central::after {
+  background: linear-gradient(45deg, #ffb347, #ffcc33);
+}
 
 .accordion-header {
     width: 60%;
@@ -165,9 +348,9 @@ gap: 12px;                             /* espaçamento entre as células */
 justify-items: center;                 /* centraliza cada item na célula */
 align-items: start;                    /* alinha cada item ao topo da célula */
 width: 100%;
-max-width: 800px;                      /* opcional: limita a largura total */
+max-width: 900px;                      /* opcional: limita a largura total */
 margin: 0 auto;                        /* centraliza o grid na página */
-padding: 24px 0;
+padding: 30px 0;
 position: relative; /* contexto para os bodies absolutos */
 
 }
@@ -184,22 +367,18 @@ position: relative; /* contexto para os bodies absolutos */
   
 }
  .accordion-body {
+  padding: 0 20px 15px 20px;
+  margin-left: 20px;
+  border-left: 2px dashed rgba(255, 255, 255, 0.2);
   max-height: 0;
   overflow: hidden;
-  top: 100%;          /* justo abaixo do header */
-  padding-left: 1rem;
-  overflow: visible;
-  transition: 
-  max-height 2.0s ease-in-out, /* <— Duração maior e suave */
-  padding 0.8s ease-in-out;
-  padding-left: 1rem;
-  padding: 0 1rem;    /* padding inicial (alturas zero) */
-
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
   
 
   .accordion-header.active + .accordion-body {
     max-height: 500px; /* ajuste conforme o conteúdo */
+    padding: 15px 20px 15px 20px;
   }
   .accordion-item.active .accordion-body {
     max-height: 1000px; /* Ou um valor grande o suficiente para o conteúdo */
@@ -227,7 +406,7 @@ position: relative; /* contexto para os bodies absolutos */
 
   .depoimentos {
     text-align: center; /* Centraliza o texto */
-    padding: 24px 0;    /* Adiciona um padding para dar mais espaço ao redor */
+    padding: 40px 0;    /* Adiciona um padding para dar mais espaço ao redor */
   }
   
   .depoimentos h2 {
@@ -242,7 +421,8 @@ position: relative; /* contexto para os bodies absolutos */
   }
   .swiper-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 30px auto 0;
+    padding: 30px 0;
     position: relative; /* Permite que os botões de navegação sejam posicionados em relação ao contêiner */
     display: flex;
     justify-content: center; /* Alinha os botões de navegação horizontalmente */
@@ -253,27 +433,50 @@ position: relative; /* contexto para os bodies absolutos */
   
   blockquote {
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 1.3rem;
     color: #fff;
+    position: relative;
+    padding: 0 30px;
   }
   
+  blockquote::before,
+  blockquote::after {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(230, 57, 70, 0.5);
+    position: absolute;
+  }
+
+  blockquote::before {
+    top: -20px;
+    left: 0;
+  }
+
+  blockquote::after {
+    bottom: -40px;
+    right: 0;
+  }
+
   cite {
     display: block;
-    font-size: 1em;
-    margin-top: 10px;
-    color: #777;
+    font-size: 1rem;
+    margin-top: 20px;
+    color: #a8dadc;
+    font-weight: bold;
   }
   .swiper-button-prev,
 .swiper-button-next {
-  color: white;  /* Altera a cor das setas para branco */
-  font-size: 1rem;  /* Ajuste o tamanho conforme necessário */
-  margin-bottom: 20px; /* Ajusta o espaço entre o título e os depoimentos */
-
+  color: #e63946;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #fff;  /* Garante que a cor continue branca quando o usuário passar o mouse */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Adicione ao seu CSS */
@@ -394,11 +597,13 @@ transform: rotate(180deg);
 .sobre-nos {
   width: 100%;
   max-width: 100%;
+  padding-top: 0px !important; /* Reduzir drasticamente o padding superior */
+  margin-top: -90px !important; /* Remover margem superior */
 }
 
 /* Reduzir margens e paddings desnecessários */
 .headline-central {
-  margin-bottom: 20px;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
@@ -435,7 +640,7 @@ transform: rotate(180deg);
   max-height: 500px; /* Valor grande o suficiente para acomodar o conteúdo */
 }
 
-/* Timeline Interativa */
+/* Timeline */
 .timeline-section {
   padding: 40px 0;
   max-width: 800px;
@@ -550,17 +755,18 @@ transform: rotate(180deg);
   }
 }
 
-/* Galeria de Fotos */
+/* Estilos para a Galeria de Fotos */
 .galeria-fotos {
   padding: 40px 0;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .galeria-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .galeria-item {
@@ -572,6 +778,7 @@ transform: rotate(180deg);
   transform: translateY(30px);
   opacity: 0;
   animation: galeriaFadeIn 0.8s ease forwards;
+  height: 200px; /* Altura fixa para uniformidade */
 }
 
 .galeria-item:nth-child(1) { animation-delay: 0.1s; }
@@ -583,7 +790,7 @@ transform: rotate(180deg);
 
 .galeria-item img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -656,104 +863,177 @@ transform: rotate(180deg);
   }
 }
 
-/* Contador de Estatísticas */
-.estatisticas {
+/* Estilos para a Seção de Equipe */
+.equipe-section {
   padding: 40px 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  margin: 30px auto;
   max-width: 1000px;
+  margin: 0 auto;
 }
 
+.equipe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.equipe-membro {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: equipeFadeIn 0.8s ease forwards;
+}
+
+.equipe-membro:nth-child(1) { animation-delay: 0.1s; }
+.equipe-membro:nth-child(2) { animation-delay: 0.2s; }
+.equipe-membro:nth-child(3) { animation-delay: 0.3s; }
+.equipe-membro:nth-child(4) { animation-delay: 0.4s; }
+
+.equipe-membro:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.equipe-foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 3px solid rgba(230, 57, 70, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.equipe-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipe-membro h3 {
+  color: #ffdab9;
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.equipe-cargo {
+  color: #e63946;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.equipe-desc {
+  color: #d8d2d2;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@keyframes equipeFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .galeria-container,
+  .equipe-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  
+  .equipe-foto {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+/* Melhorias nas estatísticas */
 .estatisticas-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 20px;
-  padding: 20px;
+  gap: 25px;
+  padding: 10px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .estatistica-item {
   text-align: center;
   flex: 1 1 200px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.estatistica-item:hover {
-  transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.estatistica-item i {
-  font-size: 2.5rem;
-  color: #e63946;
-  margin-bottom: 10px;
-}
-
-.contador {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffdab9;
-  margin: 10px 0;
-}
-
-.estatistica-item p {
-  font-size: 1rem;
-  color: #d8d2d2;
-}
-
-/* Melhorias no Accordion */
-.accordion-item {
-  transition: transform 0.3s ease;
-}
-
-.accordion-item:hover {
-  transform: translateX(5px);
-}
-
-.accordion-header {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.accordion-header::before {
+.estatistica-item::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 3px;
-  height: 100%;
-  background-color: #e63946;
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #e63946, #ffb347);
 }
 
-.accordion-header:hover::before,
-.accordion-header.active::before {
-  transform: scaleY(1);
+.estatistica-item:nth-child(2)::before {
+  background: linear-gradient(to right, #ffb347, #a8dadc);
 }
 
-.accordion-header i {
-  transition: transform 0.3s ease, color 0.3s ease;
+.estatistica-item:nth-child(3)::before {
+  background: linear-gradient(to right, #a8dadc, #457b9d);
 }
 
-.accordion-header:hover i,
-.accordion-header.active i {
-  transform: scale(1.2);
+.estatistica-item:nth-child(4)::before {
+  background: linear-gradient(to right, #457b9d, #e63946);
+}
+
+.estatistica-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.estatistica-item i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.estatistica-item:nth-child(1) i {
   color: #e63946;
 }
 
-.accordion-body {
-  position: relative;
-  padding-left: 20px;
+.estatistica-item:nth-child(2) i {
+  color: #ffb347;
 }
 
-.accordion-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
+.estatistica-item:nth-child(3) i {
+  color: #a8dadc;
+}
+
+.estatistica-item:nth-child(4) i {
+  color: #457b9d;
+}
+
+.contador {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 15px 0;
+  background: linear-gradient(45deg, #ffffff,)

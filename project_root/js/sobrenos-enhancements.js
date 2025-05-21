@@ -7,10 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Inicializando melhorias para a página Sobre Nós');
     
     // 1. Melhora o efeito de hover nos itens do sobre nós
+
     enhanceSobreItems();
+
+
+
     
-    // 2. Adiciona estatísticas animadas
-    addEstatisticas();
+    // 2. Removido: Não adiciona estatísticas aqui, pois já estão no HTML
+    // addEstatisticas(); 
     
     // 3. Adiciona timeline interativa
     addTimeline();
@@ -85,6 +89,12 @@ function enhanceSobreItems() {
 
 // Função para adicionar estatísticas
 function addEstatisticas() {
+  // Verifica se a seção de estatísticas já existe
+  if (document.querySelector('.estatisticas')) {
+    console.log('Seção de estatísticas já existe, pulando criação');
+    return;
+  }
+  
   const sobreNosGrid = document.querySelector('.sobre-nos-grid');
   if (!sobreNosGrid) return;
   
@@ -109,7 +119,7 @@ function addEstatisticas() {
         </div>
         <div class="estatistica-item">
           <div class="estatistica-icon">🏆</div>
-          <div class="contador" data-target="8">0</div>
+          <div class="contador" data-target="9">0</div>
           <p>Anos de História</p>
         </div>
       </div>

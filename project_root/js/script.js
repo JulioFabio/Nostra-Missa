@@ -20,7 +20,7 @@ function corrigirEstilosCabecalho() {
     // Resetar estilos que podem estar causando o problema
     cabecalho.style.transform = 'none';
     cabecalho.style.textAlign = 'center';
-    cabecalho.style.margin = '20px 0';
+    cabecalho.style.margin = '0px';
     cabecalho.style.position = 'relative';
   });
 }
@@ -36,6 +36,7 @@ function corrigirVisibilidadeConteudo() {
     panelContent.style.opacity = '1';
     panelContent.style.visibility = 'visible';
     panelContent.style.display = 'block';
+    panelContent.style.padding = '0px';
     panelContent.style.color = '#ffffff'; // Forçar cor branca para o texto
     
     // Verificar todos os elementos filhos e garantir que sejam visíveis
@@ -63,10 +64,68 @@ function togglePanel() {
     expandButton.textContent = '▼ Arraste para fechar';
     // Corrigir visibilidade quando o painel é aberto
     setTimeout(corrigirVisibilidadeConteudo, 300); // Aguardar a animação
+    
+    // Reiniciar a animação dos contadores quando o painel é aberto
+    // (apenas se estiver na página sobre nós)
+    if (getCurrentPage() === 'sobre') {
+      animarContadores();
+    }
   } else {
     expandButton.textContent = '▲ Arraste para explorar mais';
+    
+    // Resetar os contadores para zero quando o painel for fechado
+    // (apenas se estiver na página sobre nós)
+    if (getCurrentPage() === 'sobre') {
+      const contadores = document.querySelectorAll('.contador');
+      contadores.forEach(contador => {
+        contador.textContent = '0';
+      });
+    }
   }
 }
+
+// Função separada para animar os contadores de forma controlada
+function animarContadores() {
+  const contadores = document.querySelectorAll('.contador');
+  
+  contadores.forEach(contador => {
+    // Obter o valor final do contador
+    const valorFinal = parseInt(contador.getAttribute('data-target'));
+    if (isNaN(valorFinal)) return;
+    
+    // Resetar para zero
+    contador.textContent = '0';
+    
+    // Definir a duração da animação
+    const duracao = 2000; // 2 segundos
+    const inicioAnimacao = Date.now();
+    
+    // Usar requestAnimationFrame para uma animação mais suave
+    function atualizarContador() {
+      // Calcular o tempo decorrido
+      const tempoDecorrido = Date.now() - inicioAnimacao;
+      const progresso = Math.min(tempoDecorrido / duracao, 1);
+      
+      // Calcular o valor atual com base no progresso
+      const valorAtual = Math.floor(progresso * valorFinal);
+      
+      // Atualizar o texto do contador
+      contador.textContent = valorAtual;
+      
+      // Continuar a animação se não estiver completa
+      if (progresso < 1) {
+        requestAnimationFrame(atualizarContador);
+      } else {
+        // Garantir que o valor final seja exato
+        contador.textContent = valorFinal;
+      }
+    }
+    
+    // Iniciar a animação
+    requestAnimationFrame(atualizarContador);
+  });
+}
+
 
 // Adiciona evento de clique ao botão de expandir
 if (expandButton) {
@@ -199,6 +258,33 @@ function carregarConteudoEspecifico() {
                 </div>
               </div>
             </div>
+
+              <div class="estatisticas-section">
+        <h3 class="headline-central">Nostra Massa em Números</h3>
+        <div class="estatisticas-container">
+          <div class="estatistica-item">
+            <div class="estatistica-icon">🍕</div>
+            <div class="contador" data-target="15000">0</div>
+            <p>Pizzas por Mês</p>
+          </div>
+          <div class="estatistica-item">
+            <div class="estatistica-icon">👨‍🍳</div>
+            <div class="contador" data-target="25">0</div>
+            <p>Colaboradores</p>
+          </div>
+          <div class="estatistica-item">
+            <div class="estatistica-icon">🌟</div>
+            <div class="contador" data-target="35">0</div>
+            <p>Sabores</p>
+          </div>
+          <div class="estatistica-item">
+            <div class="estatistica-icon">🏆</div>
+            <div class="contador" data-target="9">0</div>
+            <p>Anos de História</p>
+          </div>
+        </div>
+      </div>
+  
 
             <div class="sobre-nos-grid">
               <div class="sobre-item"><h3>🍕 Pizza Artesanal</h3><p>Ingredientes frescos, massas leves e sabores que surpreendem.</p></div>
@@ -755,4 +841,6 @@ function setupUtensilsInteraction() {
       rightUtensil.classList.toggle('panel-open', isPanelOpen);
     };
   }
+  
 }
+
