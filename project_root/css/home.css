@@ -206,16 +206,19 @@
 .regiao-marker {
   position: absolute;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
 }
 
 .regiao-marker[data-regiao="napoles"] {
-  top: 60%;
-  left: 65%;
+  top: 57%;
+  left: 57%;
 }
 
 .regiao-marker[data-regiao="toscana"] {
-  top: 40%;
-  left: 50%;
+  top: 35%;
+  left: 45%;
 }
 
 .regiao-marker[data-regiao="sicilia"] {
