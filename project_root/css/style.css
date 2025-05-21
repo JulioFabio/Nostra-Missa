@@ -98,7 +98,7 @@ body::before {
     height: 100%;
     background-image: url('../assets/imagemfundo.jpeg');
     background-repeat: no-repeat;
-     background-size: 100% 100%; /* Aumenta a imagem em 20% */
+     background-size: 100% 90%; /* Aumenta a imagem em 20% */
     background-position:center;
     
     z-index: -1;

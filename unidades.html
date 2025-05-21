@@ -1,99 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unidades - Nostra Massa</title>
-  <link rel="icon" href="project_root/assets/nostraicon.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="project_root/css/style.css" />
-  <link rel="stylesheet" href="project_root/css/unidades.css" />
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="top-bar">
-  <div class="logo-container">
-    <a href="index.html" class="logo">
-      <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa" />
-    </a>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="cardapio.html">Cardápio</a>
-    <a href="unidades.html">Unidades</a>
-    <a href="sobrenos.html">Sobre Nós</a>
-    <a href="contato.html">Contato</a>
-  </nav>
-</header>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidades - Nostra Massa</title>
 
+    <!-- Google Font Caveat -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="project_root/assets/nostraicon.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="project_root/css/style.css" />
+    <link rel="stylesheet" href="project_root/css/unidades.css" />
+    <link rel="stylesheet" href="project_root/css/responsivo.css">
+  </head>
 
-  <!-- PAINEL INFERIOR COM AS UNIDADES -->
-  <div class="bottom-panel open" id="bottomPanel">
-    <div class="bottom-panel-header" id="expandButton" role="button" aria-expanded="true">
-      ▼ Arraste para fechar
-    </div>
-    <div class="bottom-panel-content" id="panelContent">
+  <body class="unidades-page">
+    <!-- HEADER -->
+    <header class="top-bar">
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="project_root/assets/nostraicon.png" alt="Logo Nostra Massa" />
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="unidades.html">Unidades</a>
+        <a href="sobrenos.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container-unidades">
       <h1 class="titulo-unidades">Nossas Unidades</h1>
 
-      <!-- UNIDADE: Cravinhos -->
-      <div class="unidade-bloco">
-        <div class="mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.2211500990885!2d-47.71907022492251!3d-21.337865479193213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be2e02bbd1a9%3A0xf289c07f1a9ed29f!2sAv.%20Rita%20C%C3%A2ndida%20Nogueira%2C%20481%20-%20Centro%2C%20Cravinhos%20-%20SP%2C%2014140-000!5e0!3m2!1spt-BR!2sbr!4v1715633080324!5m2!1spt-BR!2sbr"
-            loading="lazy" allowfullscreen style="border:0;"></iframe>
-        </div>
-        <div class="info">
-          <h2>Nostra Massa Cravinhos</h2>
-          <p>Av. Rita Cândida Nogueira, 481<br>Cravinhos, SP</p>
-          <p><strong>Tel:</strong> (16) 99238-0676 / (16) 3482-2555</p>
-          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
-        </div>
-      </div>
+      <div class="unidade-section">
 
-      <!-- UNIDADE: Ribeirão -->
-      <div class="unidade-bloco reverse">
-        <div class="info">
-          <h2>Nostra Massa Ribeirão</h2>
-          <p>Rua São José, 933<br>Ribeirão Preto – Shopping Santa Úrsula</p>
-          <p><strong>Tel:</strong> 3635-6655 / 3635-4775 / 99281-2124</p>
-          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+        <!-- CRAVINHOS -->
+        <div class="unidade-bloco">
+          <div class="unidade-item mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.2211500990885!2d-47.71907022492251!3d-21.337865479193213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be2e02bbd1a9%3A0xf289c07f1a9ed29f!2sAv.%20Rita%20C%C3%A2ndida%20Nogueira%2C%20481%20-%20Centro%2C%20Cravinhos%20-%20SP%2C%2014140-000!5e0!3m2!1spt-BR!2sbr!4v1715633080324!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="unidade-item foto">
+            <img src="project_root/assets/unidadecravinhos.jpeg" alt="Nostra Massa Cravinhos" />
+          </div>
+          <div class="unidade-item dados">
+            <h2>Nostra Massa Cravinhos</h2>
+            <p><strong>End:</strong> Av. Rita Cândida Nogueira, 481<br>Cravinhos, SP</p>
+            <p><strong>Tel:</strong> (16) 99238-0676 / (16) 3482-2555</p>
+            <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+          </div>
         </div>
-        <div class="mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.447195070301!2d-47.82080352493682!3d-21.177692779413897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9bd190e95ab95%3A0x39575d3b9d46f1c7!2sShopping%20Santa%20%C3%9Arsula!5e0!3m2!1spt-BR!2sbr!4v1715632979625!5m2!1spt-BR!2sbr"
-            loading="lazy" allowfullscreen style="border:0;"></iframe>
-        </div>
-      </div>
 
-      <!-- UNIDADE: Santa Maria -->
-      <div class="unidade-bloco">
-        <div class="mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.094315983164!2d-47.72700122492237!3d-21.34343097919344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be379e0b9b1d%3A0xfdf6cf8556d4c514!2sSanta%20Maria%20Outlet!5e0!3m2!1spt-BR!2sbr!4v1715632729603!5m2!1spt-BR!2sbr"
-            loading="lazy" allowfullscreen style="border:0;"></iframe>
+        <!-- RIBEIRÃO -->
+        <div class="unidade-bloco reverse">
+          <div class="unidade-item mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.534845058847!2d-47.81413592383398!3d-22.74609573009957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be317b6e2319%3A0xa68b4212b7902262!2sRua%20S%C3%A3o%20Jos%C3%A9%2C%20933%20-%20Centro%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014010-160!5e0!3m2!1spt-BR!2sbr!4v1716229743543!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="unidade-item foto">
+            <img src="project_root/assets/UnidadeRibeirao.jpeg" alt="Nostra Massa Ribeirão" />
+          </div>
+          <div class="unidade-item dados">
+            <h2>Nostra Massa Ribeirão</h2>
+            <p><strong>End:</strong> Rua São José, 933<br>Ribeirão Preto – Shopping Santa Úrsula</p>
+            <p><strong>Tel:</strong> (16) 3635-6655 / (16) 3635-4775 / (16) 99281-2124</p>
+            <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+          </div>
         </div>
-        <div class="info">
-          <h2>Nostra Santa Maria</h2>
-          <p>Rodovia Anhanguera, Km 299<br>Cravinhos – Santa Maria Outlet</p>
-          <p><strong>Tel:</strong> (16) 3100-0354</p>
-          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
-        </div>
-      </div>
 
-      <!-- UNIDADE: Express -->
-      <div class="unidade-bloco reverse">
-        <div class="info">
-          <h2>Nostra Express Cravinhos</h2>
-          <p>Av. Pedro Amoroso, 465<br>Cravinhos – Posto Avenida</p>
-          <p><strong>Tel:</strong> (16) 99367-7155</p>
-          <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
+        <!-- EXPRESS -->
+        <div class="unidade-bloco">
+          <div class="unidade-item mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3716.2521142310115!2d-47.740214599999995!3d-21.3405486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9c98a3f07f679%3A0x90a6a270b18d53fa!2sAv.%20Pedro%20Duarte%20Amoroso%2C%20465%20-%20Vila%20Claudia%2C%20Cravinhos%20-%20SP%2C%2014140-000!5e0!3m2!1spt-BR!2sbr!4v1747760856011!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="unidade-item foto">
+            <img src="project_root/assets/UnidadeExpress.jpeg" alt="Nostra Express Cravinhos" />
+          </div>
+          <div class="unidade-item dados">
+            <h2>Nostra Express Cravinhos</h2>
+            <p><strong>End:</strong> Av. Pedro Amoroso, 465<br>Cravinhos, SP</p>
+            <p><strong>Tel:</strong> (16) 3487-7155</p>
+            <p><strong>Email:</strong> express@nostramassa.com</p>
+          </div>
         </div>
-        <div class="mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.142046864899!2d-47.729408899999996!3d-21.341566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be3a82e64559%3A0x9f1c82cd184cba4f!2sAv.%20Pedro%20Amoroso%2C%20465%20-%20Cravinhos%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1715632852054!5m2!1spt-BR!2sbr"
-            loading="lazy" allowfullscreen style="border:0;"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- SCRIPTS -->
-  <script src="project_root/js/script.js"></script>
-</body>
+        <!-- SANTA MARIA -->
+        <div class="unidade-bloco reverse">
+          <div class="unidade-item mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3717.674939713145!2d-47.7528176!3d-21.284331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9c90016430be5%3A0xa47e8a3c2e0280e7!2sSanta%20Maria%20Outlet%20%7C%20Rodovia%20Anhanguera%20Km%20299!5e0!3m2!1spt-BR!2sbr!4v1747761076497!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="unidade-item foto">
+            <img src="project_root/assets/UnidadeSantaMaria.jpeg" alt="Nostra Santa Maria" />
+          </div>
+          <div class="unidade-item dados">
+            <h2>Nostra Santa Maria</h2>
+            <p><strong>End:</strong> Rodovia Anhanguera, Km 299<br>Cravinhos, SP</p>
+            <p><strong>Tel:</strong> (16) 3300-0345</p> 
+            <p><strong>Email:</strong> santamaria@nostramassa.com</p>
+          </div>
+        </div>
+
+      </div>
+  </body>
 </html>

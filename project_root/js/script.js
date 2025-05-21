@@ -333,77 +333,7 @@ function carregarConteudoEspecifico() {
       `;
       break;
       case 'unidades':
-        panelContent.innerHTML = `
-          <h1 class="titulo-unidades">Nossas Unidades</h1>
-      
-          <!-- 1 - Cravinhos -->
-          <div class="unidade-bloco">
-            <div class="mapa-info-wrapper painel-unidade">
-              <div class="mapa-info">
-                <div class="mapa">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.2211500990885!2d-47.71907022492251!3d-21.337865479193213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be2e02bbd1a9%3A0xf289c07f1a9ed29f!2sAv.%20Rita%20C%C3%A2ndida%20Nogueira%2C%20481%20-%20Centro%2C%20Cravinhos%20-%20SP%2C%2014140-000!5e0!3m2!1spt-BR!2sbr!4v1715633080324!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="info">
-                  <h2 class="titulo-local">Nostra Massa Cravinhos</h2>
-                  <p>Av. Rita Cândida Nogueira, 481<br>Cravinhos, SP</p>
-                  <p><strong>Tel:</strong> (16) 99238-0676 / (16) 3482-2555</p>
-                  <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      
-          <!-- 2 - Ribeirão -->
-          <div class="unidade-bloco reverse">
-            <div class="mapa-info-wrapper painel-unidade">
-              <div class="mapa-info">
-                <div class="mapa">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12513.283864355197!2d-47.81667341093104!3d-21.183356087852143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9bee4814d103d%3A0x65e24506ef4a3c8c!2sShopping%20Santa%20%C3%9Arsula!5e0!3m2!1spt-BR!2sbr!4v1747156455054!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="info">
-                  <h2 class="titulo-local">Nostra Massa Ribeirão</h2>
-                  <p>Rua São José, 933<br>Higienópolis – Shopping Santa Úrsula</p>
-                  <p><strong>Tel:</strong> 3635-6655 / 3635-4775 / 99281-2124</p>
-                  <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      
-          <!-- 3 - Santa Maria -->
-          <div class="unidade-bloco">
-            <div class="mapa-info-wrapper painel-unidade">
-              <div class="mapa-info">
-                <div class="mapa">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36407.14668098335!2d-47.76205805665075!3d-21.275920368902433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9c90016430be5%3A0xa47e8a3c2e0280e7!2sSanta%20Maria%20Outlet%20%7C%20Rodovia%20Anhanguera%20Km%20299!5e0!3m2!1spt-BR!2sbr!4v1747156552375!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="info">
-                  <h2 class="titulo-local">Nostra Santa Maria</h2>
-                  <p>Rodovia Anhanguera, Km 299<br>Cravinhos, SP – Santa Maria Outlet</p>
-                  <p><strong>Tel:</strong> (16) 3100-0354</p>
-                  <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      
-          <!-- 4 - Express -->
-          <div class="unidade-bloco reverse">
-            <div class="mapa-info-wrapper painel-unidade">
-              <div class="mapa-info">
-                <div class="mapa">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.142046864899!2d-47.729408899999996!3d-21.341566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be3a82e64559%3A0x9f1c82cd184cba4f!2sAv.%20Pedro%20Amoroso%2C%20465%20-%20Cravinhos%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1715632852054!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="info">
-                  <h2 class="titulo-local">Nostra Express Cravinhos</h2>
-                  <p>Av. Pedro Amoroso, 465<br>Cravinhos, SP – Posto Avenida</p>
-                  <p><strong>Tel:</strong> (16) 99367-7155</p>
-                  <p><strong>Email:</strong> admnostramassa@hotmail.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
+        
         corrigirVisibilidadeConteudo();
         break;      
     case 'contato':
