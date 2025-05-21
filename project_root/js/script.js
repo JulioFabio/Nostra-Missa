@@ -978,3 +978,13 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(bottomPanel, { childList: true, subtree: true });
   }
 });
+const swiper = new Swiper('.depoimento-swiper', {
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+});

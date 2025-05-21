@@ -1,0 +1,572 @@
+/* Estilos gerais para a página inicial */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.headline-central {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.headline-central::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #2e7d32, #d73427);
+}
+
+/* Hero Section Interativa */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #f9f5f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-hero {
+  padding: 0.8rem 1.5rem;
+  background-color: #d73427;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #b71c1c;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(183, 28, 28, 0.3);
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: 2px solid #d73427;
+  color: #d73427;
+}
+
+.btn-transparent:hover {
+  background-color: #d73427;
+  color: white;
+}
+
+.hero-interactive {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pizza-builder {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.pizza-base {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/Pizza#29.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.pizza-toppings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.topping {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.topping:hover {
+  transform: scale(1.2);
+}
+
+.topping::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.topping:hover::after {
+  opacity: 1;
+}
+
+.topping-1 {
+  top: 30%;
+  left: 25%;
+  background-image: url('../assets/Pizza#29.jpg');
+}
+
+.topping-2 {
+  top: 40%;
+  right: 25%;
+  background-image: url('../assets/topping-mussarela.png');
+}
+
+.topping-3 {
+  bottom: 30%;
+  left: 40%;
+  background-image: url('../assets/topping-tomate.png');
+}
+
+.pizza-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* Mapa Interativo das Origens */
+.mapa-origens {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.mapa-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mapa-italia {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.mapa-italia img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+.regiao-marker {
+  position: absolute;
+  cursor: pointer;
+}
+
+.regiao-marker[data-regiao="napoles"] {
+  top: 60%;
+  left: 65%;
+}
+
+.regiao-marker[data-regiao="toscana"] {
+  top: 40%;
+  left: 50%;
+}
+
+.regiao-marker[data-regiao="sicilia"] {
+  top: 80%;
+  left: 55%;
+}
+
+.marker-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #d73427;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 rgba(215, 52, 39, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(215, 52, 39, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(215, 52, 39, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(215, 52, 39, 0);
+  }
+}
+
+.regiao-info {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  width: 200px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.regiao-marker:hover .regiao-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5px);
+}
+
+.regiao-info h3 {
+  margin-top: 0;
+  color: #d73427;
+  font-size: 1.2rem;
+}
+
+.regiao-info p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.mapa-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mapa-texto h3 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Experiência Sensorial */
+.experiencia-sensorial {
+  padding: 4rem 2rem;
+  background-color: #f9f5f0;
+}
+
+.sentidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.sentido-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sentido-card:hover {
+  transform: translateY(-10px);
+}
+
+.sentido-card i {
+  font-size: 2.5rem;
+  color: #d73427;
+  margin-bottom: 1rem;
+}
+
+.sentido-card h3 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+/* Calendário de Eventos */
+.calendario-eventos {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.eventos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.evento-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+}
+
+.evento-data {
+  background-color: #d73427;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.evento-dia {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.evento-mes {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.evento-info {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.evento-info h3 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+.btn-evento {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-evento:hover {
+  background-color: #1b5e20;
+}
+
+.calendario-completo {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-calendario {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid #d73427;
+  color: #d73427;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-calendario:hover {
+  background-color: #d73427;
+  color: white;
+}
+
+/* Segredos da Cozinha */
+.segredos-cozinha {
+  padding: 4rem 2rem;
+  background-color: #f9f5f0;
+}
+
+.segredos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.segredo-video {
+  flex: 1;
+  min-width: 300px;
+  max-width: 550px; /* Limita a largura máxima */
+  margin: 0 auto; /* Centraliza o vídeo */
+}
+
+.segredo-video video {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Limita a altura máxima */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Mantém a proporção e cobre o container */
+}
+@media (max-width: 768px) {
+  .segredo-video {
+    max-width: 100%;
+  }
+  
+  .segredo-video video {
+    max-height: 300px;
+  }
+}
+
+.segredos-lista {
+  flex: 1;
+  min-width: 300px;
+}
+
+.segredo-item {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.segredo-numero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d73427;
+  opacity: 0.5;
+}
+
+.segredo-item h3 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+/* Menu Sazonal */
+.menu-sazonal {
+   padding: 4rem 2rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+.estacao-banner {
+  background-color: #f1f8e9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.estacao-icon {
+   font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.estacao-banner h3 {
+  margin: 0.5rem 0;
+  color: #2e7d32;
+}
+
+.sazonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.sazonal-item {
+   background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sazonal-item:hover {
+  transform: translateY(-5px);
+}
+
+.sazonal-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block; /* Garante que não haja espaço extra abaixo da imagem */
+}
+
+.sazonal-item h3 {
+  padding: 1rem 1rem 0.5rem;
+  margin: 0;
+  color: #d73427;
+}
+
+.sazonal-item p {
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+  flex-grow: 1; /* Faz o texto ocupar o espaço disponível */
+}
+
+.sazonal-preco {
+   display: block;
+  padding: 0.5rem 1rem 1rem;
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+.sazonal-nota {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  color: #666;
+}
