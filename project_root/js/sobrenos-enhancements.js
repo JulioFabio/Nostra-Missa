@@ -3,6 +3,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Verifica se estamos na página Sobre Nós
+  if (typeof window.sobreNosEnhancementsLoaded !== 'undefined') {
+    window.sobreNosEnhancementsLoaded = true;
+  }
   if (window.location.pathname.includes('sobrenos.html')) {
     console.log('Inicializando melhorias para a página Sobre Nós');
     
@@ -10,12 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     enhanceSobreItems();
 
-
-
-    
-    // 2. Removido: Não adiciona estatísticas aqui, pois já estão no HTML
-    // addEstatisticas(); 
-    
     // 3. Adiciona timeline interativa
     addTimeline();
     
@@ -231,6 +228,59 @@ function addEstatisticas() {
   document.head.appendChild(style);
 }
 
+function initSwiper() {
+  if (typeof Swiper !== 'undefined') {
+    // Primeiro, destruir qualquer instância existente para evitar conflitos
+    const swiperContainers = document.querySelectorAll('.swiper-container');
+    
+    swiperContainers.forEach((container, index) => {
+      // Verificar se já existe uma instância do Swiper neste container
+      if (container.swiper) {
+        container.swiper.destroy(true, true);
+      }
+      
+      // Adicionar um ID único se não tiver
+      if (!container.id) {
+        container.id = `swiper-container-${index}`;
+      }
+      
+      // Inicializar nova instância do Swiper com efeitos avançados
+      new Swiper(`#${container.id}`, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        speed: 800,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      });
+      
+      console.log(`Swiper inicializado para o container #${container.id}`);
+    });
+  } else {
+    console.warn('Biblioteca Swiper não encontrada');
+  }
+}
+function reinicializarSwiper() {
+  // Aguardar um pouco para garantir que o DOM foi atualizado
+  setTimeout(() => {
+    initSwiper();
+    console.log('Swiper reinicializado após carregamento de conteúdo');
+  }, 500);
+}
 // Função para adicionar timeline
 function addTimeline() {
   const depoimentos = document.querySelector('.depoimentos');
@@ -272,7 +322,61 @@ function addTimeline() {
         </div>
       </div>
     </section>
-  `;
+  
+  <section class="galeria-fotos fade-in">
+      <div class="section-title-wrapper">
+        <div class="headline-central-container">
+          <h2 class="headline-central">Nossa Pizzaria em Imagens</h2>
+        </div>
+      </div>
+      <div class="galeria-container">
+        <div class="galeria-item" data-description="Nossa primeira unidade em Cravinhos">
+          <img src="project_root/assets/unidadecravinhos.jpeg" alt="Fachada da pizzaria" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Pizzaria'">
+        </div>
+        <div class="galeria-item" data-description="Nosso forno a lenha tradicional">
+          <img src="project_root/assets/forno.jpg" alt="Forno a lenha" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Forno+a+Lenha'">
+        </div>
+        <div class="galeria-item" data-description="Preparo artesanal das massas">
+          <img src="project_root/assets/massas.jpeg" alt="Preparo de massas" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Preparo+de+Massas'">
+        </div>
+        <div class="galeria-item" data-description="Equipe Nostra Massa">
+          <img src="project_root/assets/equipe.jpg" alt="Nossa equipe" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Nossa+Equipe'">
+        </div>
+        <div class="galeria-item" data-description="Eventos e celebrações">
+          <img src="project_root/assets/herois.jpeg" alt="Área de eventos" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Eventos'">
+        </div>
+        <div class="galeria-item" data-description="Ingredientes frescos e selecionados">
+          <img src="project_root/assets/ingredientes.jpg" alt="Ingredientes frescos" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Ingredientes'">
+        </div>
+      </div>
+    </section>
+
+    <section class="depoimentos fade-in">
+      <div class="section-title-wrapper">
+        <div class="headline-central-container">
+          <h2 class="headline-central">O que nossos clientes dizem</h2>
+        </div>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <blockquote>"A melhor pizza que já comi! Sempre me surpreendo com os sabores." <cite>— João M.</cite></blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote>"Ambiente acolhedor e atendimento maravilhoso. Amei!" <cite>— Maria L.</cite></blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote>"A pizza de calabresa é sensacional, e o atendimento é impecável!" <cite>— Lucas F.</cite></blockquote>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+  `  ;
+  initGaleria();
+  initSwiper();
+
   
   depoimentos.insertAdjacentHTML('afterend', timelineHTML);
   

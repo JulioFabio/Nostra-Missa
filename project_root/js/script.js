@@ -7,6 +7,7 @@ function getCurrentPage() {
   if (path.includes('contato.html')) return 'contato';
   return 'home'; // index.html ou raiz
 }
+let sobreNosEnhancementsLoaded = false;
 
 // Elementos do painel inferior
 const bottomPanel = document.getElementById('bottomPanel');
@@ -63,7 +64,11 @@ function togglePanel() {
   if (isPanelOpen) {
     expandButton.textContent = '▼ Arraste para fechar';
     // Corrigir visibilidade quando o painel é aberto
-    setTimeout(corrigirVisibilidadeConteudo, 300); // Aguardar a animação
+    setTimeout(() => {
+      corrigirVisibilidadeConteudo();
+      initGaleria(); // Adicione esta linha para inicializar a galeria quando o painel for aberto
+      reinicializarSwiper();
+    }, 300); // Aguardar a animação
     
     // Reiniciar a animação dos contadores quando o painel é aberto
     // (apenas se estiver na página sobre nós)
@@ -82,6 +87,7 @@ function togglePanel() {
       });
     }
   }
+  initSwiper();
 }
 
 // Função separada para animar os contadores de forma controlada
@@ -194,19 +200,7 @@ function initAccordionNative() {
 }
 
 // Inicialização do Swiper
-function initSwiper() {
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      loop: true
-    });
-  }
-}
+
 
 // Função para carregar o conteúdo apropriado para cada página
 function carregarConteudoEspecifico() {
@@ -228,6 +222,25 @@ function carregarConteudoEspecifico() {
       `;
       break;
     case 'sobre':
+      if (sobreNosEnhancementsLoaded) {
+        console.log('Melhorias do Sobre Nós já carregadas, pulando carregamento básico');
+        // Apenas inicializar componentes
+        setTimeout(() => {
+          initAccordion();
+          
+          
+          // Adicionar classe 'visible' aos elementos fade-in
+          document.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.add('visible');
+          });
+          
+          // Corrigir visibilidade e estilos
+          corrigirVisibilidadeConteudo();
+        }, 300);
+        return;
+      }
+      
+      // Caso contrário, carregue o conteúdo básico
       panelContent.innerHTML = `
         <section class="sobre-nos fade-in">
           <div class="container">
@@ -295,25 +308,15 @@ function carregarConteudoEspecifico() {
         </section>
 
         <section class="depoimentos fade-in">
-          <h2 class="headline-central">O que nossos clientes dizem</h2>
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <blockquote>"A melhor pizza que já comi! Sempre me surpreendo com os sabores." <cite>— João M.</cite></blockquote>
-              </div>
-              <div class="swiper-slide">
-                <blockquote>"Ambiente acolhedor e atendimento maravilhoso. Amei!" <cite>— Maria L.</cite></blockquote>
-              </div>
-              <div class="swiper-slide">
-                <blockquote>"A pizza de calabresa é sensacional, e o atendimento é impecável!" <cite>— Lucas F.</cite></blockquote>
-              </div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
+          
         </section>
-      `;
+      `
+      
+        
+        
+    
       break;
+      
     case 'cardapio':
       panelContent.innerHTML = `
         <div class="menu-columns">
@@ -435,7 +438,7 @@ function carregarConteudoEspecifico() {
 
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="project_root/js/script.js"></script>
+  
 </body>
 </html>
       `;
@@ -444,7 +447,7 @@ function carregarConteudoEspecifico() {
   
   // Após carregar o conteúdo, inicialize os componentes
   initAccordion();
-  initSwiper();
+  
   
   // Adicionar classe 'visible' aos elementos fade-in
   document.querySelectorAll('.fade-in').forEach(el => {
@@ -701,7 +704,30 @@ function renderCardapio() {
 document.addEventListener('DOMContentLoaded', () => {
   carregarConteudoEspecifico(); // Carregar conteúdo específico para a página atual
   addDecorativeUtensils();
-
+if (!document.querySelector('.galeria-modal')) {
+    const modal = document.createElement('div');
+    modal.className = 'galeria-modal';
+    modal.innerHTML = `
+      <span class="galeria-fechar">&times;</span>
+      <img class="galeria-modal-content">
+      <div class="galeria-caption"></div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Adicionar evento para fechar o modal
+    modal.querySelector('.galeria-fechar').addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+    
+    // Fechar o modal ao clicar fora da imagem
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+    
+    console.log('Modal da galeria criado');
+  }
   if (getCurrentPage() === 'cardapio') {
     renderCardapio();
   }
@@ -843,4 +869,74 @@ function setupUtensilsInteraction() {
   }
   
 }
+// Adicione esta função para inicializar a galeria de fotos
+function initGaleria() {
+  const galeriaItems = document.querySelectorAll('.galeria-item');
+  const modal = document.querySelector('.galeria-modal');
+  
+  // Se não existir modal, crie um
+  if (!modal && galeriaItems.length > 0) {
+    const newModal = document.createElement('div');
+    newModal.className = 'galeria-modal';
+    newModal.innerHTML = `
+      <span class="galeria-fechar">&times;</span>
+      <img class="galeria-modal-content">
+      <div class="galeria-caption"></div>
+    `;
+    document.body.appendChild(newModal);
+    
+    const fecharBtn = modal.querySelector('.galeria-fechar');
+  fecharBtn.onclick = function() {
+    modal.style.display = 'none';
+  };
+  }
+  
+  // Adicionar eventos de clique aos itens da galeria
+  galeriaItems.forEach(item => {
+    // Remover eventos antigos para evitar duplicação
+    item.removeEventListener('click', handleGaleriaClick);
+    
+    // Adicionar novo evento de clique
+    item.addEventListener('click', handleGaleriaClick);
+  });
+  
+  // Função para lidar com o clique na galeria
+  function handleGaleriaClick() {
+    const img = this.querySelector('img');
+    const modalImg = modal.querySelector('.galeria-modal-content');
+    const captionText = modal.querySelector('.galeria-caption');
+    
+    modal.style.display = 'block';
+    modalImg.src = img.src;
+    captionText.innerHTML = this.getAttribute('data-description');
+    
+    console.log('Imagem clicada:', img.src);
+  }
+  
+  console.log('Galeria inicializada com', galeriaItems.length, 'itens');
+}
 
+
+// Adicione esta função para animar a timeline
+function animateTimeline() {
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  
+  timelineItems.forEach((item, index) => {
+    // Adicionar atraso baseado no índice
+    setTimeout(() => {
+      item.classList.add('visible');
+    }, index * 300);
+  });
+}
+function removerSecoesDuplicadas() {
+  // Obter todas as seções de depoimentos
+  const secoes = document.querySelectorAll('.depoimentos');
+  
+  // Se houver mais de uma seção de depoimentos, manter apenas a última
+  if (secoes.length > 1) {
+    // Remover todas exceto a última
+    for (let i = 0; i < secoes.length - 1; i++) {
+      secoes[i].remove();
+    }
+  }
+}
