@@ -573,3 +573,332 @@
   font-style: italic;
   color: #666;
 }
+.clube-pizza {
+  padding: 4rem 2rem;
+  background-color: #f9f5f0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.clube-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.clube-content h2 {
+  font-size: 2.2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.clube-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.clube-beneficios li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.clube-beneficios i {
+  color: #2e7d32;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.clube-form {
+  display: flex;
+  margin-top: 1.5rem;
+  max-width: 450px;
+}
+
+.clube-form input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 30px 0 0 30px;
+  font-size: 1rem;
+}
+
+.btn-clube {
+  padding: 0.8rem 1.5rem;
+  background-color: #d73427;
+  color: white;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-clube:hover {
+  background-color: #b71c1c;
+}
+
+.clube-imagem {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.clube-imagem img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Aplicativo Mobile */
+.app-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.app-mockup {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.app-mockup img {
+  max-width: 300px;
+  height: auto;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.app-content h2 {
+  font-size: 2.2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.app-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.app-features li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.app-features i {
+  color: #d73427;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.app-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-app {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-app i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-app:hover {
+  background-color: #555;
+  transform: translateY(-3px);
+}
+
+/* Bloco de Chamada */
+.bloco-chamada {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #fff3e0, #ffe0b2);
+  color: #5c3317;
+}
+
+.bloco-chamada h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.bloco-chamada p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.botao-destaque {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #d73427;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.botao-destaque:hover {
+  background-color: #b71c1c;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(183, 28, 28, 0.3);
+}
+
+/* Sabores Mais Amados */
+.sabores-mais-amados {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.sabores-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.sabor-card {
+  background-color: #fff8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.sabor-card:hover {
+  transform: translateY(-10px);
+}
+
+.sabor-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sabor-card h3 {
+  padding: 1rem 1rem 0.5rem;
+  margin: 0;
+  color: #d73427;
+}
+
+.sabor-card p {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  min-height: 60px;
+}
+
+.botao-pedir {
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #2e7d32;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao-pedir:hover {
+  background-color: #1b5e20;
+}
+
+/* Galeria de Pizzas */
+.galeria-pizzas {
+  padding: 4rem 2rem;
+  background-color: #f9f5f0;
+}
+
+.galeria-pizzas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.galeria-pizzas-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-pizzas-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Botão WhatsApp Flutuante */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 1.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background-color: #128C7E;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .clube-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .clube-form input {
+    border-radius: 30px;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-clube {
+    border-radius: 30px;
+    width: 100%;
+  }
+  
+  .app-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-app {
+    width: 100%;
+    justify-content: center;
+  }
+}
