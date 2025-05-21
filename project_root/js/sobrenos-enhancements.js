@@ -334,19 +334,19 @@ function addTimeline() {
           <img src="project_root/assets/unidadecravinhos.jpeg" alt="Fachada da pizzaria" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Pizzaria'">
         </div>
         <div class="galeria-item" data-description="Nosso forno a lenha tradicional">
-          <img src="project_root/assets/forno.jpg" alt="Forno a lenha" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Forno+a+Lenha'">
+          <img src="project_root/assets/fornolenha.jpg" alt="Forno a lenha" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Forno+a+Lenha'">
         </div>
         <div class="galeria-item" data-description="Preparo artesanal das massas">
           <img src="project_root/assets/massas.jpeg" alt="Preparo de massas" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Preparo+de+Massas'">
         </div>
         <div class="galeria-item" data-description="Equipe Nostra Massa">
-          <img src="project_root/assets/equipe.jpg" alt="Nossa equipe" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Nossa+Equipe'">
+          <img src="project_root/assets/pizzaiolos.jpg" alt="Nossa equipe" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Nossa+Equipe'">
         </div>
         <div class="galeria-item" data-description="Eventos e celebrações">
           <img src="project_root/assets/herois.jpeg" alt="Área de eventos" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Eventos'">
         </div>
         <div class="galeria-item" data-description="Ingredientes frescos e selecionados">
-          <img src="project_root/assets/ingredientes.jpg" alt="Ingredientes frescos" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Ingredientes'">
+          <img src="project_root/assets/frescas.jpg" alt="Ingredientes frescos" onerror="this.src='https://via.placeholder.com/300x200/e63946/ffffff?text=Ingredientes'">
         </div>
       </div>
     </section>
