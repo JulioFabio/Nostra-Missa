@@ -434,3 +434,326 @@ transform: rotate(180deg);
 .accordion-header.active + .accordion-body {
   max-height: 500px; /* Valor grande o suficiente para acomodar o conteúdo */
 }
+
+/* Timeline Interativa */
+.timeline-section {
+  padding: 40px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: timelineFadeIn 0.8s ease-out forwards;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-item:nth-child(1) { --i: 1; }
+.timeline-item:nth-child(2) { --i: 2; }
+.timeline-item:nth-child(3) { --i: 3; }
+.timeline-item:nth-child(4) { --i: 4; }
+.timeline-item:nth-child(5) { --i: 5; }
+
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #e63946;
+  border-radius: 50%;
+  top: 15px;
+  right: -10px;
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -10px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item:hover .timeline-dot {
+  background-color: #ff8c94;
+  box-shadow: 0 0 0 6px rgba(230, 57, 70, 0.5);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #ffdab9;
+}
+
+@keyframes timelineFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 15px;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 10px;
+  }
+}
+
+/* Galeria de Fotos */
+.galeria-fotos {
+  padding: 40px 0;
+}
+
+.galeria-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.galeria-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: galeriaFadeIn 0.8s ease forwards;
+}
+
+.galeria-item:nth-child(1) { animation-delay: 0.1s; }
+.galeria-item:nth-child(2) { animation-delay: 0.2s; }
+.galeria-item:nth-child(3) { animation-delay: 0.3s; }
+.galeria-item:nth-child(4) { animation-delay: 0.4s; }
+.galeria-item:nth-child(5) { animation-delay: 0.5s; }
+.galeria-item:nth-child(6) { animation-delay: 0.6s; }
+
+.galeria-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.1);
+}
+
+.galeria-item::after {
+  content: attr(data-description);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover::after {
+  transform: translateY(0);
+}
+
+/* Modal da Galeria */
+.galeria-modal {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.galeria-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.galeria-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+}
+
+.galeria-fechar {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes galeriaFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contador de Estatísticas */
+.estatisticas {
+  padding: 40px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+.estatisticas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.estatistica-item {
+  text-align: center;
+  flex: 1 1 200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.estatistica-item:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.estatistica-item i {
+  font-size: 2.5rem;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.contador {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffdab9;
+  margin: 10px 0;
+}
+
+.estatistica-item p {
+  font-size: 1rem;
+  color: #d8d2d2;
+}
+
+/* Melhorias no Accordion */
+.accordion-item {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: translateX(5px);
+}
+
+.accordion-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #e63946;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.accordion-header:hover::before,
+.accordion-header.active::before {
+  transform: scaleY(1);
+}
+
+.accordion-header i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.accordion-header:hover i,
+.accordion-header.active i {
+  transform: scale(1.2);
+  color: #e63946;
+}
+
+.accordion-body {
+  position: relative;
+  padding-left: 20px;
+}
+
+.accordion-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;

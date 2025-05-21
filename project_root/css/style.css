@@ -206,13 +206,11 @@ main {
 .bottom-panel {
     background-image: url('project_root/assets/cardápio.png');
     position: fixed;
-    bottom: -54%; /* Começa ligeiramente abaixo da tela */
+    bottom: -47%; /* Começa ligeiramente abaixo da tela */
     left: 0;
     right: 0;
     height: 70%;
     background: var(--primary-color); /* Cor do fundo igual ao do restante do site */
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
     width: 100%;
     margin: 0;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
@@ -259,28 +257,9 @@ main {
 .bottom-panel-header:active {
     transform: scale(0.98);
 }
-.bottom-panel-content {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 30px;
-    width: 100%;
-    color: #d8d2d2;
-    overflow-y: auto;
-    height: calc(100% - 40px);
-    box-sizing: border-box;
-    flex-grow: 1;
-    max-width: 100%;
-    margin: 0;
-  }
+
   
-  
-  .bottom-panel-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: -5px 3px 2px rgba(0, 0, 0, 0.25);
-  }
-  
+
 
 .bottom-panel.open {
     bottom: 0; /* A posição final onde estará visível */
@@ -334,7 +313,7 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
         bottom: -60%; /* Começa ligeiramente fora da tela */
     }
     to {
-        bottom: -54%; /* Atinge a posição final */
+        bottom: -47%; /* Atinge a posição final */
     }
 }
 
@@ -412,11 +391,6 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
   .nav-links a {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
-  }
-
-  .bottom-panel-content {
-    align-items: center;
-    padding: 10px;
   }
 
   .divider {
@@ -507,13 +481,14 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body
     left: -20px; /* Distância da borda esquerda */
     transform: rotate(-15deg);
     transition: transform 0.6s ease-out, bottom 0.6s ease-out, left 0.6s ease-out;
-    bottom: 5%;
+    bottom: 10%;
   }
   
   .right-utensil {
     right: -20px; /* Distância da borda direita */
     transform: rotate(15deg); /* Rotação para parecer mais natural */
     transition: transform 0.6s ease-out, bottom 0.6s ease-out, right 0.6s ease-out;
+    bottom: 10%;
   }
   
   .utensil img {

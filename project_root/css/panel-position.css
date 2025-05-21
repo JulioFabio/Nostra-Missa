@@ -1,0 +1,11 @@
+/* Ajuste da posição inicial do painel para mostrar mais conteúdo */
+.bottom-panel {
+  bottom: -40% !important; /* Mostra mais do painel quando fechado (era -54%) */
+}
+
+/* Garante que o botão de expansão fique bem visível */
+.bottom-panel-header {
+  background-color: #162c0a !important;
+  padding: 15px 0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
