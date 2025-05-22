@@ -574,19 +574,19 @@
   color: #666;
 }
 .clube-pizza {
-  padding: 4rem 2rem;
+  padding: 2.5rem 2rem;
   background-color: #f9f5f0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   overflow: hidden; /* Impede overflow */
 }
 
 .clube-content {
    flex: 1;
   min-width: 300px;
-  max-width: 100%; /* Garante que não ultrapasse a largura do container */
+  max-width: 1050px; /* Garante que não ultrapasse a largura do container */
   padding: 0 10px; /* Adiciona um pouco de padding para evitar que o conteúdo toque as bordas */
 }
 
@@ -640,7 +640,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
-  width: auto%; /* Garante que ocupe toda a largura disponível */
+  width: auto; /* Garante que ocupe toda a largura disponível */
   max-width: 100%; /* Impede que o botão ultrapasse o container */
 }
 
@@ -652,33 +652,36 @@
 .clube-imagem {
   flex: 1;
   min-width: 300px;
+  max-width: 900px;
   text-align: center;
 }
 
 .clube-imagem img {
-  max-width: 100%;
+  max-width: 550px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Aplicativo Mobile */
 .app-section {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
+  align-items: center;
 }
 
 .app-mockup {
   flex: 1;
-  min-width: 300px;
+  min-width: 250px;
   text-align: center;
+  transform: translateY(-20px);
 }
 
 .app-mockup img {
-  max-width: 300px;
+  max-width: 250px;
   height: auto;
 }
 
