@@ -24,7 +24,7 @@ body {
 form {
   font-family: 'Caveat', cursive;
   background: url('../assets/comandaForm.png') no-repeat center;
-  background-color: transparent;
+  /* background-color: transparent; */
   color: #423020;
   font-weight: bolder;
   margin-top: -40px;
